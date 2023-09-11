@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사 레이아웃 B-4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            background-color: #bfccf9;
+        }
+        #header .logo {
+            width: 20%;
+            height: 100px;
+            background-color: #f46060;
+        }
+        #header .nav {
+            width: 80%;
+            height: 100px;
+            background-color: #cfa6a6;
+        }
+
+        #slider {
+            width: 100%;
+            height: 300px;
+        }
+        #contents {
+            width: 100%;
+        }
+        #contents .contents1 {
+            width: 33.3333em;
+            height: 200px;
+            background-color: #12ff90;
+        }
+        #contents .contents2 {
+            width: 33.3333em;
+            height: 200px;
+            background-color: #0d9757;
+        }
+        #contents .contents3 {
+            width: 33.3333em;
+            height: 200px;
+            background-color: #015930;
+        }
+
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #ed5a5a;
+        }
+        #footer .footer1 {
+            width: 80%;
+        }
+        #footer .footer1 .footer1-1 {
+            width: 100%;
+            height: 50px;
+            background-color: aqua;
+        }
+        #footer .footer1 .footer1-2 {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(82, 176, 176);
+        }
+        #footer .footer2 {
+            width: 20%;
+            height: 100px;
+            background-color: #91a5ec;
+        }
+
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            height: inherit;
+            background-color: rgba(0,0,0,0.5)
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </div>
+        </header>
+        <!--//header-->
+
+        <article id="slider">
+            <div class="container"></div>
+        </article>
+        <!--//slider-->
+
+        <main id="contents">
+            <div class="container">
+                <section class="contents1"></section>
+                <section class="contents2"></section>
+                <section class="contents3"></section>
+            </div>
+        </main>
+        <!--//contents-->
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer1">
+                    <div class="footer1-1"></div>
+                    <div class="footer1-2"></div>
+                </div>
+                <div class="footer2"></div>
+            </div>
+        </footer>
+        <!--//footer-->
+    </div>
+</body>
+</html>

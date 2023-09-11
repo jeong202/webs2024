@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트03</title>
+
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    <link rel="stylesheet" href="assets/css/ani.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>Quiz</h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li class="active"><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz_wrap">
+            <div class="quiz">
+                <div class="quiz_header"></div>
+                <div class="quiz_main">
+                    <div class="quiz_question"></div>
+                    <div class="quiz_choice">
+                        <label for="choice1">
+                            <input type="radio" id="choice1" name="choice" value="1">
+                            <span></span>
+                        </label>
+                        <label for="choice2">
+                            <input type="radio" id="choice2" name="choice" value="2">
+                            <span></span>
+                        </label>
+                        <label for="choice3">
+                            <input type="radio" id="choice3" name="choice" value="3">
+                            <span></span>
+                        </label>
+                        <label for="choice4">
+                            <input type="radio" id="choice4" name="choice" value="4">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="quiz_answer none"></div>
+                    <div class="quiz_desc none"></div>
+                </div>
+                <div class="quiz_footer">
+                    <button class="quiz_confirm">정답 확인하기</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:jhyjhy968@gmail.com">jhyjhy968@gmail.com</a>
+    </footer>
+    <!--//footer-->
+    <!-- <script>
+        //선택자
+        // const quizWrap = document.querySelector(".quiz_wrap");
+        // const quizHeader = document.querySelector(".quiz_header");
+        // const quizQuestion = quizWrap.querySelector(".quiz_question");
+        // const quizAnswer = quizWrap.querySelector(".quiz_answer");
+        // const quizDesc = quizWrap.querySelector(".quiz_desc");
+        // const quizChoice = quizWrap.querySelectorAll(".quiz_choice span");
+        // const quizSelctor = quizWrap.querySelectorAll(".quiz_choice input");
+        // const quizConfirm = quizWrap.querySelector(".quiz_confirm");
+
+        const quizWrap = document.querySelector(".quiz_wrap"); 
+        const quizHeader = quizWrap.querySelector(".quiz_header");
+        const quizQuestion = quizWrap.querySelector(".quiz_question");
+        const quizAnswer = quizWrap.querySelector(".quiz_answer");
+        const quizDesc = quizWrap.querySelector(".quiz_desc");
+        const quizChoice = quizWrap.querySelectorAll(".quiz_choice span");
+        const quizConfirm = quizWrap.querySelector(".quiz_confirm");
+
+        //문제 정보
+        const quizInfo = [
+            {
+                infoDate : "2023년 4월",
+                infoType : "정보처리 기능사",
+                infoNum : "1",
+                infoQuestion : "속성과 관련된 연산(Operation)을 클래스 안에 묶어서 하나로 취급하는 것을 의미하는 객체지향 개념은?",
+                infoChoice : ["Encapsulation, KIPS, Operation, NUI"],
+                infoAnswer : "2",
+                infoDesc : "캡슐화란 클래스 안에 서로 연관있는 속성과 기능들을 하나의 캡슐(capsule)로 만들어 데이터를 외부로부터 보호하는 것을 말합니다"
+            }
+        ]
+
+        //문제출력
+        // quizHeader.innerHTML = quizInfo[0].infoDate + " " + quizInfo[0].infoType;
+        // quizQuestion.innerHTML = quizInfo[0].infoNum + " " + quizInfo[0].infoQuestion;
+        // quizAnswer.innerHTML = quizInfo[0].infoAnswer;
+        // quizDesc.innerHTML = quizInfo[0].infoDesc;
+
+        quizHeader.innerHTML = quizInfo[0].infoDate + " " + quizInfo[0].infoType;
+        quizQuestion.innerHTML = quizInfo[0].infoNum + ". " + quizInfo[0].infoQuestion;
+        quizAnswer.innerText = quizInfo[0].infoAnswer;
+        quizDesc.innerText = quizInfo[0].infoDesc;
+
+        for(let i=0; i<quizChoice.length; i++){
+            quizChoice[i].innerText = quizInfo[0].infoChoice[i];
+        };
+
+        //정답 확인
+        quizConfirm.addEventListener("click", ()=>{
+            for(let i=0; i<quizChoice.length; i++){
+            if(quizSelctor[i].checked == true){
+                //사용자가 보기를 체크한 상태
+                if(quizSelctor[i].value == quizInfo[0].infoAnswer) {
+                    //정답인 경우
+                    // alert("정답"+quizSelctor[i].value);
+
+                } else {    
+                    //오답인 경우
+                    // alert("오답"+quizSelctor[i].value);
+                }
+            } else {                      
+                //사용자가 보기를 체크하지 않은 경우
+                // alert("보기");
+            }
+        }
+        })
+    </script> -->
+    <script>
+        // 선택자 
+        const quizWrap = document.querySelector(".quiz_wrap");
+        const quizHeader = quizWrap.querySelector(".quiz_header");
+        const quizQuestion = quizWrap.querySelector(".quiz_question");
+        const quizAnswer = quizWrap.querySelector(".quiz_answer");
+        const quizDesc = quizWrap.querySelector(".quiz_desc");
+        const quizChoice = quizWrap.querySelectorAll(".quiz_choice span");
+        const quizSelect = quizWrap.querySelectorAll(".quiz_choice input");
+        const quizConfirm = quizWrap.querySelector(".quiz_confirm");
+
+        // 문제 정보
+        const quizInfo = [
+            {
+                infoDate: "2023년 4월",
+                infoType: "정보처리 기능사",
+                infoNum: "01",
+                infoQuestion: "속성과 관련된 연산(Operation)을 클래스 안에 묶어서 하나로 취급하는 것을 의미하는 객체지향 개념은?",
+                infoChoice: ["Encapsulation", "MIPS", "Operation", "NUI"],
+                infoAnswer: 1,
+                infoDesc: "캡슐화란 클래스 안에 서로 연관있는 속성과 기능들을 하나의 캡슐(capsule)로 만들어 데이터를 외부로부터 보호하는 것을 말합니다"
+            }
+        ];
+
+        // 문제 출력
+        quizHeader.innerHTML = quizInfo[0].infoDate + " " + quizInfo[0].infoType;
+        quizQuestion.innerHTML = quizInfo[0].infoNum + ". " + quizInfo[0].infoQuestion;
+        quizAnswer.innerText = quizInfo[0].infoAnswer;
+        quizDesc.innerText = quizInfo[0].infoDesc;
+
+        for (let i = 0; i < quizChoice.length; i++) {
+            quizChoice[i].innerText = quizInfo[0].infoChoice[i];
+        }
+
+        // 정답 확인
+        quizConfirm.addEventListener("click", () => {
+            let seletedChoice = null;
+
+            for (let i = 0; i < quizSelect.length; i++) {
+                if (quizSelect[i].checked) {
+                    seletedChoice = quizSelect[i].value;
+                    break;
+                }
+            }
+
+            if (seletedChoice !== null) {
+                if (seletedChoice == quizInfo[0].infoAnswer) {
+                    alert("정답입니다.");
+                    quizDesc.classList.remove("none")
+                } else {
+                    alert("오답입니다.")
+                    quizAnswer.classList.remove("none")
+                    quizDesc.classList.remove("none")
+                }
+            } else {
+                alert("보기를 선택하세요!!")
+            }
+        });
+
+    </script>
+</body>
+
+</html>
