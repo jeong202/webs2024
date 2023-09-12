@@ -125,28 +125,6 @@
                 }
             });
         }
-        // 정답확인
-        // const checkAnswer = () => {
-        //     const selectedChoice = quizWrap.querySelector("input[name='choice']:checked");
-        //     const userAnswer = selectedChoice.value; //사용자가 클릭한 정답
-        //     const correctAnswer = quizInfo[currentIndex].infoAnswer //정답지의 정답
-        //     const quizElement = quizWrap.querySelector(".quiz");
-        //     const descElement = quizWrap.querySelector(".quiz_desc");
-        //     const answerElement = quizWrap.querySelector(".quiz_answer");
-
-        //     if(userAnswer ===correctAnswer){
-        //         quizElement.classList.add("good");
-        //     } else {
-        //         quizElement.classList.add("bad");
-        //         answerElement.classList.remove("none");
-        //     }
-        //     descElement.classList.remove("none");
-        //     if (!selectedChoice) {
-        //             alert("보기를 골라주세요."); // 경고창 표시
-        //             return; // 함수 종료
-        //         }
-        // }
-
         const checkAnswer = () => {
             const selectedChoice = quizWrap.querySelector("input[name='choice']:checked");
 
