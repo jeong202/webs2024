@@ -1433,9 +1433,10 @@
                     totalScore++;
                     quizScore.innerHTML = totalScore;
                 } else {
-                    answerElement.textContent = "오답입니다!";
+                    answerElement.textContent = `${quizInfo[index].infoAnswer}`;
                     quizElement.classList.add("bad");
                     descElement.classList.remove("none");
+                    answerElement.classList.remove("none");
                 }
             }
         }

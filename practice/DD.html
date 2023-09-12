@@ -4,107 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        table {
-            width: 100%;
-            border-top: 1px solid #dcdcdc;
-            border-spacing: 0;
-        }
-        table td {
-            border-bottom: 1px solid #dcdcdc
-        }
-    </style>
 </head>
 <body>
     <script>
-
-        //1~100까지 출력 0.7
-        {
-            for(let i=1; i<=100; i++){
-            console.log(i)
-            };
+        const aaa = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+      {
+        let sum = 0;
+        for(i=0; i<aaa.length; i++){
+          sum += aaa[i];
         }
-        //1~100까지 합 구하기 0.7
-        {
-            let sum = 0;
-            for(let i=1; i<=100; i++){
-                sum += i
-            };
-            console.log(sum);
-        }
-        //5단 구하기 0,8
-        //2~9 / 1~9
-        {
-            for(let i=2; i<=9; i++){
-                for(let j=1; j<=9; j++){
-                    console.log(i + " X " + j + " = " + j*i);
-                };
-            };
-
-            for(let i=5; i<=5; i++){
-                for(let j=1; j<=9; j++){
-                    console.log(i + " X " + j + " = " + j*i);
-                };
-            };
-        }
-        //테이블 만들기 0.9
-        {
-            let table = "<table class='table'>";
-           
-            for(let i=1; i<=5; i++){
-                table +="<tr>";
-                
-                for(let j=1; j<=5; j++){
-                    table += "<td>1</td>";
-                }    
-                
-                table +="</tr>";
-            }
-
-            table +="</table>"
-
-            document.write(table);
-                
-        }
-        //50칸 테이블 (5/10)(1-50)
-        {
-            let table ="<table class='table'>";
-            let num = 1;    
-                for(let i=1; i<=10; i++){
-                    table +="<tr>";
-                
-                for(let j=1; j<=5; j++){
-                    table +="<td>"+ num + "</td>"; //문자열과 변수 결합
-                    num++
-                };
-                table +="</tr>";
-            };
-
-            table += "</table>";
-
-            document.write(table);
-        }
-        {
-            let table ="<table class='table'>";
-            let num = 2;    
-                for(let i=1; i<=10; i++){
-                    table +="<tr>";
-                
-                for(let j=1; j<=5; j++){
-                    table +="<td>"+ num + "</td>"; //문자열과 변수 결합
-                    num += 2
-                };
-                table +="</tr>";
-            };
-
-            table += "</table>";
-
-            document.write(table);
-        }
-       
-        
-
+        console.log(sum)
+      }
+      {
+        let sum = 0;
+        aaa.forEach((el,l,arr) => {})
+      }
+      
     </script>
 </body>
 </html>

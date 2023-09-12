@@ -16,9 +16,9 @@
                 <li class="active"><a href="quizEffect02.html">2</a></li> 
                 <li><a href="quizEffect03.html">3</a></li> 
                 <li><a href="quizEffect04.html">4</a></li> 
-                <li><a href="#">5</a></li> 
-                <li><a href="#">6</a></li> 
-                <li><a href="#">7</a></li> 
+                <li><a href="quizEffect05.html">5</a></li> 
+                <li><a href="quizEffect06.html">6</a></li> 
+                <li><a href="quizEffect07.html">7</a></li> 
             </ul>
         </nav>
     </header>
@@ -227,52 +227,6 @@
             }]
 
             //문제 출력
-            // quizDate[0].textContent = quizInfo[0].infoDate;
-            // quizDate[1].textContent = quizInfo[1].infoDate;
-            // quizDate[2].textContent = quizInfo[2].infoDate;
-
-            // quiztype[0].textContent = quizInfo[0].infoType;
-            // quiztype[1].textContent = quizInfo[1].infoType;
-            // quiztype[2].textContent = quizInfo[2].infoType;
-
-            // quizNum[2].textContent = quizInfo[0].infoNum;
-            // quizNum[2].textContent = quizInfo[1].infoNum;
-            // quizNum[2].textContent = quizInfo[2].infoNum;
-
-            // quizQuestion[0].textContent = quizInfo[0].infoQuestion
-            // quizQuestion[1].textContent = quizInfo[1].infoQuestion
-            // quizQuestion[2].textContent = quizInfo[2].infoQuestion
-
-            // quizAnswer[0].textContent = quizInfo[0].infoAnswer
-            // quizAnswer[1].textContent = quizInfo[1].infoAnswer
-            // quizAnswer[2].textContent = quizInfo[2].infoAnswer
-
-            // quizDesc[0].textContent = quizInfo[0].infoDesc
-            // quizDesc[1].textContent = quizInfo[1].infoDesc
-            // quizDesc[2].textContent = quizInfo[2].infoDesc
-
-            // //for()
-            // for(let i=0; i<quizInfo.length; i++){
-            //     quizDate[i].textContent = quizInfo[i].infoDate;
-            //     quiztype[i].textContent = quizInfo[i].infoType;
-            //     quizNum[i].textContent = quizInfo[i].infoNum;
-            //     quizQuestion[i].textContent = quizInfo[i].infoQuestion;
-            //     quizAnswer[i].textContent = quizInfo[i].infoAnswer;
-            //     quizDesc[i].textContent = quizInfo[i].infoDesc;
-            // };
-
-            // //forEach
-            // quizInfo.forEach((el, i) => {
-            //     quizDate[i].textContent = quizInfo[i].infoDate;
-            //     quiztype[i].textContent = quizInfo[i].infoType;
-            //     quizNum[i].textContent = quizInfo[i].infoNum;
-            //     quizQuestion[i].textContent = quizInfo[i].infoQuestion;
-            //     quizAnswer[i].textContent = quizInfo[i].infoAnswer;
-            //     quizDesc[i].textContent = quizInfo[i].infoDesc;
-                
-            // });
-
-            //for in (이곳에 적절한 문법은 아니다) / for of는 이곳에서 사용할 수 없다 i 자체만 출력해서
 
             for(let i in quizInfo){
                 quizDate[i].textContent = quizInfo[i].infoDate;
@@ -282,32 +236,6 @@
                 quizAnswer[i].textContent = quizInfo[i].infoAnswer;
                 quizDesc[i].textContent = quizInfo[i].infoDesc;
             }
-
-            // // 정답 해설 숨기기
-            // quizAnswer[0].style.display = "none";
-            // quizAnswer[1].style.display = "none";
-            // quizAnswer[2].style.display = "none";
-
-            // quizDesc[0].style.display = "none";
-            // quizDesc[1].style.display = "none";
-            // quizDesc[2].style.display = "none";
-
-            // //for in 별로
-            // for(let i in quizInfo){
-            //     quizAnswer[i].style.display = "none";
-            //     quizDesc[i].style.display = "none";
-            // };
-            //for() 베스트
-            for(let i=0; i<quizInfo.length; i++){
-                quizAnswer[i].style.display = "none";
-                quizDesc[i].style.display = "none";
-            }
-
-            // //forEach
-            // quizInfo.forEach((el별로, i) =>{
-            //     quizAnswer[i].style.display = "none";
-            //     quizDesc[i].style.display = "none";
-            // });
 
             //정답확인 다중
             quizConfirm.forEach(function(btn, num){
@@ -328,7 +256,6 @@
                 });
             });
 
-            //SQL = 엑셀파일같은거...
 
     </script>
 </body>

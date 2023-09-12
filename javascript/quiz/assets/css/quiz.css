@@ -357,7 +357,8 @@ body::after {
     content:"💙 설명 : "
 }
 .quiz_footer {}
-.quiz_confirm {
+.quiz_confirm,
+.quiz_next {
     background-color: rgb(98, 89, 131);
     color: #fff;
     text-align: center;
@@ -368,7 +369,8 @@ body::after {
     transition: all 0.3s;
     border-radius: 3px;
 }
-.quiz_confirm:hover {
+.quiz_confirm:hover,
+.quiz_next:hover {
     border: 1px dashed #000;
     background-color: transparent;
     color: rgb(0, 0, 0);
