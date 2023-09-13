@@ -495,6 +495,46 @@
                     </div>
                     <!--//sample12-->
 
+                    <div id="sample13" class="sample">
+                        <h3>13. 함수유형 : 함수와 배열을 이용한 형태</h3>
+                        <P>
+                            배열을 사용하여 함수를 호출하는 예제입니다.
+                        </P>
+                        <pre><code class="language-js">{
+    const num = [13, 14]
+    const str = ["함수", "함수"]
+
+    function func(num, str) {
+        console.log(`${num}. ${str}`);
+    }
+    func(num[0], str[0]);
+    func(num[1], str[1]);
+}
+</code></pre>
+                        <p class="desc">
+                            1. num 배열에는 [13, 14]라는 숫자들이, str 배열에는 ["함수", "함수"]라는 문자열들이 할당되었습니다.<br>
+                            2. func라는 함수를 정의합니다. 이 함수는 두 개의 매개변수 num과 str을 받습니다.
+                            함수 내부에서는 전달된 num과 str을 템플릿 리터럴을 사용하여 조합하고, 그 결과를 콘솔에 출력합니다.<br>
+                            3. func 함수를 두 번 호출하고 있습니다.
+                            첫 번째 호출에서는 num[0] (즉, 13)과 str[0] (즉, "함수")가 인자로 전달됩니다.
+                            두 번째 호출에서는 num[1] (즉, 14)과 str[1] (즉, "함수")가 인자로 전달됩니다.
+                            함수가 호출될 때마다 템플릿 리터럴을 사용하여 num과 str을 조합한 문자열이 콘솔에 출력됩니다.<br>
+                            4. 첫 번째 호출에서는 "13. 함수"가 출력되고, 두 번째 호출에서는 "14. 함수"가 출력됩니다.<br>
+                        </p>
+                        <div class="result">
+                            <details>
+                                <summary>결과 확인하기</summary>
+                                <div>
+                                    13. 함수
+                                    14. 함수
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <!--//sample13-->
+
+                    
+
             </main>
             <!-- //main -->
 
