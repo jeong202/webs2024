@@ -97,7 +97,7 @@
                     </p>
                     <p>
                         MySQL은 다중 사용자, 다중 스레드 RDBMS로서, 데이터의 안정성과 보안성을 제공합니다.
-                        MySQL은 대부분의 운영 체제에서 작동하며, 웹 애플리케이션 개발, 데이터 분석, 빅 데이터, 클라우드 기반 애플리케이션 등에 많이 사용됩니다.  
+                        MySQL은 대부분의 운영 체제에서 작동하며, 웹 애플리케이션 개발, 데이터 분석, 빅 데이터, 클라우드 기반 애플리케이션 등에 많이 사용됩니다.
                     </p>
                     <p>
                         MySQL은 SQL(Structured Query Language)을 사용하여 데이터를 관리합니다.
@@ -119,7 +119,7 @@
                     <h3 id="intro2" class="page-header">MySQL 설치</h3>
                     MAMP란 웹 사이트를 개발할 때 쓰이는 기술 스택인 MacOS, Apache, MySql, PHP의 약어이자 솔루션 스택입니다.
                     <a href="https://www.mamp.info/en/windows/" target="_blank">https://www.mamp.info/en/windows/</a>
-                 
+
                 </div>
                 <!--//intro2-->
 
@@ -127,9 +127,11 @@
                     <h3 id="intro3" class="page-header">MySQL 실행</h3>
                     <div class="bs-callout bs-callout-info">
                         윈도우 : cd C:\MAMP\bin\mysql\bin>
+                        cd C:\MAMP\bin\mysql\bin>
+                        mysql -uroot -proot
                         로그인 : mysql -uroot -proot
                     </div>
-<pre class="language-js"><code>mysql: [Warning] Using a password on the command line interface can be insecure.
+                    <pre><code class="language-js">mysql: [Warning] Using a password on the command line interface can be insecure.
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 6
     Server version: 5.7.24 MySQL Community Server (GPL)
@@ -177,14 +179,13 @@
                     <div class="bs-callout bs-callout-info">
                         create table 테이블 이름;
                     </div>
-<pre class="language-js"><code>create table members(
+                    <pre><code class="language-js">create table members(
     memberID int(10) unsigned auto_increment,
     youEmail varchar(40) NOT NULL,
     youName varchar(10) NOT NULL,
-    youPass varchar(20) NOT NULL,
-    youBirth int(10) NOT NULL,
+    youPass varchar(50) NOT NULL,
     youAge int(5) NOT NULL,
-    regTime int(30) NOT NULL,
+    regTime int(20) NOT NULL,
     PRIMARY KEY(memberID)
 ) charset=utf8;
 </code></pre>
@@ -192,13 +193,42 @@
                     <div class="bs-callout bs-callout-info">
                         show tables;
                     </div>
+<pre><code class="language-js">
+    mysql> show tables;
+    +---------------+
+    | Tables_in_aaa |
+    +---------------+
+    | members       |
+    +---------------+
+    1 row in set (0.00 sec)                  
+</code></pre>
                     <h4 id="intro5-3" class="page-header">테이블 보기</h4>
                     <div class="bs-callout bs-callout-info">
                         desc 테이블이름;
                     </div>
+<pre><code class="language-js">
+mysql> desc members;
++----------+------------------+------+-----+---------+----------------+
+| Field    | Type             | Null | Key | Default | Extra          |
++----------+------------------+------+-----+---------+----------------+
+| memberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail | varchar(40)      | NO   |     | NULL    |                |
+| youName  | varchar(10)      | NO   |     | NULL    |                |
+| youPass  | varchar(50)      | NO   |     | NULL    |                |
+| youAge   | int(5)           | NO   |     | NULL    |                |
+| regTime  | int(20)          | NO   |     | NULL    |                |
++----------+------------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+</code></pre>
+
                     <h4 id="intro5-4" class="page-header">테이블 삭제</h4>
                     <div class="bs-callout bs-callout-info">
                         drop table 테이블이름;
+                    </div>
+
+                    <h4 id="intro5-4" class="page-header">테이블 초기화</h4>
+                    <div class="bs-callout bs-callout-info">
+                        TRUNCATE table 테이블이름;
                     </div>
                 </div>
                 <!--//intro5-->
@@ -206,7 +236,60 @@
                 <div class="bs-docs-section">
                     <h3 id="intro6" class="page-header">테이블 데이터</h3>
                     <h4 id="intro6-1" class="page-header">테이블 입력하기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        INSERT INTO 테이블명(필드명) VALUES
+                    </div>
+<pre><code class="language-js">
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("webstoryboy@naver.com", "황상연", "9876", "10", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("lee.jiyoung492@gmail.com", "이지영", "0106", "27", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("capitaljs10@gmail.com", "윤지성", "9876", "10", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("wolves941110@gmail.com", "강서현", "0000", "30", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("jeongsaeyeong@gmail.com", "정새영", "1234", "21", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("chfhrdk@gmail.com", "권초록", "1234", "28", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("hongjihyeon1004@gmail.com", "홍지현", "1111", "40", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("tmddnrla1@naver.com", "김승우", "7768", "29", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("dbwls9038@naver.com", "정유진", "8151", "27", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("answlsgh95@gmail.com", "문진호", "9999", "23","20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("adorabelness1215@naver.com", "이혜민", "0624", "28", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("duddls6552@naver.com", "문영인", "1234", "23", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("audgns722@naver.com", "이명훈", "1212", "30", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("elese0821@naver.com", "이원영", "0821", "27", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("kmdojs@gmail.com", "오종석", "1234", "32", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("imdoob@naver.com", "임종한", "3125", "19", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("rlanrider@gmail.com", "김우주", "1234", "20", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("yunyoungsik91@gmail.com", "윤영식", "12345", "32", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("97.eugene.s@gmail.com", "서유진", "9876", "26", "20239012");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("jhyjhy968@gmail.com", "정해연", "1234", "27", "20230913");
+    INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("hee031812@gmail.com", "김희진", "9099", "29", "20230913");
+</code></pre>
                     <h4 id="intro6-2" class="page-header">테이블 불러오기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT 필드명 FROM 테이블명
+                    </div>
+                    <h5>모든 필드명 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members;</code></pre>
+                    <h5>이름 필드명 불러오기</h5>
+<pre><code class="language-js">SELECT youName FROM members;</code></pre>
+                    <h5>이름,나이 필드명 불러오기</h5>
+<pre><code class="language-js">SELECT youName, youAge FROM members;</code></pre>
+                    <h5>이메일, 이름, 나이 필드명 불러오기</h5>
+<pre><code class="language-js">SELECT youEmail, youName, youAge FROM members;</code></pre>
+
+                    <div class="bs-callout bs-callout-info">
+                        SELECT 필드명 FROM 테이블명 WHERE 조건
+                    </div>
+                    <h5>멤버 아이디가 1번인 모든 회원 데이터 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE memberID = 1;</code></pre>     
+                    <h5>멤버 아이디가 10번인 회원의 이름과 이메일 불러오기</h5>
+<pre><code class="language-js">SELECT youName, youEmail FROM members WHERE memberID = 10;</code></pre>
+                    <h5>나이가 30이상 회원의 모든 데이터 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youAge >= 30;</code></pre> 
+                    <h5>나이가 30인 회원을 제외하고 모든 데이터 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youAge != 30;
+SELECT * FROM members WHERE youAge <> 30;    
+</code></pre>              
+
+
                     <h4 id="intro6-3" class="page-header">테이블 수정하기</h4>
                     <h4 id="intro6-4" class="page-header">테이블 삭제하기</h4>
                 </div>
@@ -247,11 +330,13 @@
                                 <li><a href="#intro5-2">테이블 전체보기</a></li>
                                 <li><a href="#intro5-3">테이블 보기</a></li>
                                 <li><a href="#intro5-4">테이블 삭제</a></li>
+                                <li><a href="#intro5-5">테이블 초기화</a></li>
                             </ul>
                         </li>
                         <li><a href="#intro6">테이블 데이터</a>
                             <ul class="nav bs-sidenav">
                                 <li><a href="#intro6-1">테이블 입력하기</a></li>
+
                                 <li><a href="#intro6-2">테이블 불러오기</a></li>
                                 <li><a href="#intro6-3">테이블 수정하기</a></li>
                                 <li><a href="#intro6-4">테이블 삭제하기</a></li>
