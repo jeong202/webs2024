@@ -17,6 +17,7 @@ li,
 h1,
 h2,
 h3,
+h4,
 h5,
 h6,
 pre,
@@ -29,12 +30,22 @@ blockquote,
 th,
 tr,
 td,
+input,
 select,
 button,
 figure,
-figcaption {
+figcaption{
     margin: 0;
     padding: 0;
+}
+
+/* 시멘틱 태그 블럭화 */
+section,
+aside,
+article,
+header,
+nav{
+    display: block;
 }
 
 /* 폰트 초기화 */
@@ -47,7 +58,7 @@ textarea {
     font-family: "nanumSquareNeo", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Arial, Helvetica, sans-serif;
 }
 
-/* 링크초기화 */
+/* 링크 초기화 */
 a {
     text-decoration: none;
     color: #000;
@@ -65,20 +76,21 @@ h6 {
 }
 
 /* 리스트 스타일 초기화 */
-ul, ol, lo {
+ul, ol, li {
     list-style: none;
 }
 
 /* 폰트 스타일 초기화 */
-em,
+em, 
 address {
     font-style: normal;
 }
+
 /* 이미지 대체(IR) 효과 */
 .ir {
     display: block;
     overflow: hidden;
     font-size: 0;
     line-height: 0;
-    text-indent: -99999px;
+    text-indent: -999999px;
 }
