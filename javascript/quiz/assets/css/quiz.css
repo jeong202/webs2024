@@ -211,8 +211,8 @@ body::after {
     font-weight: 300;
 }
 .quiz_question span {
-    font-size: 24px;
-    line-height: 1.5;
+    font-size: 20px;
+    line-height: 1.2;
     font-weight: 300;
 }
 .quiz_img {
@@ -421,8 +421,15 @@ body::after {
 }
 
 @media(max-width: 600px){
-    #header h1 {
+    #header {
+        flex-direction: column;
+    }
+    #header h1 a {
         padding: 15px;
+    }
+    #header nav {
+        padding-right: 0;
+        margin-bottom: 20px;
     }
     #header nav li a {
         width: 30px;
@@ -448,6 +455,8 @@ body::after {
     }
     .quiz_question {
         margin-bottom: 10px;
+        line-height: 1.5;
+        font-size: 20px;
     }
     .quiz_question em {
         font-size: 20px;
@@ -463,5 +472,8 @@ body::after {
     }
     .quiz_desc {
         padding: 14px;
+    }
+    .quiz_choice label span {
+        padding: 13px;
     }
 }
