@@ -215,7 +215,14 @@ body::after {
     line-height: 1.5;
     font-weight: 300;
 }
-
+.quiz_img {
+    margin-bottom: 10px;
+}
+.quiz_img img {
+    width: 100%;
+    border: 1px solid #eee;
+}
+/* ----------------------------------------------------- */
 .quiz_choice {
     margin-bottom: 20px;
 }
@@ -231,7 +238,6 @@ body::after {
     margin: -1px;
     overflow: hidden;
 }
-
 .quiz_choice label span {
     position: relative;
     display: flex;
@@ -241,12 +247,12 @@ body::after {
     margin-bottom: 10px;
     border-radius: 3px;
     font-size: 16px;
-    line-height: 1.4;
-    font-weight: 350;
+    line-height: 1.5;
+    font-weight: 400;
     cursor: pointer;
 }
 .quiz_choice label span:hover {
-    border-color: #8b78d6;
+    border-color: #412E91;
     color: #412E91;
     box-shadow: 1px 1px 5px #422e9160;
 }
@@ -273,22 +279,11 @@ body::after {
     border: 1px solid #eee;
     padding: 17px;
     margin-bottom: 5px;
-}
-.quiz_choice .choice:nth-child(1)::before {
-    content: "1. ";
-}
-.quiz_choice .choice:nth-child(2)::before {
-    content: "2. ";
-}
-.quiz_choice .choice:nth-child(3)::before {
-    content: "3. ";
-}
-.quiz_choice .choice:nth-child(4)::before {
-    content: "4. ";
+    font-size: 16px;
+    line-height: 1.5;
+    transition: border-color 0.3s, background-color 0.3s;
 }
 
-.quiz_choice .choice.correct
-.quiz_choice .choice.incorrect
 
 
 .quiz_animation {
