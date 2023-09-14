@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +7,11 @@
 
     <link rel="stylesheet" href="assets/css/quiz.css">
 </head>
-
 <body>
     <header id="header">
-        <h1>Quiz</h1>
+        <h1>
+            <a href="../index.html">Quiz</a>
+        </h1>
         <nav>
             <ul>
                 <li><a href="quizEffect01.html">1</a></li>
@@ -27,12 +27,12 @@
     <!-- //header -->
 
     <main id="main">
-        <div class="quiz_wrap">
+        <div class="quiz__wrap">
             <div class="quiz">
-                <div class="quiz_header"></div>
-                <div class="quiz_main">
-                    <div class="quiz_question"></div>
-                    <div class="quiz_choice">
+                <div class="quiz__header"></div>
+                <div class="quiz__main">
+                    <div class="quiz__question"></div>
+                    <div class="quiz__choice">
                         <label for="choice1">
                             <input type="radio" id="choice1" name="choice" value="1">
                             <span></span>
@@ -50,11 +50,11 @@
                             <span></span>
                         </label>
                     </div>
-                    <div class="quiz_answer none"></div>
-                    <div class="quiz_desc none"></div>
+                    <div class="quiz__answer none"></div>
+                    <div class="quiz__desc none"></div>
                 </div>
-                <div class="quiz_footer">
-                    <button class="quiz_confirm">정답 확인하기</button>
+                <div class="quiz__footer">
+                    <button class="quiz__confirm">정답 확인하기</button>
                 </div>
             </div>
         </div>
@@ -64,28 +64,29 @@
     <footer id="footer">
         <a href="mailto:jhyjhy968@gmail.com">jhyjhy968@gmail.com</a>
     </footer>
-    <!--//footer-->
+    <!-- //footer -->
+
     <script>
         // 선택자 
-        const quizWrap = document.querySelector(".quiz_wrap");
-        const quizHeader = quizWrap.querySelector(".quiz_header");
-        const quizQuestion = quizWrap.querySelector(".quiz_question");
-        const quizAnswer = quizWrap.querySelector(".quiz_answer");
-        const quizDesc = quizWrap.querySelector(".quiz_desc");
-        const quizChoice = quizWrap.querySelectorAll(".quiz_choice span");
-        const quizSelect = quizWrap.querySelectorAll(".quiz_choice input");
-        const quizConfirm = quizWrap.querySelector(".quiz_confirm");
+        const quizWrap = document.querySelector(".quiz__wrap"); 
+        const quizHeader = quizWrap.querySelector(".quiz__header");
+        const quizQuestion = quizWrap.querySelector(".quiz__question");
+        const quizAnswer = quizWrap.querySelector(".quiz__answer");
+        const quizDesc = quizWrap.querySelector(".quiz__desc");
+        const quizChoice = quizWrap.querySelectorAll(".quiz__choice span");
+        const quizSelect = quizWrap.querySelectorAll(".quiz__choice input");
+        const quizConfirm = quizWrap.querySelector(".quiz__confirm");
 
         // 문제 정보
         const quizInfo = [
             {
-                infoDate: "2023년 4월",
-                infoType: "정보처리 기능사",
-                infoNum: "01",
-                infoQuestion: "속성과 관련된 연산(Operation)을 클래스 안에 묶어서 하나로 취급하는 것을 의미하는 객체지향 개념은?",
-                infoChoice: ["Encapsulation", "MIPS", "Operation", "NUI"],
-                infoAnswer: 1,
-                infoDesc: "캡슐화란 클래스 안에 서로 연관있는 속성과 기능들을 하나의 캡슐(capsule)로 만들어 데이터를 외부로부터 보호하는 것을 말합니다"
+                infoDate : "2016년 4회",
+                infoType : "웹디자인 기능사",
+                infoNum : "01",
+                infoQuestion : "다음 중 디자인의 기본 요소들로 옳은 것은?",
+                infoChoice : ["선, 색채, 공간, 수량", "점, 선, 면, 질감", "시간, 수량, 구조, 공간", "면, 구조, 공간, 수량"],
+                infoAnswer : "2",
+                infoDesc : "디자인의 기본 요소에는 점, 선, 면, 질감이 있습니다."
             }
         ];
 
@@ -95,7 +96,7 @@
         quizAnswer.innerText = quizInfo[0].infoAnswer;
         quizDesc.innerText = quizInfo[0].infoDesc;
 
-        for (let i = 0; i < quizChoice.length; i++) {
+        for(let i=0; i<quizChoice.length; i++){
             quizChoice[i].innerText = quizInfo[0].infoChoice[i];
         }
 
@@ -103,28 +104,26 @@
         quizConfirm.addEventListener("click", () => {
             let seletedChoice = null;
 
-            for (let i = 0; i < quizSelect.length; i++) {
-                if (quizSelect[i].checked) {
+            for(let i=0; i<quizSelect.length; i++){
+                if(quizSelect[i].checked){
                     seletedChoice = quizSelect[i].value;
                     break;
                 }
             }
 
-            if (seletedChoice !== null) {
-                if (seletedChoice == quizInfo[0].infoAnswer) {
+            if(seletedChoice !== null){
+                if(seletedChoice == quizInfo[0].infoAnswer){
                     alert("정답입니다.");
-                    quizDesc.classList.remove("none")
+                    quizDesc.classList.remove("none");
                 } else {
-                    alert("오답입니다.")
-                    quizAnswer.classList.remove("none")
-                    quizDesc.classList.remove("none")
+                    alert("오답입니다.");
+                    quizAnswer.classList.remove("none");
+                    quizDesc.classList.remove("none");
                 }
             } else {
-                alert("보기를 선택하세요!!")
+                alert("보기를 선택해주세요!!");
             }
         });
-
     </script>
 </body>
-
 </html>

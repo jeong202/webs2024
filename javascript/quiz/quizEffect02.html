@@ -6,7 +6,7 @@
     <title>퀴즈 이펙트02</title>
 
     <link rel="stylesheet" href="assets/css/quiz.css">
-    <link rel="stylesheet" href="assets/css/cssquiz.css">
+    <link rel="stylesheet" href="assets/css/ani.css">
 </head>
 <body>
     <header id="header">
@@ -28,18 +28,18 @@
     <!-- //header -->
 
     <main id="main">
-        <div class="quiz_wrap">
+        <div class="quiz__wrap">
             <div class="quiz">
-                <div class="quiz_header">
-                    <span class="quiz_date"></span>
-                    <span class="quiz_type"></span>
+                <div class="quiz__header">
+                    <span class="quiz__date"></span>
+                    <span class="quiz__type"></span>
                 </div>
-                <div class="quiz_main">
-                    <div class="quiz_question">
+                <div class="quiz__main">
+                    <div class="quiz__question">
                         <em></em>. 
                         <span></span>
                     </div>
-                    <div class="quiz_animation">
+                    <div class="quiz__animation">
                         <div class="wrapper">
                             <div class="card-container">
                                 <div class="dog">
@@ -63,27 +63,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="quiz_input">
+                    <div class="quiz__input">
                         <input type="text" placeholder="정답을 입력해주세요!">
                     </div>
-                    <div class="quiz_answer"></div>
-                    <div class="quiz_desc"></div>
+                    <div class="quiz__answer"></div>
+                    <div class="quiz__desc"></div>
                 </div>
-                <div class="quiz_footer">
-                    <button class="quiz_confirm">정답 확인하기</button>
+                <div class="quiz__footer">
+                    <button class="quiz__confirm">정답 확인하기</button>
                 </div>
             </div>
             <div class="quiz">
-                <div class="quiz_header">
-                    <span class="quiz_date"></span>
-                    <span class="quiz_type"></span>
+                <div class="quiz__header">
+                    <span class="quiz__date"></span>
+                    <span class="quiz__type"></span>
                 </div>
-                <div class="quiz_main">
-                    <div class="quiz_question">
+                <div class="quiz__main">
+                    <div class="quiz__question">
                         <em></em>. 
                         <span></span>
                     </div>
-                    <div class="quiz_animation">
+                    <div class="quiz__animation">
                         <div class="wrapper">
                             <div class="card-container">
                                 <div class="dog">
@@ -107,27 +107,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="quiz_input">
+                    <div class="quiz__input">
                         <input type="text" placeholder="정답을 입력해주세요!">
                     </div>
-                    <div class="quiz_answer"></div>
-                    <div class="quiz_desc"></div>
+                    <div class="quiz__answer"></div>
+                    <div class="quiz__desc"></div>
                 </div>
-                <div class="quiz_footer">
-                    <button class="quiz_confirm">정답 확인하기</button>
+                <div class="quiz__footer">
+                    <button class="quiz__confirm">정답 확인하기</button>
                 </div>
             </div>
             <div class="quiz">
-                <div class="quiz_header">
-                    <span class="quiz_date"></span>
-                    <span class="quiz_type"></span>
+                <div class="quiz__header">
+                    <span class="quiz__date"></span>
+                    <span class="quiz__type"></span>
                 </div>
-                <div class="quiz_main">
-                    <div class="quiz_question">
+                <div class="quiz__main">
+                    <div class="quiz__question">
                         <em></em>. 
                         <span></span>
                     </div>
-                    <div class="quiz_animation">
+                    <div class="quiz__animation">
                         <div class="wrapper">
                             <div class="card-container">
                                 <div class="dog">
@@ -151,14 +151,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="quiz_input">
+                    <div class="quiz__input">
                         <input type="text" placeholder="정답을 입력해주세요!">
                     </div>
-                    <div class="quiz_answer"></div>
-                    <div class="quiz_desc"></div>
+                    <div class="quiz__answer"></div>
+                    <div class="quiz__desc"></div>
                 </div>
-                <div class="quiz_footer">
-                    <button class="quiz_confirm">정답 확인하기</button>
+                <div class="quiz__footer">
+                    <button class="quiz__confirm">정답 확인하기</button>
                 </div>
             </div>
         </div>
@@ -166,22 +166,22 @@
     <!-- //main -->
 
     <footer id="footer">
-        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+        <a href="mailto:webstoryboy@naver.com">jhyjhy968@gmail.com</a>
     </footer>
     <!-- //footer -->
 
     <script>
         // 선택자 
-        const quizWrap = document.querySelector(".quiz_wrap"); 
-        const quizDate = quizWrap.querySelectorAll(".quiz_date");
-        const quizType = quizWrap.querySelectorAll(".quiz_type");
-        const quizNum = quizWrap.querySelectorAll(".quiz_question em");
-        const quizQuestion = quizWrap.querySelectorAll(".quiz_question span");
-        const quizAnswer = quizWrap.querySelectorAll(".quiz_answer");
-        const quizDesc = quizWrap.querySelectorAll(".quiz_desc");
-        const quizConfirm = quizWrap.querySelectorAll(".quiz_confirm");
-        const quizInput = quizWrap.querySelectorAll(".quiz_input input");
-        const quizAnimation = quizWrap.querySelectorAll(".quiz_animation");
+        const quizWrap = document.querySelector(".quiz__wrap"); 
+        const quizDate = quizWrap.querySelectorAll(".quiz__date");
+        const quizType = quizWrap.querySelectorAll(".quiz__type");
+        const quizNum = quizWrap.querySelectorAll(".quiz__question em");
+        const quizQuestion = quizWrap.querySelectorAll(".quiz__question span");
+        const quizAnswer = quizWrap.querySelectorAll(".quiz__answer");
+        const quizDesc = quizWrap.querySelectorAll(".quiz__desc");
+        const quizConfirm = quizWrap.querySelectorAll(".quiz__confirm");
+        const quizInput = quizWrap.querySelectorAll(".quiz__input input");
+        const quizAnimation = quizWrap.querySelectorAll(".quiz__animation");
 
         // 문제 정보
         const quizInfo = [
@@ -211,7 +211,7 @@
             }
         ];
 
-
+       
         // forEach()
         quizInfo.forEach((el, i) => {
             quizDate[i].textContent = quizInfo[i].infoDate;
@@ -221,8 +221,6 @@
             quizAnswer[i].textContent = quizInfo[i].infoAnswer;
             quizDesc[i].textContent = quizInfo[i].infoDesc;
         });
-
-    
 
         // forEach
         quizInfo.forEach((el, i) => { 

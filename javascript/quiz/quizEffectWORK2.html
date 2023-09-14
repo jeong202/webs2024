@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이펙트03</title>
+    <title>웹디자인기능사</title>
 
     <link rel="stylesheet" href="assets/css/quiz.css">
-    <link rel="stylesheet" href="assets/css/ani.css">
 </head>
 <style>
-    .quiz_score {
+    .quiz__score {
         position: fixed;
         left: 20px;
         bottom: 20px;
@@ -30,22 +29,16 @@
         <h1><a href="../index.html">Quiz</a></h1>
         <nav>
             <ul>
-                <li><a href="quizEffect01.html">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
-                <li><a href="quizEffect03.html">3</a></li>
-                <li><a href="quizEffect04-1.html">4.1</a></li>
-                <li class="active"><a href="quizEffect04-2.html">4.2</a></li>
-                <li><a href="quizEffect05.html">5</a></li>
-                <li><a href="quizEffect06.html">6</a></li>
-                <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quizEffectWORK1.html">1</a></li>
+                <li class="active"><a href="quizEffectWORK2.html">2</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
 
     <main id="main">
-        <div class="quiz_wrap"></div>
-        <div class="quiz_score"></div>
+        <div class="quiz__wrap"></div>
+        <div class="quiz__score"></div>
     </main>
     <!-- //main -->
 
@@ -55,20 +48,18 @@
     <!--//footer-->
     <script>
         // 선택자 
-        const quizWrap = document.querySelector(".quiz_wrap");
-        const quizHeader = quizWrap.querySelector(".quiz_header");
-        const quizQuestion = quizWrap.querySelector(".quiz_question");
-        const quizAnswer = quizWrap.querySelector(".quiz_answer");
-        const quizDesc = quizWrap.querySelector(".quiz_desc");
-        const quizChoice = quizWrap.querySelectorAll(".quiz_choice span");
-        const quizSelect = quizWrap.querySelectorAll(".quiz_choice input");
-        const quizConfirm = quizWrap.querySelector(".quiz_confirm");
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizHeader = quizWrap.querySelector(".quiz__header");
+        const quizQuestion = quizWrap.querySelector(".quiz__question");
+        const quizAnswer = quizWrap.querySelector(".quiz__answer");
+        const quizDesc = quizWrap.querySelector(".quiz__desc");
+        const quizChoice = quizWrap.querySelectorAll(".quiz__choice span");
+        const quizSelect = quizWrap.querySelectorAll(".quiz__choice input");
+        const quizConfirm = quizWrap.querySelector(".quiz__confirm");
 
-        const quizScore = document.querySelector(".quiz_score");
+        const quizScore = document.querySelector(".quiz__score");
         let totalScore = 0;
 
-
-        // 문제 정보
         const quizInfo = [
             {
                 infoDate: "2014년",
@@ -1367,19 +1358,18 @@
                 infoDesc: "진출색 : 앞으로 전진하는 것처럼 느껴지는 색으로 따뜻한 색,밝은 색, 유채색, 팽창색이 더 진출하는 느낌을 준다"
             }
         ]
-
-        // 문제 출력 선생님
+      
         // 문제 출력
         const updateQuiz = () => {
             const quizArray = [];
-        
+
             quizInfo.forEach((quiz, index) => {
                 quizArray.push(`
                     <div class="quiz">
-                        <div class="quiz_header">${quiz.infoDate} ${quiz.infoType}</div>
-                        <div class="quiz_main">
-                            <div class="quiz_question">${index+1}. ${quiz.infoQuestion}</div>
-                            <div class="quiz_choice">
+                        <div class="quiz__header">${quiz.infoDate} ${quiz.infoType}</div>
+                        <div class="quiz__main">
+                            <div class="quiz__question">${index + 1}. ${quiz.infoQuestion}</div>
+                            <div class="quiz__choice">
                                 <label for="choice1-${index}">
                                     <input type="radio" id="choice1-${index}" name="choice${index}" value="1">
                                     <span>${quiz.infoChoice[1]}</span>
@@ -1397,11 +1387,11 @@
                                     <span>${quiz.infoChoice[4]}</span>
                                 </label>
                             </div>
-                            <div class="quiz_answer none">${quiz.infoAnswer}</div>
-                            <div class="quiz_desc none">${quiz.infoDesc}</div>
+                            <div class="quiz__answer none">${quiz.infoAnswer}</div>
+                            <div class="quiz__desc none">${quiz.infoDesc}</div>
                         </div>
-                        <div class="quiz_footer">
-                            <button class="quiz_confirm" data-index="${index}">정답 확인하기</button>
+                        <div class="quiz__footer">
+                            <button class="quiz__confirm" data-index="${index}">정답 확인하기</button>
                         </div>
                     </div>
                 `);
@@ -1409,12 +1399,12 @@
 
             quizWrap.innerHTML = quizArray.join(" ");
         }
-        
+
         // 정답 확인
         const answerQuiz = (index) => {
-            const quizChoices = document.querySelectorAll(`.quiz_choice input[name="choice${index}"]:checked`);
-            const answerElement = quizWrap.querySelectorAll(".quiz_answer")[index];
-            const descElement = quizWrap.querySelectorAll(".quiz_desc")[index];
+            const quizChoices = document.querySelectorAll(`.quiz__choice input[name="choice${index}"]:checked`);
+            const answerElement = quizWrap.querySelectorAll(".quiz__answer")[index];
+            const descElement = quizWrap.querySelectorAll(".quiz__desc")[index];
             const quizElement = quizWrap.querySelectorAll(".quiz")[index];
 
             if (quizChoices.length > 0) {
@@ -1426,7 +1416,7 @@
                     totalScore++;
                     quizScore.innerHTML = totalScore;
                 } else {
-                    answerElement.textContent = `${quizInfo[index].infoAnswer}`;;
+                    answerElement.textContent = `${quizInfo[index].infoAnswer}`;
                     quizElement.classList.add("bad");
                     descElement.classList.remove("none");
                     answerElement.classList.remove("none");
@@ -1438,16 +1428,13 @@
         document.addEventListener("DOMContentLoaded", () => {
             updateQuiz();
 
-            const confirmButtons = document.querySelectorAll(".quiz_confirm");
+            const confirmButtons = document.querySelectorAll(".quiz__confirm");
             confirmButtons.forEach((button, index) => {
                 button.addEventListener("click", () => {
                     answerQuiz(index);
                 });
             });
         });
-
-        // 문제 출력 선생님
-
     </script>
 </body>
 

@@ -68,15 +68,16 @@ a {
     text-decoration: none;
     color: #000;
 }
+
 body {
-    background-image: url(../img/bg01min.jpg);
+    background-image: url(../img/bg01.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
 }
 body::after {
-    content:"";
+    content: '';
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.2);
@@ -91,7 +92,7 @@ body::after {
     display: none !important;
 }
 
-/*header*/
+/* header */
 #header {
     color: #fff;
     display: flex;
@@ -99,10 +100,10 @@ body::after {
     justify-content: space-between;
 }
 #header h1 a {
-    color: rgb(255, 255, 255);
+    display: inline-block;
+    color: #fff;
     padding: 20px;
     font-size: 30px;
-    display: inline-block;
 }
 #header nav {
     padding-right: 20px;
@@ -115,41 +116,42 @@ body::after {
     display: inline-block;
     width: 35px;
     height: 35px;
-    border: 1px solid #ffffff;
+    border: 1px solid #fff;
     text-align: center;
-    box-shadow: 1px 1px 0px #ffffff;
+    box-shadow: 1px 1px 0px #fff;
     line-height: 1;
     color: #fff;
 }
 #header nav li.active a {
-    background-color: #ffffff;
+    background-color: #fff;
     color: #000;
 }
+
 /* main */
-#main{
+#main {
     min-height: 85vh;
 }
 
-/* quiz_wrap */
-.quiz_wrap {
+/* quiz__wrap */
+.quiz__wrap {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 40px;
 }
-.quiz_wrap > .quiz {
+.quiz__wrap > .quiz {
     width: 500px;
     min-height: 400px;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 20px;
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
     margin: 10px;
 }
-.quiz_wrap > .quiz.good {
+.quiz__wrap > .quiz.good {
     position: relative;
 }
-.quiz_wrap > .quiz.good::before {
+.quiz__wrap > .quiz.good::before {
     content: '';
     width: 100px;
     height: 100px;
@@ -160,10 +162,10 @@ body::after {
     top: 20px;
     z-index: 100;
 }
-.quiz_wrap > .quiz.bad {
+.quiz__wrap > .quiz.bad {
     position: relative;
 }
-.quiz_wrap > .quiz.bad::before {
+.quiz__wrap > .quiz.bad::before {
     content: '';
     width: 150px;
     height: 10px;
@@ -175,7 +177,7 @@ body::after {
     transform: rotate(45deg);
     z-index: 100;
 }
-.quiz_wrap > .quiz.bad::after {
+.quiz__wrap > .quiz.bad::after {
     content: '';
     width: 150px;
     height: 10px;
@@ -187,50 +189,49 @@ body::after {
     transform: rotate(-45deg);
     z-index: 100;
 }
-.quiz_header {
+.quiz__header {
     margin-bottom: 20px;
-   color: #5364e0;
+    color: #5364e0;
 }
-.quiz_date {
+.quiz__date {
     display: inline-block;
     margin-right: 5px;
     color: #696969;
 }
-.quiz_type {
+.quiz__type {
     color: #696969;
 }
-.quiz_question {
+.quiz__question {
     margin-bottom: 20px;
     font-size: 24px;
-    font-style: 400;
+    font-weight: 400;
     line-height: 1.5;
 }
-.quiz_question em {
+.quiz__question em {
     font-size: 24px;
     font-style: normal;
     font-weight: 300;
 }
-.quiz_question span {
+.quiz__question span {
     font-size: 20px;
-    line-height: 1.2;
-    font-weight: 300;
+    line-height: 1.5;
+    font-weight: 400;
 }
-.quiz_img {
+.quiz__img {
     margin-bottom: 10px;
 }
-.quiz_img img {
+.quiz__img img {
     width: 100%;
     border: 1px solid #eee;
 }
-/* ----------------------------------------------------- */
-.quiz_choice {
+.quiz__choice {
     margin-bottom: 20px;
 }
-.quiz_choice label {
+.quiz__choice label {
     display: block;
     width: 100%;
 }
-.quiz_choice label input {
+.quiz__choice label input {
     position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;
@@ -238,7 +239,7 @@ body::after {
     margin: -1px;
     overflow: hidden;
 }
-.quiz_choice label span {
+.quiz__choice label span {
     position: relative;
     display: flex;
     align-items: center;
@@ -251,12 +252,12 @@ body::after {
     font-weight: 400;
     cursor: pointer;
 }
-.quiz_choice label span:hover {
+.quiz__choice label span:hover {
     border-color: #412E91;
     color: #412E91;
     box-shadow: 1px 1px 5px #422e9160;
 }
-.quiz_choice label span::before {
+.quiz__choice label span::before {
     content: '';
     width: 24px;
     height: 24px;
@@ -266,40 +267,97 @@ body::after {
     margin-right: 15px;
     transition: all 0.3s;
 }
-.quiz_choice label input:checked + span::before {
+.quiz__choice label input:checked + span::before {
     box-shadow: inset 0 0 0 9px #412E91;
 }
-.quiz_choice label input:checked + span {
+.quiz__choice label input:checked + span {
     border-color: #412E91;
     color: #412E91;
     box-shadow: 1px 1px 5px #422e9160;
     background-color: #e9e4ff60;
 }
-.quiz_choice .choice {
+.quiz__choice .choice {
     border: 1px solid #eee;
     padding: 17px;
     margin-bottom: 5px;
     font-size: 16px;
     line-height: 1.5;
     transition: border-color 0.3s, background-color 0.3s;
+    border-radius: 3px;
+    color: #666;
+}
+.quiz__choice .choice:hover {
+    border-color: #9378ff;
+    background-color: #f6f4ff;
+    cursor: pointer;
+}
+.quiz__choice .choice.correct {
+    position: relative;
+    border-color: #412E91;
+    background-color: #e9e4ff60;
+    color: #412E91;
+    padding-right: 57px;
+}
+.quiz__choice .choice.correct::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border: 6px solid #412E91;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.quiz__choice .choice.incorrect {
+    position: relative;
+    border-color: #912e3a;
+    box-shadow: 1px 1px 5px #912e3a19;
+    background-color: #fac7cd19;
+    color: #912e3a;
+    padding-right: 57px;
+}
+.quiz__choice .choice.incorrect::before {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 6px;
+    background-color: #912e3a;
+    border-radius: 4px;
+    transform: rotate(45deg);
+    margin-top: -3px;
+}
+.quiz__choice .choice.incorrect::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 6px;
+    background-color: #912e3a;
+    border-radius: 4px;
+    transform: rotate(-45deg);
+    margin-top: -3px;
 }
 
-
-
-.quiz_animation {
-    border: 1px solid rgb(98, 89, 131);
+.quiz__animation {
+    border: 1px dashed rgb(98, 89, 131);
     margin-bottom: 10px;
 }
-.quiz_input {
+.quiz__input {
     margin-bottom: 10px;
 }
-.quiz_input input {
+.quiz__input input {
     width: 100%;
     padding: 20px;
     border: 1px solid rgb(98, 89, 131);
     border-radius: 3px;
 }
-.quiz_answer {
+.quiz__answer {
     background-color: #dedef5;
     border: 1px solid rgb(98, 89, 131);
     padding: 20px;
@@ -307,20 +365,20 @@ body::after {
     line-height: 1.5;
     color: #666;
 }
-.quiz_answer::before{
+.quiz__answer::before {
     content: "💙 정답 : ";
 }
-.quiz_desc{
+.quiz__desc {
     border: 1px solid #eaeaea;
     padding: 20px;
     margin-bottom: 10px;
     line-height: 1.5;
     color: #666;
 }
-.quiz_desc::before {
-    content:"💙 설명 : "
+.quiz__desc::before {
+    content: "💙 설명 : ";
 }
-.quiz_confirm {
+.quiz__confirm {
     background-color: rgb(98, 89, 131);
     color: #fff;
     text-align: center;
@@ -329,81 +387,80 @@ body::after {
     border: 0;
     width: 100%;
     transition: all 0.3s;
+    border: 1px dashed transparent;
     border-radius: 3px;
 }
-.quiz_confirm:hover {
-    border: 1px dashed #000;
+.quiz__confirm:hover {
+    border: 1px dashed #412E91;
     background-color: transparent;
-    color: rgb(0, 0, 0);
+    color: #412E91;
     cursor: pointer;
 }
-.quiz_next {
+.quiz__next {
     width: 100%;
     border: 1px dashed rgb(98, 89, 131);
-    padding: 10px 20px;
     padding: 15px 20px;
     background-color: #fff;
     cursor: pointer;
     color: rgb(98, 89, 131);
     transition: all 0.3s;
 }
-.quiz_next:hover {
-    background-color: rgb(235, 231, 250);
+.quiz__next:hover {
+    background-color: #f5f2ff;
 }
-.quiz_indicator {
-    background-color: rgb(235, 231, 250);
+.quiz__indicator {
+    background-color: #f5f2ff;
     padding: 20px;
     border-radius: 3px;
     margin-bottom: 20px;
 }
-.quiz_indicator span {
+.quiz__indicator span {
     display: inline-block;
     width: 20px;
     height: 20px;
     border: 1px solid rgb(98, 89, 131);
     box-shadow: 1px 1px rgb(98, 89, 131);
 }
-.quiz_indicator span.correct {
+.quiz__indicator span.correct {
     background-color: rgb(98, 89, 131);
     position: relative;
 }
-.quiz_indicator span.correct::before {
+.quiz__indicator span.correct::before {
     content: '';
     width: 8px;
     height: 8px;
     border: 4px solid #fff;
     border-radius: 50%;
     position: absolute;
-    left: 1px;
+    left: 1px; 
     top: 1px;
 }
-.quiz_indicator span.incorrect {
+.quiz__indicator span.incorrect {
     position: relative;
 }
-.quiz_indicator span.incorrect::before {
+.quiz__indicator span.incorrect::before {
     content: '';
     position: absolute;
     left: 2px;
     top: 7px;
+    width: 14px;
     height: 4px;
     border-radius: 4px;
     background-color: rgb(98, 89, 131);
     transform: rotate(-45deg);
-
 }
-.quiz_indicator span.incorrect::after {
+.quiz__indicator span.incorrect::after {
     content: '';
     position: absolute;
     left: 2px;
     top: 7px;
+    width: 14px;
     height: 4px;
     border-radius: 4px;
     background-color: rgb(98, 89, 131);
     transform: rotate(45deg);
+
 }
-
-
-
 
 /* footer */
 #footer {
@@ -412,7 +469,7 @@ body::after {
 }
 #footer a {
     display: block;
-    color: #666;
+    color: #fff;
     padding: 40px;
 }
 #footer a:hover {
@@ -420,7 +477,7 @@ body::after {
     text-underline-position: under;
 }
 
-@media(max-width: 600px){
+@media (max-width: 600px){
     #header {
         flex-direction: column;
     }
@@ -436,44 +493,44 @@ body::after {
         height: 30px;
         padding: 7px;
     }
-    .quiz_wrap {
+    .quiz__wrap {
         padding: 0 16px;
         margin-top: 0;
     }
-    .quiz_wrap > .quiz {
+    .quiz__wrap > .quiz {
         width: 100%;
         padding: 20px;
     }
-    .quiz_header {
+    .quiz__header {
         margin-bottom: 10px;
     }
-    .quiz_date {
+    .quiz__date {
         font-size: 14px;
     }
-    .quiz_type {
+    .quiz__type {
         font-size: 14px;
     }
-    .quiz_question {
+    .quiz__question {
         margin-bottom: 10px;
         line-height: 1.5;
         font-size: 20px;
     }
-    .quiz_question em {
+    .quiz__question em {
         font-size: 20px;
     }
-    .quiz_question span {
+    .quiz__question span {
         font-size: 20px;
     }
-    .quiz_input input {
+    .quiz__input input {
         padding: 14px;
     }
-    .quiz_answer {
+    .quiz__answer {
         padding: 14px;
     }
-    .quiz_desc {
+    .quiz__desc {
         padding: 14px;
     }
-    .quiz_choice label span {
+    .quiz__choice label span {
         padding: 13px;
     }
 }
