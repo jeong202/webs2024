@@ -78,7 +78,7 @@
             console.log(...arr1); //100 200 300
             console.log(arr1 + arr2); //100, 200, 300 400,  500, 600
             console.log(...arr1, ...arr2); //100 200 300 400 500 600
-            console.log(...arr1, 400); 
+            console.log(...arr1, 400);
             console.log(...arr1.slice(0, 2)); //100 200
             console.log(...arr1.slice(1, 2)); //200
 
@@ -160,7 +160,7 @@
 
             console.log(obj3); //a: 100, b;200, c:"
             document.writ(obj3.a); //100
-            
+
 
         }
         {
@@ -188,10 +188,13 @@
             console.log("b" in obj);
             console.log("c" in obj);
             console.log("d" in obj);
+            //위의 코드는 객체 obj 안에 해당 키가 존재하는지 확인하는 코드입니다.
+            
         }
 
+
+        //18
         {
-            //18
             const obj = {
                 a: 100,
                 b: 200,
@@ -201,74 +204,84 @@
                 console.log(el + " : " + obj[el]);
             }
 
-            {
-                //19
-                const obj1 = {
-                    a: 100,
-                    b: 200,
-                    c: "javascript"
-                }
-                const obj2 = {
-                    d: 300,
-                    e: 400,
-                    f: "jquery"
-                }
-                const obj3 = { ...obj1, obj2 }
-                const obj4 = { ...obj1, d: "jquery" }
-                const obj5 = { ...obj1, b: 300 }
-
-                console.log(obj3) //a:100, b:200, c:"javascript"
-                document.writ(obj3.a) //100
-
-                console.log(obj4) //a:100, b:200, c:"javascript" d:"jqury"
-                document.writ(obj4.d) //jqury
-
-                document.writ(obj4) 
-                document.writ(obj5)
-            }
-            {
-                //20
-                const obj1 = {
-                    a: 100,
-                    b: 200,
-                    c: "javascript",
-                }
-                const { a, b, c } = obj1;
-
-                console.log(a);
-                console.log(b);
-                console.log(c);
-                //100 200 javascript
-                
-                const { a: x, b: y, c: z } = obj1;
-
-                console.log(x);
-                console.log(y);
-                console.log(z);
-
-                const obj2 = {
-                    d: 100,
-                    e: 200,
-                    f: "javascript",
-                }
-
-                const { d, e, f, g = "jquery" } = obj2;
-
-                console.log(g);
-
-                const obj3 = {
-                    x1: 100,
-                    y1: { a1: 100, b1: 200 },
-                    z1: "javascript",
-                }
-                const { x1, y1: { a1, b1 }, z1 } = obj3;
-
-                console.log(x1);
-                console.log(a1);
-                console.log(b1);
-                console.log(z1);
-            }
+            //a : 100
+            //b : 200
+            //c : javascript
         }
+
+
+        {
+            //19
+            const obj1 = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            const obj2 = {
+                d: 300,
+                e: 400,
+                f: "jquery"
+            }
+            const obj3 = { ...obj1, obj2 }
+            const obj4 = { ...obj1, d: "jquery" }
+            const obj5 = { ...obj1, b: 300 }
+
+            console.log(obj3) //a:100, b:200, c:"javascript"
+            document.writ(obj3.a) //100
+
+            console.log(obj4) //a:100, b:200, c:"javascript" d:"jqury"
+            document.writ(obj4.d) //jqury
+
+            console.log(obj4)//a: 100, b: 200, c: 'javascript', d: 'jquery'
+            document.writ(obj4)// object Object
+            console.log(obj5)//a: 100, b: 300, c: 'javascript'
+            document.writ(obj5)//object Object
+        }
+        {
+            //20
+            const obj1 = {
+                a: 100,
+                b: 200,
+                c: "javascript",
+            }
+            const { a, b, c } = obj1;
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            //100 200 javascript
+
+            const { a: x, b: y, c: z } = obj1;
+
+            document.writ(x);
+            document.writ(y);
+            document.writ(z);
+            //100 200 javascript
+
+            const obj2 = {
+                d: 100,
+                e: 200,
+                f: "javascript",
+            }
+
+            const { d, e, f, g = "jquery" } = obj2;
+
+            document.writ(g);
+            //jquery
+
+            const obj3 = {
+                x1: 100,
+                y1: { a1: 100, b1: 200 },
+                z1: "javascript",
+            }
+            const { x1, y1: { a1, b1 }, z1 } = obj3;
+
+            document.writ(x1);    //100
+            document.writ(a1);    //100
+            document.writ(b1);    //200
+            document.writ(z1);    //javascript
+        }
+
     </script>
 </body>
 
