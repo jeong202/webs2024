@@ -210,7 +210,6 @@ body::after {
 .quiz__question em {
     font-size: 24px;
     font-style: normal;
-    font-weight: 300;
 }
 .quiz__question span {
     font-size: 20px;

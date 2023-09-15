@@ -83,13 +83,15 @@
                 <div class="quiz">
                     <div class="quiz__header">정보처리 기능사</div>
                     <div class="quiz__main">
-                        <div class="quiz__question">${quizInfo[0]}</div>
+                        <div class="quiz__question">${quizInfo}</div>
                     </div>
+
+                    <div class="quiz__desc">${quizInfo}</div>
                 </div>
             `;
 
             quizWrap.innerHTML = quizWrapTag;
-        }
+        };
 
         // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
