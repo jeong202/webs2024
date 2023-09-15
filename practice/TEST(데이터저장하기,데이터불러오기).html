@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        {
+            //01
+            const arr = [100, 200, "javascript"];
+
+            document.write(arr[0], arr[1], arr[2]);
+
+            //100 200 javascript
+        }
+        {
+            //02
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            for (let i = 0; i < arr.length; i++) {
+                document.write(arr[i]);
+            }
+
+            //100 200 300 400 500 600 700 800 900
+        }
+        {
+            //03
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            arr.forEach(el => document.write(el));
+
+            //100 200 300 400 500 600 700 800 900
+        }
+        {
+            //04
+            const arr = [100, 200, 300, 400, 500];
+
+            for (let element of arr) {
+                document.write(element);
+            }
+        }
+        {
+            //05
+            const arr = [100, 200];
+
+            for (let element in arr) {
+                document.write(element + " : " + arr[element]);
+            }
+        }
+        {
+            //06
+            const arr = [100, 200, 300, 800, 900];
+
+            arr.map(function (element, index) {
+                document.write(index);
+            });
+        }
+        {
+            //07
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            const arrNum = arr.filter((el) => {
+                return el >= 300;
+            });
+
+            document.write(arrNum);
+        }
+        {
+            //08
+            const arr1 = [100, 200, 300];
+            const arr2 = [400, 500, 600];
+
+            console.log(arr1); //100, 200, 300
+            console.log(...arr1); //100 200 300
+            console.log(arr1 + arr2); //100, 200, 300 400,  500, 600
+            console.log(...arr1, ...arr2); //100 200 300 400 500 600
+            console.log(...arr1, 400); 
+            console.log(...arr1.slice(0, 2)); //100 200
+            console.log(...arr1.slice(1, 2)); //200
+
+        }
+        {
+            //09
+            function addNum(a, b, c) {
+                return a + b + c;
+            }
+            const num = [100, 250, 350];
+            const sum = addNum(...num);
+            const sum1 = addNum1(num);
+            document.write(sum); //700
+            document.write(sum1)//100,250,350,undefiend
+        }
+        {
+            //10
+            const [a, b, c] = [100, 200, 300];
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+
+        }
+        {
+            //11
+            const arr = [100, 200, 300];
+            const [x, y, z] = arr;
+            console.log(x);
+            console.log(y);
+            console.log(z);
+        }
+        {
+            //12
+            const num = [100, 200, 300, 400, 500, 600];
+            const [num1, num2, ...rest] = num;
+
+            console.log(num1);
+            console.log(num2);
+            console.log(...rest);
+            console.log(rest);
+        }
+        {
+            //13
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            console.log(obj.a);
+            console.log(obj.b);
+            console.log(obj.c);
+        }
+        {
+            //14
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            document.writ(Object.keys(obj));
+            document.writ(Object.values(obj));
+            document.writ(Object.entries(obj)); //a,100,b,200,c,javascript
+        }
+        {
+            //15
+
+            const obj1 = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+            const obj2 = {
+                d: 300,
+                e: 400,
+                f: "jquery"
+            };
+            const obj3 = Object.assign(obj1, obj2);
+
+            console.log(obj3); //a: 100, b;200, c:"
+            document.writ(obj3.a); //100
+            
+
+        }
+        {
+            //16
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+
+            console.log(obj.hasOwnProperty("a"));
+            console.log(obj.hasOwnProperty("b"));
+            console.log(obj.hasOwnProperty("c"));
+            console.log(obj.hasOwnProperty("d"));
+
+        }
+        {
+            //17
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            console.log("a" in obj);
+            console.log("b" in obj);
+            console.log("c" in obj);
+            console.log("d" in obj);
+        }
+
+        {
+            //18
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            for (let el in obj) {
+                console.log(el + " : " + obj[el]);
+            }
+
+            {
+                //19
+                const obj1 = {
+                    a: 100,
+                    b: 200,
+                    c: "javascript"
+                }
+                const obj2 = {
+                    d: 300,
+                    e: 400,
+                    f: "jquery"
+                }
+                const obj3 = { ...obj1, obj2 }
+                const obj4 = { ...obj1, d: "jquery" }
+                const obj5 = { ...obj1, b: 300 }
+
+                console.log(obj3) //a:100, b:200, c:"javascript"
+                document.writ(obj3.a) //100
+
+                console.log(obj4) //a:100, b:200, c:"javascript" d:"jqury"
+                document.writ(obj4.d) //jqury
+
+                document.writ(obj4) 
+                document.writ(obj5)
+            }
+            {
+                //20
+                const obj1 = {
+                    a: 100,
+                    b: 200,
+                    c: "javascript",
+                }
+                const { a, b, c } = obj1;
+
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                //100 200 javascript
+                
+                const { a: x, b: y, c: z } = obj1;
+
+                console.log(x);
+                console.log(y);
+                console.log(z);
+
+                const obj2 = {
+                    d: 100,
+                    e: 200,
+                    f: "javascript",
+                }
+
+                const { d, e, f, g = "jquery" } = obj2;
+
+                console.log(g);
+
+                const obj3 = {
+                    x1: 100,
+                    y1: { a1: 100, b1: 200 },
+                    z1: "javascript",
+                }
+                const { x1, y1: { a1, b1 }, z1 } = obj3;
+
+                console.log(x1);
+                console.log(a1);
+                console.log(b1);
+                console.log(z1);
+            }
+        }
+    </script>
+</body>
+
+</html>
