@@ -129,6 +129,7 @@
                         윈도우 : cd C:\MAMP\bin\mysql\bin>
                         cd C:\MAMP\bin\mysql\bin>
                         mysql -uroot -proot
+                        (cd..)
                         로그인 : mysql -uroot -proot
                     </div>
                     <pre><code class="language-js">mysql: [Warning] Using a password on the command line interface can be insecure.
@@ -180,13 +181,13 @@
                         create table 테이블 이름;
                     </div>
                     <pre><code class="language-js">create table members(
-    memberID int(10) unsigned auto_increment,
-    youEmail varchar(40) NOT NULL,
-    youName varchar(10) NOT NULL,
-    youPass varchar(50) NOT NULL,
-    youAge int(5) NOT NULL,
-    regTime int(20) NOT NULL,
-    PRIMARY KEY(memberID)
+memberID int(10) unsigned auto_increment,
+youEmail varchar(40) NOT NULL,
+youName varchar(10) NOT NULL,
+youPass varchar(50) NOT NULL,
+youAge int(5) NOT NULL,
+regTime int(20) NOT NULL,
+PRIMARY KEY(memberID)
 ) charset=utf8;
 </code></pre>
                     <h4 id="intro5-2" class="page-header">테이블 전체보기</h4>
@@ -194,13 +195,13 @@
                         show tables;
                     </div>
 <pre><code class="language-js">
-    mysql> show tables;
-    +---------------+
-    | Tables_in_aaa |
-    +---------------+
-    | members       |
-    +---------------+
-    1 row in set (0.00 sec)                  
+mysql> show tables;
++---------------+
+| Tables_in_aaa |
++---------------+
+| members       |
++---------------+
+1 row in set (0.00 sec)                  
 </code></pre>
                     <h4 id="intro5-3" class="page-header">테이블 보기</h4>
                     <div class="bs-callout bs-callout-info">
@@ -257,7 +258,7 @@ INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("elese08
 INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("kmdojs@gmail.com", "오종석", "1234", "32", "20230913");
 INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("imdoob@naver.com", "임종한", "3125", "19", "20230913");
 INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("rlanrider@gmail.com", "김우주", "1234", "20", "20230913");
-INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("yunyoungsik91@gmail.com", "윤영식", "12345", "32", "20230913");
+INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("yunyoungsik91@gmail.com", "윤영식", "1234", "32", "20230913");
 INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("97.eugene.s@gmail.com", "서유진", "9876", "26", "20239012");
 INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("jhyjhy968@gmail.com", "정해연", "1234", "27", "20230913");
 INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("hee031812@gmail.com", "김희진", "9099", "29", "20230913");
@@ -278,16 +279,53 @@ INSERT INTO members(youEmail, youName, youPass, youAge, regTime) VALUES("hee0318
                     <div class="bs-callout bs-callout-info">
                         SELECT 필드명 FROM 테이블명 WHERE 조건
                     </div>
-                    <h5>멤버 아이디가 1번인 모든 회원 데이터 불러오기</h5>
+                    <h5>memberID가 1번인 모든 회원 데이터 불러오기</h5>
 <pre><code class="language-js">SELECT * FROM members WHERE memberID = 1;</code></pre>     
-                    <h5>멤버 아이디가 10번인 회원의 이름과 이메일 불러오기</h5>
+                    <h5>memberID가 10번인 회원의 이름과 이메일 불러오기</h5>
 <pre><code class="language-js">SELECT youName, youEmail FROM members WHERE memberID = 10;</code></pre>
                     <h5>나이가 30이상 회원의 모든 데이터 불러오기</h5>
 <pre><code class="language-js">SELECT * FROM members WHERE youAge >= 30;</code></pre> 
                     <h5>나이가 30인 회원을 제외하고 모든 데이터 불러오기</h5>
 <pre><code class="language-js">SELECT * FROM members WHERE youAge != 30;
-SELECT * FROM members WHERE youAge <> 30;    
-</code></pre>              
+SELECT * FROM members WHERE youAge &lt;> 30;</code></pre>
+                    <h5>memberID 5~10 경우 데이터 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE memberID &lt; 5 AND memberID &gt; 10;</code></pre>              
+                    <h5>나이가 30~40인 경우 데이터 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youAge BETWEEN 30 AND 40;</code></pre>   
+                    <h5>나이가 30~40 아닌 경우 데이터 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youAge NOT BETWEEN 30 AND 40;</code></pre>
+                    <h5>memberID가 1, 5, 10, 15만 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE memberID IN(1,5,10,15);</code></pre>
+                    <h5>데이터 없는 것 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youName IS NULL;</code></pre>
+                    <h5>데이터 있는 것 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youName IS NOT NULL;</code></pre>
+                    <h5>이름 중에 "연"텍스트가 포함된 이름 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youName LIKE '%연%';</code></pre>
+                    <h5>이름 중에 "김"텍스트로 시작하는 이름 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youName LIKE '김%';</code></pre>
+                    <h5>이름 중에 "연"텍스트로 끝나는는 이름 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youName LIKE '연%';</code></pre>                    
+                    <h5>이름 중에 "성"텍스트로 끝나는는 이름 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youName LIKE '__성';</code></pre>
+                    <h5>이름 중에 "김"텍스트와 "이"텍스트로 시작하는 이름 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youName LIKE '김%' OR youName LIKE '이%';</code></pre>
+                    <h5>나이가 25 이상이고 아이디가 2 또는 9인 멤버 불러오기</h5>
+<pre><code class="language-js">SELECT * FROM members WHERE youAge >= 25 AND memberID IN(2,9);
+SELECT * FROM members WHERE (memberID = 2 OR memberID = 9) AND youAge &gt;=25
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                     <h4 id="intro6-3" class="page-header">테이블 수정하기</h4>

@@ -27,27 +27,8 @@
     <!-- //header -->
 
     <main id="main">
-        <div class="quiz__wrap">
-            <div class="quiz">
-                <div class="quiz__header"></div>
-                <div class="quiz__main">
-                    <div class="quiz__question"></div>
-                    <div class="quiz__img"></div>
-                    <div class="quiz__choice">
-                        <div id="choice1" class="choice"></div>
-                        <div id="choice2" class="choice"></div>
-                        <div id="choice3" class="choice"></div>
-                        <div id="choice4" class="choice"></div>
-                    </div>
-                    <div class="quiz__answer"></div>
-                    <div class="quiz__desc"></div> 
-                </div>
-                <div class="quiz__footer">
-                    <div class="quiz__indicator"></div>
-                    <button class="quiz__next">다음 문제</button>
-                </div>
-            </div>
-        </div>
+        <div class="quiz__wrap"></div>
+        <div class="quiz__check">정답확인</div>
     </main>
     <!-- //main -->
 
@@ -59,39 +40,92 @@
     <script>
         // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
+        const quiz__check = document.querySelector(".quiz__check");
 
-        // 문제 데이터
-        const quizInfo = [];
+        // 변수 설정
+        let currentIndex = 0;   // 현재 문제
+        let quizInfo = [];  // 모든 퀴즈 정보
 
         // 문제 가져오기
         const fetchQuiz = () => {
             fetch("https://jeong202.github.io/webs2024/json/gineungsaJC2011_05.json")
-                .then(res => res.json())
-                .then(items => {
-                    console.log(items[0].question);
-                    quizInfo[0] = items[0].question;
-                    console.log(quizInfo)
+            .then(res => res.json())
+            .then(items => {
+                quizInfo = items.map((item, index)=> {
+                    const formattedQuiz = {
+                        infoDate: "2011년 5회",
+                        infoType: item.subject,
+                        infoQuestion: item.question,
+                        infoDesc: item.desc,
+                        infoAnswer : item.correct_answers        
+                    }
 
-                    updataQuiz();
-                })
-                .catch((error) => console.log(error));
+                    // 보기 가져오기
+                    const choices = [...item.incorrect_answers, ...item.correct_answers];
+
+                    // 보기 랜덤 섞기
+                    for (let i = choices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [choices[i], choices[j]] = [choices[j], choices[i]];
+                    }
+
+
+
+                    formattedQuiz.infoChoice = choices
+                    return formattedQuiz;
+                });
+                console.log(quizInfo)
+                updateQuiz();
+            })
         }
+        //문제 출력
+        const updateQuiz = () => {
+        const quizArray = [];
 
-        // 문제 출력하기
-        const updataQuiz = () => {
-            let quizWrapTag = `
+            quizInfo.forEach((quiz, number) => {
+                quizArray.push(`
                 <div class="quiz">
-                    <div class="quiz__header">정보처리 기능사</div>
+                    <div class="quiz__header">${quiz.infoDate}${quiz.infoType}</div>
                     <div class="quiz__main">
-                        <div class="quiz__question">${quizInfo}</div>
+                        <div class="quiz__question">
+                           ${number+1}. ${quiz.infoQuestion}
+                        </div>
+                        <div class="quiz__choice">
+                            <label for="choice1-${number}">
+                                <input type="radio" id="choice1" name="choice-${number}" value="1">
+                                <span>${quiz.infochoices[0]}</span>
+                            </label>
+                            <label for="choice2-${number}">
+                                <input type="radio" id="choice2" name="choice-${number}" value="2">
+                                <span>${quiz.infochoices[1]}</span>
+                            </label>
+                            <label for="choice3-${number}">
+                                <input type="radio" id="choice3" name="choice-${number}" value="3">
+                                <span>${quiz.infochoices[2]}</span>
+                            </label>
+                            <label for="choice4-${number}">
+                                <input type="radio" id="choice4" name="choice-${number}" value="4">
+                                <span>${quiz.infochoices[3]}</span>
+                            </label>
+                        </div>
+                        <div class="quiz__answer none">${quiz.infoAnswers}</div>
+                        <div class="quiz__desc none">${quiz.infoDesc}</div>
                     </div>
-
-                    <div class="quiz__desc">${quizInfo}</div>
+                    <div class="quiz__footer">
+                        <button class="quiz__confirm">정답 확인하기</button>
+                        <button class="quiz__next none">다음 문제</button>
+                    </div>
                 </div>
-            `;
+                `);
+            })
+            quizWrap.innerHTML = quizArray.join("");
+        }
+        fetchQuiz();
 
-            quizWrap.innerHTML = quizWrapTag;
-        };
+        // 정답 확인
+        quizCheck.addEventListener("click", ()=>{
+
+        })
 
         // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
