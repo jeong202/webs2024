@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,7 +7,7 @@
     <title>퀴즈 이펙트06</title>
 
     <link rel="stylesheet" href="assets/css/quiz.css">
-
+  
 </head>
 <body>
     <header id="header">
@@ -59,11 +60,11 @@
                         infoQuestion : item.question,
                         infoDesc : item.desc,
                         infoAnswer :item.correct_answer
-
+                        
                     }
                     // 보기 가져오기
                    const choices =[...item.incorrect_answers,item.correct_answer];
-
+                  
                     // 보기 랜덤 섞기
                     for (let i = choices.length - 1; i > 0; i--) {
                         const j = Math.floor(Math.random() * (i + 1));
