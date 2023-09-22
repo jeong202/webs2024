@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사 레이아웃 E-1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #main {
+            width: 100%;
+            height: calc(100vh - 120px);
+            display: flex;
+        }
+        #header {
+            width: 200px;
+        }
+        #header .logo{
+            width: 100%;
+            height: 10%;
+            background-color: #56F7C9;
+        }
+        #header .nav{
+            width: 100%;
+            height: 90%;
+            background-color: #4BD687;
+        }
+        #contents {
+            width: 400px;
+            height: 100%;
+        }
+        #contents .banner {
+            width: 100%;
+            height: 15%;
+            background-color: #5FED74;
+        }
+        #contents .notice {
+            width: 100%;
+            height: 35%;
+            background-color: #62D64B;
+        }
+        #contents .gallery {
+            width: 100%;
+            height: 35%;
+            background-color: #A9F756;
+        }
+        #contents .link {
+            width: 100%;
+            height: 15%;
+            background-color: #2C6E36;
+        }
+
+        #slider {
+            width: calc(100% - 600px);
+            height: 100%;
+            background-color: #A8F0B3;
+        }
+        #footer {
+            width: 100%;
+            display: flex;
+        }
+        #footer .footer1 {
+            width: 20%;
+            height: 120px;
+            background-color: #5FED74;
+        }
+        #footer .footer2 {
+            width: 80%;
+        }
+        #footer .footer2 .footer2-1 {
+            width: 100%;
+            height: 60px;
+            background-color: #4D6E52;
+        }
+        #footer .footer2 .footer2-2 {
+            width: 100%;
+            height: 60px;
+            background-color: #4ABA5B;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="main">
+            <header id="header">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </header>
+            <!-- //header -->
+            <section id="contents">
+                <article class="banner"></article>
+                <article class="notice"></article>
+                <article class="gallery"></article>
+                <article class="link"></article>
+            </section>
+            <!-- //contents -->
+            <article id="slider">
+            </article>
+            <!-- //slider -->
+        </div>
+        <!-- //main -->
+        <div id="footer">
+            <div class="footer1"></div>
+            <div class="footer2">
+                <div class="footer2-1"></div>
+                <div class="footer2-2"></div>
+            </div>
+        </div>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+</body>
+</html>

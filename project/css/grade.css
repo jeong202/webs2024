@@ -1,5 +1,5 @@
 body {
-    background-image: url(/project/img/BG.jpg);
+    background-image: url(../img/BG.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -8,7 +8,7 @@ body {
 
     margin: 0 auto;
     padding: 0;
-    background-image: url(/project/img/QRbg.png);
+    background-image: url(../img/Qbg.png);
     width: 750px;
     height: 800px;
     position: relative;
