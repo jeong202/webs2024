@@ -7,49 +7,40 @@
 pre code.hljs {
     margin-bottom: 0 !important;
 }
+
 body {
     width: 100%;
     height: 100vh;
 }
 body.img01 {
-    background: #000 url(../img/imges01.jpg) no-repeat center / cover;
-    
+    background: #000 url(../img/images01.jpg) no-repeat center / cover;
 }
 body.img02 {
-    background: #000 url(../img/imges02.jpg) no-repeat center / cover;
-    
+    background: #000 url(../img/images02.jpg) no-repeat center / cover;
 }
 body.img03 {
-    background: #000 url(../img/imges03.jpg) no-repeat center / cover;
-    
+    background: #000 url(../img/images03.jpg) no-repeat center / cover;
 }
 body.img04 {
-    background: #000 url(../img/imges04.jpg) no-repeat center / cover;
-    
+    background: #000 url(../img/images04.jpg) no-repeat center / cover;
 }
 body.img05 {
-    background: #000 url(../img/imges05.jpg) no-repeat center / cover;
-    
+    background: #000 url(../img/images05.jpg) no-repeat center / cover;
 }
 body.img06 {
-    background: #000 url(../img/imges06.jpg) no-repeat center / cover;
-    
+    background: #000 url(../img/images06.jpg) no-repeat center / cover;
 }
 body.img07 {
-    background: #000 url(../img/imges07.jpg) no-repeat center / cover;
-    
+    background: #000 url(../img/images07.jpg) no-repeat center / cover;
 }
 body.img08 {
-    background: #000 url(../img/imges08.jpg) no-repeat center / cover;
-    
+    background: #000 url(../img/images08.jpg) no-repeat center / cover;
 }
 body.img09 {
-    background: #000 url(../img/imges09.jpg) no-repeat center / cover;
-    
+    background: #000 url(../img/images09.jpg) no-repeat center / cover;
 }
 body.img10 {
-    background: #000 url(../img/imges10.jpg) no-repeat center / cover;
-    
+    background: #000 url(../img/images10.jpg) no-repeat center / cover;
 }
 body::after {
     content: '';
@@ -58,13 +49,13 @@ body::after {
     top: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(55, 27, 217, 0.209);
+    background-color: rgba(23, 20, 88, 0.486);
     z-index: -1;
 }
 img {
     width: 100%;
     height: 100%;
-    vertical-align: top; /* 이미지 여백 제거 */
+    vertical-align: top;    /* 이미지 여백 제거 */
 }
 a {
     color: #fff;
@@ -94,6 +85,7 @@ a {
 }
 #header h1 {
     display: inline-block;
+    font-weight: 300;
     font-size: 30px;
     margin-bottom: 10px;
     border-bottom: 1px dashed #fff;
@@ -116,8 +108,9 @@ a {
 }
 #header li.active a {
     background-color: #fff;
-    color:  #33377d;;
+    color: #000;
 }
+
 /* modal__wrap */
 .modal__btn {
     color: #fff;
@@ -163,7 +156,7 @@ a {
 .modal__box .title .dot {
     width: 15px;
     height: 15px;
-    background-color: #dfd577;
+    background-color: #3b3d63;
     display: inline-block;
     border-radius: 50%;
     position: relative;
@@ -176,7 +169,7 @@ a {
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: #70c279;
+    background-color: #3b3d63;
     border-radius: 50%;
 }
 .modal__box .title .dot::after {
@@ -186,7 +179,7 @@ a {
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: #e87533;
+    background-color: #3b3d63;
     border-radius: 50%;
 }
 
@@ -247,8 +240,9 @@ a {
     opacity: 0;
 }
 .modal__close:hover {
-    background-color: #4e53ac;
+    background-color: #b9bdff;
 }
+
 @media (max-width: 1100px){
     .modal__box .title {
         overflow: hidden;
@@ -275,6 +269,7 @@ a {
         width: 96%;
     }
 }
+
 /* 모달 애니메이션 */
 .modal__cont.show {
     animation: foldOut 1s ease forwards;
@@ -297,28 +292,28 @@ a {
 }
 
 @keyframes foldOut {
-    0%   {transform: scaleX(0.0001) scaleY(0);}
-    50%  {transform: scaleX(0.0001) scaleY(1);}
+    0% {transform: scaleX(0.0001) scaleY(1);}
+    50% {transform: scaleX(0.0001) scaleY(1);}
     100% {transform: scaleX(1) scaleY(1);}
 }
 @keyframes foldIn {
-    0%   {transform: scaleX(1) scaleY(1);}
-    50%  {transform: scaleX(0.0001) scaleY(1);}
-    100% {transform: scaleX(0.0001) scaleY(0);}
+    0% {transform: scaleX(1) scaleY(1);}
+    50% {transform: scaleX(0.0001) scaleY(1);}
+    100% {transform: scaleX(0.0001) scaleY(1);}
 }
 @keyframes zoomOut {
-    0%   {transform: scale(0);}
+    0% {transform: scale(0);}
     100% {transform: scale(1);}
 }
 @keyframes zoomIn {
-    0%   {transform: scale(1);}
+    0% {transform: scale(1);}
     100% {transform: scale(0);}
 }
 @keyframes opacityOut {
-    0%   {opacity: 0;}
+    0% {opacity: 0;}
     100% {opacity: 1;}
 }
 @keyframes opacityIn {
-    0%   {opacity: 1;}
+    0% {opacity: 1;}
     100% {opacity: 0;}
 }

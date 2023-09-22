@@ -587,7 +587,7 @@ body::after {
 }
 .modal__box .title {
     padding: 1rem;
-    background-color: #d8d5d8;
+    background-color: #1b1c2e;
     display: flex;
     align-items: center;
     color: #fff;
@@ -598,7 +598,7 @@ body::after {
 .modal__box .title .dot {
     width: 15px;
     height: 15px;
-    background-color: #dfd577;
+    background-color: #3b3d63;
     display: inline-block;
     border-radius: 50%;
     position: relative;
@@ -611,7 +611,7 @@ body::after {
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: #70c279;
+    background-color: #3b3d63;
     border-radius: 50%;
 }
 .modal__box .title .dot::after {
@@ -621,7 +621,7 @@ body::after {
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: #e87533;
+    background-color: #3b3d63;
     border-radius: 50%;
 }
 
@@ -631,8 +631,8 @@ body::after {
     margin-left: 50px;
 }
 .modal__box .title .tabs > div {
-    color: #000000;
-    background-color: #d7cdd6;
+    color: #7a7d9d;
+    background-color: #282936;
     padding: 0.35rem 0.8rem 0.25rem 0.8rem;
     margin-right: 0.5rem;
     display: flex;
@@ -642,7 +642,7 @@ body::after {
     cursor: pointer;
 }
 .modal__box .title .tabs > div.active {
-    background-color: #bb91b7;
+    background-color: #1f224a;
 }
 .modal__box .title .tabs > div em {
     font-style: normal;
@@ -682,8 +682,9 @@ body::after {
     opacity: 0;
 }
 .modal__close:hover {
-    background-color: #bb91b7;
+    background-color: #b9bdff;
 }
+
 @media (max-width: 1100px){
     .modal__box .title {
         overflow: hidden;
@@ -710,6 +711,7 @@ body::after {
         width: 96%;
     }
 }
+
 /* 모달 애니메이션 */
 .modal__cont.show {
     animation: foldOut 1s ease forwards;
@@ -732,28 +734,28 @@ body::after {
 }
 
 @keyframes foldOut {
-    0%   {transform: scaleX(0.0001) scaleY(0);}
-    50%  {transform: scaleX(0.0001) scaleY(1);}
+    0% {transform: scaleX(0.0001) scaleY(1);}
+    50% {transform: scaleX(0.0001) scaleY(1);}
     100% {transform: scaleX(1) scaleY(1);}
 }
 @keyframes foldIn {
-    0%   {transform: scaleX(1) scaleY(1);}
-    50%  {transform: scaleX(0.0001) scaleY(1);}
-    100% {transform: scaleX(0.0001) scaleY(0);}
+    0% {transform: scaleX(1) scaleY(1);}
+    50% {transform: scaleX(0.0001) scaleY(1);}
+    100% {transform: scaleX(0.0001) scaleY(1);}
 }
 @keyframes zoomOut {
-    0%   {transform: scale(0);}
+    0% {transform: scale(0);}
     100% {transform: scale(1);}
 }
 @keyframes zoomIn {
-    0%   {transform: scale(1);}
+    0% {transform: scale(1);}
     100% {transform: scale(0);}
 }
 @keyframes opacityOut {
-    0%   {opacity: 0;}
+    0% {opacity: 0;}
     100% {opacity: 1;}
 }
 @keyframes opacityIn {
-    0%   {opacity: 1;}
+    0% {opacity: 1;}
     100% {opacity: 0;}
 }
