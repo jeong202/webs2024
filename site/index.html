@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +17,10 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/common.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
+
 <body>
     <div id="skip">
         <a href="#header" id="header">헤더 영역 바로가기</a>
@@ -51,7 +55,37 @@
 
     <main id="main" role="main">
         <section id="sliderWrap">
-            <div class="slider__inner">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider__text">
+                            <h3>현대백화점그룹의<br /><em>다양한 제휴사</em>를 만나보세요!</h3>
+                            <p>다양한 브랜드에서 적립하고 사용하는<br />즐거운 일상의 포인트 제도</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider__text">
+                            <h3>현대백화점그룹의<br /><em>다양한 제휴사</em>를 만나보세요!</h3>
+                            <p>다양한 브랜드에서 적립하고 사용하는<br />즐거운 일상의 포인트 제도</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider__text">
+                            <h3>현대백화점그룹의<br /><em>다양한 제휴사</em>를 만나보세요!</h3>
+                            <p>다양한 브랜드에서 적립하고 사용하는<br />즐거운 일상의 포인트 제도</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button">
+                    <div class="swiper-button-play"></div>
+                    <div class="swiper-button-stop"></div>
+                </div>
+            </div>
+
+            <!-- <div class="slider__inner">
                 <div class="slider">
                     <div class="slider__text">
                         <h3>현대백화점그룹의<br /><em>다양한 제휴사</em>를 만나보세요!</h3>
@@ -69,7 +103,7 @@
                         <a href="#" class="right"><span class="ir">다음 이미지</span></a>
                     </div>
                 </div>
-            </div> 
+            </div>  -->
         </section>
         <!-- //sliderWrap -->
 
@@ -82,7 +116,7 @@
                         </div>
                         <div class="img2">
                             <img src="assets/img/intro02.png" alt="멤버십2" aria-hidden="true">
-                        </div> 
+                        </div>
                         <div class="img3">
                             <img src="assets/img/intro01.png" alt="멤버십3" aria-hidden="true">
                         </div>
@@ -92,7 +126,7 @@
                         <p>현대백화점그룹 라이프스타일 멤버쉽<br />H.Point로 쌓고 즐기고 나누는 새로운 일상</p>
                     </div>
                 </div>
-            </div> 
+            </div>
         </section>
         <!-- //introWrap -->
 
@@ -199,7 +233,69 @@
 
 
     <footer id="footer" role="contentinfo">
-        <h2>푸터</h2>
+        <div class="footer__inner">
+            <div class="container">
+                <div class="footer__logo">
+                    <a href="#">
+                        <img src="assets/img/W.Point.svg" alt="W.Point">
+                    </a>
+                </div>
+                <address class="footer__info">
+                    <ul>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">위치기반서비스 이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">개인정보보호센터</a></li>
+                    </ul>
+                    <ul>
+                        <li>주식회사 현대백화점  서울시 강남구 테헤란로 98길 12    고객센터 1800-2800</li>
+                        <li>© HYUNDAI DEPARTMENT STORE GROUP Co. Ltd. ALL RIGHTS RESERVED</li>
+                    </ul>
+                </address>
+                <div class="footer__sns">
+                    <ul>
+                        <li><a href="#" ><span class="ir">naver</span></a></li>
+                        <li><a href="#"><span class="ir">insta</span>></a></li>
+                        <li><a href="#"><span class="ir">facebook</span>></a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            
     </footer>
 </body>
+<!-- javascript -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    let swiper = new Swiper(".swiper", {
+        autoplay: {
+            delay: 1000,
+            disableOnInteraction: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        }
+    });
+
+
+    const btnStop = document.querySelector(".swiper-button-stop");
+    const btnStart = document.querySelector(".swiper-button-play");
+
+    btnStop.addEventListener("click", () => {
+        swiper.autoplay.stop();
+    });
+    btnStart.addEventListener("click", () => {
+        swiper.autoplay.start();
+    });
+
+
+
+</script>
+
 </html>
