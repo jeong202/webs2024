@@ -191,7 +191,7 @@ body::after {
 }
 .quiz__header {
     margin-bottom: 20px;
-    color: #5364e0;
+    color: #696969;
 }
 .quiz__date {
     display: inline-block;
@@ -553,3 +553,6 @@ body::after {
         padding: 13px;
     }
 }
+
+
+

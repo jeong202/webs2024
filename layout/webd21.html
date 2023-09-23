@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <title>웹디자인기능사 메뉴 M1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "NexonLv1Gothic";
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #header {
+            width: 100%;
+            display: flex;
+        }
+
+        #header .logo {
+            width: 20%;
+            height: 100px;
+            background-color: #efefef;
+        }
+
+        #header .nav {
+            width: 80%;
+            background-color: #e3e3e3;
+        }
+
+        #slider {
+            width: 100%;
+            height: 300px;
+            background-color: #d9d9d9;
+        }
+
+        #contents {
+            width: 100%;
+            display: flex;
+        }
+
+        #contents .content1 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #d1d1d1;
+        }
+
+        #contents .content2 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #c7c7c7;
+        }
+
+        #contents .content3 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #bcbcbc;
+        }
+
+        #footer {
+            width: 100%;
+            display: flex;
+        }
+
+        #footer .footer1 {
+            width: 20%;
+            height: 100px;
+            background-color: #b1b1b1;
+        }
+
+        #footer .footer2 {
+            width: 60%;
+            height: 100px;
+            background-color: #a3a3a3;
+        }
+
+        #footer .footer3 {
+            width: 20%;
+            height: 100px;
+            background-color: #9d9d9d;
+        }
+        /* nav */
+        .nav {
+        }
+        .nav > ul {
+            display: flex; /* .nav > ul > li > a를 가로 방향으로 정렬하기 위해 사용 */
+            justify-content: right;
+            margin-top: 30px;
+        }
+        .nav > ul > li {
+            position: relative;   /*position: absolute;의 기준점*/
+        }
+        .nav > ul > li > a {
+            display: inline-block; /* a링크는 인라인 구조이다 따라서 패딩,마진이 적용되지 않는다*/
+            padding: 10px 50px; /* 위아래로10 좌우로50*/
+            background-color: #dad1d1;
+        }
+        .nav > ul > li > a:hover {
+            background-color: #b1a9a9;
+        }
+        .nav > ul > li > ul {
+            position: absolute; /*기준점()을 기준으로 위치가 움직임 position이 설정된 가장 가까운 부모 요소를 기준으로 위치를 조정*/
+            left: 0;
+            top: 38px;
+            background-color: #fff;
+            width: 100%;
+            text-align: center;
+            display: none;
+        }
+        .nav > ul > li > ul > li {}
+        .nav > ul > li > ul > li > a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #e4c5c5;
+
+            /* 넘치는 이유 : width: 100%;만 적용했을 때는 100%가 적용되고 10픽셀 마진도 적용이 되어 전체 너비가 100%+20px(좌우)가 된다, 따라서 100%안에 패딩값을 포함시키기 위해 box-sizing: border-box;를 사용한다 */
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .nav > ul > li > ul > li > a:hover {
+            background-color: #f09a9a;
+        }
+        /* 자바스크립트용 CSS */
+        .nav > ul > li > ul {
+            /* 위에서 설정된 display: none;값을 바꿔서 요소가 보이게함 */
+            display: block;
+            
+            height: 0;
+            overflow: hidden;
+
+            /*처음에0~마우스 오버했을때 height: 152px;를 자바스크립트로 설정하기 위해 */
+            transition: all 600ms;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo"></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">메뉴1</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴1-1</a></li>
+                            <li><a href="#">서브메뉴1-2</a></li>
+                            <li><a href="#">서브메뉴1-3</a></li>
+                            <li><a href="#">서브메뉴1-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">메뉴2</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴2-1</a></li>
+                            <li><a href="#">서브메뉴2-2</a></li>
+                            <li><a href="#">서브메뉴2-3</a></li>
+                            <li><a href="#">서브메뉴2-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">메뉴3</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴3-1</a></li>
+                            <li><a href="#">서브메뉴3-2</a></li>
+                            <li><a href="#">서브메뉴3-3</a></li>
+                            <li><a href="#">서브메뉴3-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">메뉴4</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴4-1</a></li>
+                            <li><a href="#">서브메뉴4-2</a></li>
+                            <li><a href="#">서브메뉴4-3</a></li>
+                            <li><a href="#">서브메뉴4-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- //header -->
+
+        <div id="slider">
+        </div>
+        <!-- //slider -->
+
+        <div id="contents">
+            <div class="content1"></div>
+            <div class="content2"></div>
+            <div class="content3"></div>
+        </div>
+        <!-- //contents -->
+
+        <div id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+        </div>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    //JQ
+        // //기본 : 문서가 제이쿼리 함수를 읽을 준비가 되었다
+        // $(document).redy(function(){
+
+        // });
+        // //약식
+        // $(function(){
+
+        // });
+        
+        // $(function(){
+        //     // 메뉴에 오버했을 때 자식 메뉴가 보이게!
+        //     // 애니메이션 명령이 저장되지 않게 .stop()
+        //     // .slideDown().slideUp() : 기본값 600,(6초)
+        //     $(".nav > ul > li").mouseover(function(){
+        //         $(this).find(".submenu").stop().slideDown(200);
+        //     });
+        //     // 메뉴에 오버를 해제했을 때 자식 메뉴가 사라지게!
+        //     $(".nav > ul > li").mouseout(function(){
+        //         $(this).find(".submenu").stop().slideUp(200);
+        //     });
+        // });
+
+    //JS
+        window.onload = function(){
+            // 선택자 (위치)
+            let navList = document.querySelectorAll(".nav > ul > li");  //4개의 메뉴(메뉴1,메뉴2,메뉴3,메뉴4)를 변수에 저장
+            
+            // forEach() 메서드는 JavaScript 배열에서 사용할 수 있는 배열 반복(iteration) 메서드 중 하나입니다. 배열 arr의 각 요소를 순회하면서 각 요소, 해당 요소의 인덱스, 그리고 배열 자체를 출력하는 예제입니다. 배열요소 각각에 이름을 정할수 있다 여기서는 메뉴요소 각각이(.nav > ul > li=메뉴1,메뉴2,메뉴3,메뉴4) navItem이 된다.
+            // 메뉴에 오버했을 때 자식 메뉴가 보이게!
+            navList.forEach(function(navItem){
+                navItem.addEventListener("mouseover", function(){
+                    this.querySelector(".submenu").style.height = "152px"; /*처음에0~마우스 오버했을때 height: 152px; */
+                });
+            })
+            // 메뉴에 오버를 해제했을 때 자식 메뉴가 사라지게!
+            navList.forEach(function(navItem){
+                navItem.addEventListener("mouseout", function(){
+                    this.querySelector(".submenu").style.height = "0px"; /*처음에0~마우스 오버했을때 height: 152px; */
+                });
+            })
+        };     
+
+</script>
+</html>

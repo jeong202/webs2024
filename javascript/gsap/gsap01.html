@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSAP Scroll Effect01</title>
 
-    <link href="https://webfontworld.github.io/cookierun/CookieRun.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,16 +18,16 @@
         body {
             color: #fff;
             background-color: #111;
-            font-family: 'cookierun';
+            font-family: "NexonLv1Gothic";
         }
         #parallax__title {
             position: fixed;
-            left: 20px;
             top: 20px;
+            left: 20px;
             z-index: 10000;
         }
         #parallax__title h1 {
-            font-style: 30px;
+            font-size: 30px;
             border-bottom: 1px dashed #fff;
             margin-bottom: 10px;
             padding-bottom: 5px;
@@ -76,7 +76,7 @@
             position: absolute;
             right: 20px;
             bottom: 20px;
-            font-size: 5vw;
+            font-size: 5vh;
             line-height: 1;
         }
         .parallax__item__img {
@@ -120,7 +120,7 @@
 </head>
 <body>
     <header id="parallax__title">
-        <h1>GSAP Parallax Effect01</h1>
+        <h1>GSAP parallax Effect01</h1>
         <p>GSAP scrollTrigger - 애니메이션 기본 효과</p>
         <ul>
             <li class="active"><a href="gsap01.html">1</a></li>
@@ -141,76 +141,85 @@
         </ul>
     </header>
     <main id="parallax__cont">
-        <section id="section1" class="parallax__item">
+        <section id="section01" class="parallax__item">
             <span class="parallax__item__num">01</span>
             <div class="parallax__item__img"></div>
         </section>
-        <!-- //section1 -->
-        <section id="section2" class="parallax__item">
+        <!-- //section01 -->
+
+        <section id="section02" class="parallax__item">
             <span class="parallax__item__num">02</span>
             <div class="parallax__item__img"></div>
         </section>
-        <!-- //section2 -->
-        <section id="section3" class="parallax__item">
+        <!-- //section02 -->
+
+        <section id="section03" class="parallax__item">
             <span class="parallax__item__num">03</span>
             <div class="parallax__item__img"></div>
         </section>
-        <!-- //section3 -->
-        <section id="section4" class="parallax__item">
+        <!-- //section03 -->
+
+        <section id="section04" class="parallax__item">
             <span class="parallax__item__num">04</span>
             <div class="parallax__item__img"></div>
         </section>
-        <!-- //section4 -->
-        <section id="section5" class="parallax__item">
+        <!-- //section04 -->
+
+        <section id="section05" class="parallax__item">
             <span class="parallax__item__num">05</span>
             <div class="parallax__item__img"></div>
         </section>
-        <!-- //section5 -->
-        <section id="section6" class="parallax__item">
+        <!-- //section05 -->
+
+        <section id="section06" class="parallax__item">
             <span class="parallax__item__num">06</span>
             <div class="parallax__item__img"></div>
         </section>
-        <!-- //section6 -->
-        <section id="section7" class="parallax__item">
+        <!-- //section06 -->
+
+        <section id="section07" class="parallax__item">
             <span class="parallax__item__num">07</span>
             <div class="parallax__item__img"></div>
         </section>
-        <!-- //section7 -->
-        <section id="section8" class="parallax__item">
+        <!-- //section07 -->
+
+        <section id="section08" class="parallax__item">
             <span class="parallax__item__num">08</span>
             <div class="parallax__item__img"></div>
         </section>
-        <!-- //section8 -->
-        <section id="section9" class="parallax__item">
+        <!-- //section08 -->
+
+        <section id="section09" class="parallax__item">
             <span class="parallax__item__num">09</span>
             <div class="parallax__item__img"></div>
         </section>
-        <!-- //section9 -->
+        <!-- //section09 -->
+        
     </main>
 
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
-        const box1 = document.querySelector("#section1 .parallax__item__img");
-        const box2 = document.querySelector("#section2 .parallax__item__img");
-        const box3 = document.querySelector("#section3 .parallax__item__img");
-        const box4 = document.querySelector("#section4 .parallax__item__img");
-        const box5 = document.querySelector("#section5 .parallax__item__img");
-        const box6 = document.querySelector("#section6 .parallax__item__img");
-        const box7 = document.querySelector("#section7 .parallax__item__img");
-        const box8 = document.querySelector("#section8 .parallax__item__img");
-        const box9 = document.querySelector("#section9 .parallax__item__img");
+        const box1 = document.querySelector("#section01 .parallax__item__img");
+        const box2 = document.querySelector("#section02 .parallax__item__img");
+        const box3 = document.querySelector("#section03 .parallax__item__img");
+        const box4 = document.querySelector("#section04 .parallax__item__img");
+        const box5 = document.querySelector("#section05 .parallax__item__img");
+        const box6 = document.querySelector("#section06 .parallax__item__img");
+        const box7 = document.querySelector("#section07 .parallax__item__img");
+        const box8 = document.querySelector("#section08 .parallax__item__img");
+        const box9 = document.querySelector("#section09 .parallax__item__img");
 
-        // 01 - 360도 회전하면서 오른쪽으로 500정도 가면서 동그랗게 변하기
+        // 01
         gsap.to(box1, {
             duration: 2,
             x: 500,
-            borderRadius : 100,
-            rotation : 360
+            borderRadius: 100,
+            rotation: 360 
         });
 
-        // 02 : trigger
-        // 화면에 포착되었을때 360도 회전하면서 오른쪽으로 500정도 가면서 동그랗게 변하기
+        // 02 : trigger - 화면에 이미지가 보이면 동작
         gsap.to(box2, {
             duration: 2,
             x: 500,
@@ -225,30 +234,31 @@
         gsap.to(box3, {
             duration: 2,
             x: 500,
-            rotation: 360,
+            rotarion: 360,
             borderRadius: 100,
             scrollTrigger: {
                 trigger: box3,
-                toggleActions: "play none reverse none" //play pause resume reverse restart reset complete none
+                toggleActions: "play none reverse none"     // play pause resume reverse restart reset complete none
+                                                            // onEnter onLeave onEnterBack onLeaveBack
             }
         });
 
-        // 04 : start, end 
+        // 04 : start, end : 애니메이션 시작순간과 끝나는 순간 정하기
         gsap.to(box4, {
             duration: 2,
             x: 500,
             rotation: 360,
             borderRadius: 100,
             scrollTrigger: {
-                trigger: box4,
-                start: "top 50%",
-                end: "bottom 20%",
-                toggleActions: "play none reverse none",
-                markers: false
+                  trigger: box4,
+                  start: "top 50%",
+                  end: "bottom 20%",
+                  toggleActions: "play none reverse none",
+                  markers: false
             }
         });
 
-        // 05 : scrub
+        // 05 : scrub : 움직일때마다 애니메이션 작동
         gsap.to(box5, {
             duration: 2,
             x: 500,
@@ -258,11 +268,11 @@
                 trigger: box5,
                 start: "top 50%",
                 end: "bottom 20%",
-                scrub: true       // 1 또는 2 같은 숫자를 적을 수 있다 속도나 움직임이 다르다
+                scrub: true     // 1 또는 2도 가능  - 속도 조절
             }
         });
 
-        // 06 : pin
+        // 06 : pin : 원하는 위치로 이동
         gsap.to(box6, {
             duration: 2,
             x: 500,
@@ -277,7 +287,7 @@
             }
         });
 
-        // 07 : toggleClass
+        // 07 : toggleClass : 클래스 추가
         gsap.to(box7, {
             duration: 2,
             x: 500,
@@ -304,8 +314,8 @@
                 trigger: box8,
                 start: "top center",
                 end: "bottom 20%",
-                scrub: true,
-                // onEnter: () => {console.log("OnEnter")},
+                 scrub: true,
+                // onEnter: () => {console.log("onEnter")},
                 // onLeave: () => {console.log("onLeave")},
                 // onEnterBack: () => {console.log("onEnterBack")},
                 // onLeaveBack: () => {console.log("onLeaveBack")},
@@ -313,7 +323,6 @@
                 onToggle: (self) => {console.log("onToggle", self.isActive)}
             }
         });
-
     </script>
 </body>
 </html>
