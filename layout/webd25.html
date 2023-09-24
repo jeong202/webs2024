@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <title>웹디자인기능사 메뉴 M5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #wrap {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #aside {
+            width: 200px;
+        }
+
+        #aside h1 {
+            width: 100%;
+            height: 100px;
+            background-color: #efefef;
+        }
+
+        #aside nav {
+            width: 100%;
+            height: 700px;
+            background-color: #e3e3e3;
+        }
+
+        #main {
+            width: calc(100% - 200px);
+        }
+
+        #slider {
+            width: 100%;
+            height: 400px;
+            background-color: #d9d9d9;
+        }
+
+        #link {
+            width: 100%;
+            height: 150px;
+            background-color: #d1d1d1;
+        }
+
+        #contents {
+            width: 100%;
+            display: flex;
+        }
+
+        #contents .content1 {
+            width: 50%;
+            height: 250px;
+            background-color: #c7c7c7;
+        }
+
+        #contents .content2 {
+            width: 50%;
+            height: 250px;
+            background-color: #bcbcbc;
+        }
+
+        #footer {
+            width: 100%;
+            display: flex;
+        }
+
+        #footer .footer1 {
+            width: 20%;
+            height: 120px;
+            background-color: #b1b1b1;
+        }
+
+        #footer .footer2 {
+            width: 60%;
+        }
+
+        #footer .footer2 .footer2-1 {
+            width: 100%;
+            height: 60px;
+            background-color: #a3a3a3;
+        }
+
+        #footer .footer2 .footer2-2 {
+            width: 100%;
+            height: 60px;
+            background-color: #9d9d9d;
+        }
+
+        #footer .footer3 {
+            width: 20%;
+            height: 120px;
+            background-color: #929292;
+        }
+
+        /* nav */
+        .nav {
+          
+        }
+
+        .nav > ul {
+        }
+
+        .nav > ul > li {
+            position: relative;
+        }
+
+        .nav > ul > li > a {
+            padding: 10px;
+            display: block; /* a링크는 인라인 구조이다 따라서 패딩,마진이 적용되지 않는다. 패딩값을 적용하기 위해 블록 구조로 만듦*/
+            text-align: center;
+            background-color: aqua;
+        }
+
+        .nav > ul > li > a:hover {
+            background-color: rgb(141, 193, 193);
+        }
+        
+        /* 서브메뉴가 오른쪽으로 나오는 위치기 때문에 position: absolute로 위치를 잡아주면 됩니다. 기준점이 되는 li에 position: relative를 넣어주면 됩니다. 위치는 오른쪽에 위치해야 하기 때문에 right: -200px;를 설정해주고, width 값을 200px로 설정해주면 됩니다. */
+        .nav > ul > li > ul {
+            position: absolute;
+            right: -200px;
+            top: 0;
+            width: 200px;
+            background-color: rgb(85, 200, 200);
+            display: none;
+        }
+
+        .nav > ul > li > ul > li {}
+
+        .nav > ul > li > ul > li > a {
+            padding: 10px; /* a링크는 인라인 구조이다 따라서 패딩,마진이 적용되지 않는다. 패딩값을 적용하기 위해 블록 구조로 만듦*/
+            display: block;
+        }
+
+        .nav > ul > li > ul > li > a:hover {
+            background-color: rgb(73, 165, 165);
+        }
+
+        /* 자바스크립트용 CSS */
+        .nav > ul > li > ul {
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <aside id="aside">
+            <h1></h1>
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="#">메뉴1</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴1-1</a></li>
+                            <li><a href="#">서브메뉴1-2</a></li>
+                            <li><a href="#">서브메뉴1-3</a></li>
+                            <li><a href="#">서브메뉴1-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">메뉴2</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴2-1</a></li>
+                            <li><a href="#">서브메뉴2-2</a></li>
+                            <li><a href="#">서브메뉴2-3</a></li>
+                            <li><a href="#">서브메뉴2-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">메뉴3</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴3-1</a></li>
+                            <li><a href="#">서브메뉴3-2</a></li>
+                            <li><a href="#">서브메뉴3-3</a></li>
+                            <li><a href="#">서브메뉴3-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">메뉴4</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴4-1</a></li>
+                            <li><a href="#">서브메뉴4-2</a></li>
+                            <li><a href="#">서브메뉴4-3</a></li>
+                            <li><a href="#">서브메뉴4-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- //aside -->
+
+        <main id="main">
+            <article id="slider"></article>
+            <article id="link"></article>
+            <section id="contents">
+                <div class="content1"></div>
+                <div class="content2"></div>
+            </section>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <div class="footer1"></div>
+            <div class="footer2">
+                <div class="footer2-1"></div>
+                <div class="footer2-2"></div>
+            </div>
+            <div class="footer3"></div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    //JQ
+        // $(function(){
+        //     $(".nav > ul > li").mouseover(function(){
+        //         //find : 해당(this) 메뉴의 서브 메뉴 찾기(find)
+        //         $(this).find(".submenu").stop().slideDown();
+        //     });
+        //     $(".nav > ul > li").mouseout(function(){
+        //         $(this).find(".submenu").stop().slideUp();
+        //     });
+        // });
+    //JS    
+        window.onload = function(){
+            let navList = document.querySelectorAll(".nav > ul > li");
+
+            //navList 즉,.nav > ul > li, 4개의 li이름을 nav로 다시 정의
+            //자바스크립트용 JS : 아래의 효과가 적용되기 위해서는 CSS가 선행되어야함 CSS를 JS로 추가함
+            navList.forEach(function(nav){
+                nav.querySelector("ul").style.display = "block"; /* 위에서 설정된 display: none;값을 바꿔서 요소가 보이게함 */
+                nav.querySelector("ul").style.height = "0";
+                nav.querySelector("ul").style.overflow = "hidden"; /* 넘치는 부분의 요소가 보이는 상태인데 overflow: hidden;을 주어 넘치는 부분이 안보이게 설정 */
+                nav.querySelector("ul").style.transition = "height 400ms";
+            })
+       
+
+            //서브메뉴 나타내기 : ul에 마우스오버했을 때 각각 서브메뉴를 다중선택 해 높이를 155로 주어 서브메뉴가 나타나게하고(transition이 적용)
+            navList.forEach(function(navItem) {
+                navItem.addEventListener("mouseover", function() {
+                    this.querySelector(".submenu").style.height = "155px";
+                });
+            });
+            //서브메뉴 사라지기 : ul에 마우스아웃했을 때 각각 서브메뉴를 다중선택 해 높이를 0으로 줘 서브메뉴가 사라지게함
+            navList.forEach(function(navItem) {
+                navItem.addEventListener("mouseout", function() {
+                    this.querySelector(".submenu").style.height = "0px";
+                });
+            });
+        };
+</script>
+
+</html>

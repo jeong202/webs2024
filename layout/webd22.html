@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
-    <title>웹디자인기능사 메뉴 M1</title>
+    <title>웹디자인기능사 메뉴 M2</title>
     <style>
         * {
             margin: 0;
@@ -94,61 +94,63 @@
             height: 100px;
             background-color: #9d9d9d;
         }
+
         /* nav */
-        .nav {
-        }
+        .nav {}
+
         .nav > ul {
-            display: flex; /* .nav > ul > li > a를 가로 방향으로 정렬하기 위해 사용 */
-            justify-content: right;
+            display: flex;
+            justify-content: end;
             margin-top: 30px;
         }
+
         .nav > ul > li {
-            position: relative;   /*position: absolute;의 기준점*/
+            position: relative;
         }
+
         .nav > ul > li > a {
-            display: inline-block; /* a링크는 인라인 구조이다 따라서 패딩,마진이 적용되지 않는다*/
+            display: inline-block; /* a링크는 인라인 구조이다 따라서 패딩,마진이 적용되지 않는다. 패딩값을 적용하기 위해 인라인블록 구조로 만듦*/
             padding: 10px 50px; /* 위아래로10 좌우로50*/
-            background-color: #dad1d1;
+            background-color: #dea0a0;
         }
+
         .nav > ul > li > a:hover {
-            background-color: #b1a9a9;
+            background-color: #e88484;
         }
+
         .nav > ul > li > ul {
-            position: absolute; /*기준점()을 기준으로 위치가 움직임 position이 설정된 가장 가까운 부모 요소를 기준으로 위치를 조정*/
+            position: absolute;
             left: 0;
             top: 38px;
-            background-color: #fff;
             width: 100%;
-            text-align: center; /* 서브메뉴 글자 가운데 정렬*/
+            text-align: center;
             display: none;
         }
+
         .nav > ul > li > ul > li {}
+
         .nav > ul > li > ul > li > a {
             display: inline-block;
             padding: 10px;
-            background-color: #e4c5c5;
-
-            /* 넘치는 이유 : width: 100%;만 적용했을 때는 100%가 적용되고 10픽셀 마진도 적용이 되어 전체 너비가 100%+20px(좌우)가 된다, 따라서 100%안에 패딩값을 포함시키기 위해 box-sizing: border-box;를 사용한다 */
+            background-color: #e8c0c0;
             width: 100%;
             box-sizing: border-box;
         }
-        .nav > ul > li > ul > li > a:hover {
-            background-color: #f09a9a;
+
+        .nav > ul > li > ul > li >a:hover {
+            background-color: #c08484;
         }
+
         /* 자바스크립트용 CSS */
         .nav > ul > li > ul {
-            /* 위에서 설정된 display: none;값을 바꿔서 요소가 보이게함 */
-            display: block;
-            
+            display: block; /* 위에서 설정된 display: none;값을 바꿔서 요소가 보이게함 */
             height: 0;
             overflow: hidden;
-
-            /*처음에0~마우스 오버했을때 height: 152px;를 자바스크립트로 설정하기 위해 */
             transition: all 600ms;
         }
+
     </style>
 </head>
-
 
 <body>
     <div id="wrap">
@@ -156,7 +158,8 @@
             <div class="logo"></div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#">메뉴1</a>
+                    <li>
+                        <a href="#">메뉴1</a>
                         <ul class="submenu">
                             <li><a href="#">서브메뉴1-1</a></li>
                             <li><a href="#">서브메뉴1-2</a></li>
@@ -164,7 +167,8 @@
                             <li><a href="#">서브메뉴1-4</a></li>
                         </ul>
                     </li>
-                    <li><a href="">메뉴2</a>
+                    <li>
+                        <a href="#">메뉴2</a>
                         <ul class="submenu">
                             <li><a href="#">서브메뉴2-1</a></li>
                             <li><a href="#">서브메뉴2-2</a></li>
@@ -172,7 +176,8 @@
                             <li><a href="#">서브메뉴2-4</a></li>
                         </ul>
                     </li>
-                    <li><a href="">메뉴3</a>
+                    <li>
+                        <a href="#">메뉴3</a>
                         <ul class="submenu">
                             <li><a href="#">서브메뉴3-1</a></li>
                             <li><a href="#">서브메뉴3-2</a></li>
@@ -180,7 +185,8 @@
                             <li><a href="#">서브메뉴3-4</a></li>
                         </ul>
                     </li>
-                    <li><a href="">메뉴4</a>
+                    <li>
+                        <a href="#">메뉴4</a>
                         <ul class="submenu">
                             <li><a href="#">서브메뉴4-1</a></li>
                             <li><a href="#">서브메뉴4-2</a></li>
@@ -213,50 +219,39 @@
     </div>
     <!-- //wrap -->
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
-    //JQ
-        // //기본 : 문서가 제이쿼리 함수를 읽을 준비가 되었다
-        // $(document).redy(function(){
+    // //JQ
+    // $(function(){
+    //     $(".nav > ul > li").mouseover(function(){
+    //         $(".nav > ul > li > ul").stop().slideDown();
+    //     });
+    //     $(".nav > ul > li").mouseout(function(){
+    //         $(".nav > ul > li > ul").stop().slideUp();
+    //     });
 
-        // });
-        // //약식
-        // $(function(){
-
-        // });
-        
-        // $(function(){
-        //     // 메뉴에 오버했을 때 자식 메뉴가 보이게!
-        //     // 애니메이션 명령이 저장되지 않게 .stop()
-        //     // .slideDown().slideUp() : 기본값 600,(6초)
-        //     $(".nav > ul > li").mouseover(function(){
-        //         $(this).find(".submenu").stop().slideDown(200);
-        //     });
-        //     // 메뉴에 오버를 해제했을 때 자식 메뉴가 사라지게!
-        //     $(".nav > ul > li").mouseout(function(){
-        //         $(this).find(".submenu").stop().slideUp(200);
-        //     });
-        // });
-
+    // });
     //JS
         window.onload = function(){
-            // 선택자 (위치)
-            let navList = document.querySelectorAll(".nav > ul > li");  //4개의 메뉴(메뉴1,메뉴2,메뉴3,메뉴4)를 변수에 저장
-            
-            // forEach() 메서드는 JavaScript 배열에서 사용할 수 있는 배열 반복(iteration) 메서드 중 하나입니다. 배열 arr의 각 요소를 순회하면서 각 요소, 해당 요소의 인덱스, 그리고 배열 자체를 출력하는 예제입니다. 배열요소 각각에 이름을 정할수 있다 여기서는 메뉴요소 각각이(.nav > ul > li=메뉴1,메뉴2,메뉴3,메뉴4) navItem이 된다.
-            // 메뉴에 오버했을 때 자식 메뉴가 보이게!
-            navList.forEach(function(navItem){
-                navItem.addEventListener("mouseover", function(){
-                    this.querySelector(".submenu").style.height = "152px"; /*처음에0~마우스 오버했을때 height: 152px; */
-                });
-            })
-            // 메뉴에 오버를 해제했을 때 자식 메뉴가 사라지게!
-            navList.forEach(function(navItem){
-                navItem.addEventListener("mouseout", function(){
-                    this.querySelector(".submenu").style.height = "0px"; /*처음에0~마우스 오버했을때 height: 152px; */
-                });
-            })
-        };     
+            //선택자 (위치), 4개의 메뉴(메뉴1,메뉴2,메뉴3,메뉴4)가 들어있는 1개의 ul을 변수에 저장 따라서 querySelectorAll을 사용할 수 없음
+            let navList = document.querySelector(".nav > ul")
 
+           //ul에 마우스오버했을 때 각각 서브메뉴를 다중선택 해 높이를 155로 줘 서브메뉴가 나타나게 함
+            navList.addEventListener("mouseover", function(){
+                navList.querySelectorAll(".submenu").forEach(sub => {
+                    sub.style.height = "155px";
+                });
+            });
+            //ul에 마우스아웃했을 때 각각 서브메뉴를 다중선택 해 높이를 0으로 줘 서브메뉴가 사라지게 함 (.nav > ul안에 li가 있음)
+            navList.addEventListener("mouseout", function(){
+                navList.querySelectorAll(".submenu").forEach(sub => {
+                    sub.style.height = "0";
+                });
+            });
+        }
+           
+    
 </script>
+
 </html>
