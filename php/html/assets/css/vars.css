@@ -2,7 +2,7 @@
     --main-nanum: "NanumSquareNeo";
     --main-gmark: "GmarketSans";
 
-    --primary-color: #eeeeee;
+    --primary-color: #EEEEEE;
 
     --black: #000;
     --white: #fff;
@@ -12,11 +12,12 @@
     --black300: #777;
     --black400: #999;
 
+
     font-size: 16px;
     line-height: 1.5;
     font-weight: 400;
-
 }
+
 @media (max-width: 800px){
     :root {
         font-size: 14px;
