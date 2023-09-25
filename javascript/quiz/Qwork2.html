@@ -1,0 +1,135 @@
+<!-- <script>
+        <div class="main__sample">
+                <div id="sample01" class="sample">
+<pre class="line-numbers"><code class="language-js">{
+        // 문제 정보
+        const infoDate= "21년 10월";
+        const infoType = "정보처리 기능사";
+        const infoNum = "1";
+        const infoQuestion = "CPU의 정보처리 속도 단위 중 초당 100만 개의 연산을 수행한다는 의미의 단위는?";
+        const infoAnswer = "MIPS";
+        const infoDesc = "LIPS는 초당 1개, KIPS는 초당 1000개, MIPS는 초당 1000000의 연산을 수행하는 것을 의미합니다.";
+
+        // 선택자(위치)
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizDate = quizWrap.querySelector(".quiz__date");
+        const quizType = quizWrap.querySelector(".quiz__type");
+        const quizNum = quizWrap.querySelector(".quiz__question em");
+        const quizQuestion = quizWrap.querySelector(".quiz__question span");
+        const quizAnswer = quizWrap.querySelector(".quiz__answer");
+        const quizDesc = quizWrap.querySelector(".quiz__desc");
+        const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+        const quizInput = quizWrap.querySelector(".quiz__input input");
+        const quizAnimation = quizWrap.querySelector(".quiz__animation");
+
+        // 문제 출력
+        quizDate.innerText = infoDate;
+        quizType.innerText = infoType;
+        quizNum.innerText = infoNum;
+        quizQuestion.innerText = infoQuestion;
+        quizAnswer.innerText = infoAnswer;
+        quizDesc.innerText = infoDesc;
+
+        // 정답 해설 숨기기
+        quizAnswer.classList.add("none");           
+        quizDesc.classList.add("none");
+
+        // 정답 확인하기
+        quizConfirm.addEventListener("click", () => {
+            const userAnswer = quizInput.value;
+
+        if(infoAnswer == userAnswer){
+                quizAnimation.classList.add("like");
+            } else {
+                quizAnimation.classList.add("dislike");
+            }
+            quizAnswer.classList.remove("none");    
+            quizDesc.classList.remove("none");
+            quizConfirm.classList.add("none");
+            quizInput.classList.add("none");
+        });
+}</code></pre>
+                    <p class="desc">
+                        문제 정보<br>
+                        const 키워드를 사용하여 여러 변수를 정의하고, 각 변수에는 퀴즈 정보가 들어갑니다.<br>
+                        이 정보에는 날짜, 퀴즈 유형, 퀴즈 번호, 퀴즈 질문, 정답, 그리고 정답 해설이 포함됩니다.<br>
+                        3: 변수를 선언하여 날짜 관련 퀴즈 정보를 저장합니다.<br>
+                        4: 변수를 선언하여 유형 관련 퀴즈 정보를 저장합니다.<br>
+                        5: 변수를 선언하여 번호 관련 퀴즈 정보를 저장합니다.<br>
+                        6: 변수를 선언하여 질문 관련 퀴즈 정보를 저장합니다.<br>
+                        7: 변수를 선언하여 정답 관련 퀴즈 정보를 저장합니다.<br>
+                        8: 변수를 선언하여 해설 관련 퀴즈 정보를 저장합니다.<br>
+                    </p>
+                    <p class="desc">
+                        선택자<br>
+                        11: HTML문서에서 클래스가 quiz__wrap인 요소를 찾아서 저장합니다. 이 요소는 퀴즈를 감싸는 부모 요소입니다.<br>
+                        12: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__date인 요소를 찾아서 할당합니다.<br>
+                        13: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__type인 요소를 찾아서 할당합니다.<br>
+                        14: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__question em인 요소를 찾아서 할당합니다.<br>
+                        15: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__question span인 요소를 찾아서 할당합니다.<br>
+                        16: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 .quiz__answer인 요소를 찾아서 할당합니다.<br>
+                        17: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__desc인 요소를 찾아서 할당합니다.<br>
+                        18: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__confirm인 요소를 찾아서 할당합니다.<br>
+                        19: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__input input인 요소를 찾아서 할당합니다.<br>
+                        20: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__animation인 요소를 찾아서 할당합니다.<br><br>
+
+                        <b>querySelector()</b><br>
+                        querySelector()는 문서 내에서 요소를 검색하므로, 해당 요소가 어느 위치에 있든 상관없이 선택할 수 있습니다.
+                        위의 코드에서 quizWrap 변수는 클래스명이 "quiz__wrap"인 요소를 선택하고, 이후 quizWrap 내에서 quizDate와 quizType등을 선택하고 있습니다.
+                    </p>
+                    <p class="desc">
+                        문제 출력<br>
+                        23: innerText 속성을 사용하여 infoDate 변수들의 값을 선택자로 보내 퀴즈 정보를 표시합니다.<br>
+                        24: innerText 속성을 사용하여 infoType 변수들의 값을 선택자로 보내 퀴즈 정보를 표시합니다.<br>
+                        25: innerText 속성을 사용하여 infoNum 변수들의 값을 선택자로 보내 퀴즈 정보를 표시합니다.<br>
+                        26: innerText 속성을 사용하여 infoQuestion 변수들의 값을 선택자로 보내 퀴즈 정보를 표시합니다.<br>
+                        27: innerText 속성을 사용하여 infoAnswer 변수들의 값을 선택자로 보내 퀴즈 정보를 표시합니다.<br>
+                        28: innerText 속성을 사용하여 infoDesc  변수들의 값을 선택자로 보내 퀴즈 정보를 표시합니다.<br><br>
+
+                        <b>.innerText</b><br>
+                        .innerText를 사용하여 HTML 요소의 텍스트 내용을 설정할 수 있습니다. 이를 통해 요소의 내용을 변경할 수 있습니다.
+                        .innerText 속성은 요소의 내부 텍스트만을 다루며, 포함된 HTML 태그를 처리하지 않습니다. 
+                    </p>
+                    <p class="desc">
+                        정답 해설 숨기기<br>
+                        31: classList.add("none")를 사용하여 처음에는 정답 화면을 숨깁니다. none 클래스를 추가하여 숨긴 처리합니다.<br>
+                        32: classList.add("none")를 사용하여 처음에는 정답 해설 화면을 숨깁니다. none 클래스를 추가하여 숨긴 처리합니다.<br><br>
+                        이 코드에서 사용된 "none" 클래스는 보통 CSS로 정의된 스타일 중에서 해당 요소를 화면에서 숨기기 위한 스타일을 나타냅니다. display 속성을 none으로 설정하여 해당 요소를 화면에 표시하지 않도록 만듭니다.<br>
+                        classList는 JavaScript에서 DOM 요소의 클래스 목록을 조작하는데 사용되는 속성입니다. 이 속성은 특정 DOM 요소의 클래스를 추가, 제거, 토글(toggle)하고 클래스가 존재하는지 확인하는 다양한 메서드를 제공합니다. 이를 통해 웹 페이지의 스타일 및 동작을 동적으로 변경하는 것이 가능합니다.<br>
+                        .add(className): 클래스를 추가합니다.<br>
+                        .remove(className): 클래스를 제거합니다.
+                    </p>
+                    <p class="desc">
+                        정답 확인하기<br>
+                        35: quizConfirm은 HTML 문서에서 "정답 확인" 버튼을 나타내는 요소입니다. 이 버튼이 클릭되었을 때, 다음 중괄호 내의 코드 블록이 실행됩니다.<br>
+                        36: 사용자가 입력한 답을 가져와서 userAnswer 변수에 저장합니다. quizInput은 HTML 문서에서 입력 필드를 나타내는 요소이며, .value 속성을 사용하여 그 입력 필드에 입력된 값을 가져옵니다.<br>
+                        38: 사용자가 입력한 답과 정답(infoAnswer)을 비교합니다. 만약 두 값이 같다면 아래 중괄호 내의 코드 블록이 실행됩니다. 이 부분은 사용자가 정답을 맞춘 경우를 다룹니다. <br>
+                        39: 정답을 맞춘 경우, "정답 확인" 애니메이션을 나타내는 요소에 "like" 클래스를 추가합니다. 이 클래스를 추가하면 애니메이션 효과가 활성화됩니다. 예를 들어, 이 부분은 "정답"을 시각적으로 나타내기 위한 것입니다.<br>
+                        40,41: 만약 사용자가 입력한 답과 정답이 다르다면 다음 중괄호 내의 코드 블록이 실행됩니다. 이 부분은 사용자가 오답인 경우를 다룹니다. 오답인 경우, "정답 확인" 애니메이션을 나타내는 요소에 "dislike" 클래스를 추가합니다. 이 클래스를 추가하면 오답 효과를 나타내는 애니메이션을 활성화합니다.<br>
+                        43: 정답을 표시하는 요소인 quizAnswer에서 none 클래스를 제거하여 정답을 화면에 표시합니다.<br>
+                        44: 정답 해설을 표시하는 요소인 quizDesc에서도 none 클래스를 제거하여 정답 해설을 화면에 표시합니다.<br>
+                        45: 확인 버튼을 화면에서 숨기기 위해 quizConfirm 요소에 none 클래스를 추가합니다.<br>
+                        46: 사용자 입력 필드인 quizInput 요소도 화면에서 숨기기 위해 none 클래스를 추가합니다.이렇게 하면 사용자가 이미 정답을 제출했기 때문에 입력 필드를 비활성화합니다.<br>
+                        <b>요약</b>
+                        addEventListener() 메서드는 quizConfirm 버튼에 클릭 이벤트를 연결합니다. 이 이벤트가 발생하면 익명 함수가 호출됩니다. 익명 함수는 먼저 quizInput 요소의 값을 가져옵니다. 이것은 사용자가 입력한 퀴즈 답변입니다. 그런 다음 익명 함수는 사용자가 입력한 답변이 정답인지 확인합니다. 정답이면 quizAnimation 요소에 like 클래스를 추가합니다. 오답이면 quizAnimation 요소에 dislike 클래스를 추가합니다.다음으로, 익명 함수는 quizAnswer, quizDesc, quizConfirm, quizInput 요소의 none 클래스를 제거합니다. 이것은 이러한 요소를 표시합니다. 마지막으로, 익명 함수는 quizConfirm 요소에 none 클래스를 추가합니다. 이것은 버튼을 숨겨 사용자가 다시 클릭할 수 없도록 합니다.<br><br>
+
+                        <b>addEventListener()</b><br>
+                        JavaScript에서 이벤트를 처리하는 메서드 중 하나로, 특정 이벤트가 발생했을 때 지정된 함수를 실행하도록 설정할 수 있습니다. 예를 들어 클릭, 마우스 이동, 키보드 입력, 버튼 클릭 등이 해당됩니다.<br>
+                        element.addEventListener(event, function, useCapture);<br>
+                        element: 이벤트를 청취할 HTML 요소를 나타냅니다.<br>
+                        event: 청취할 이벤트의 종류를 나타냅니다. 예를 들어, "click", "keyup", "mouseover"와 같은 이벤트 이름을 사용할 수 있습니다.<br>
+                        function: 이벤트가 발생했을 때 실행할 함수를 나타냅니다. 이 함수는 이벤트가 발생할 때 호출됩니다.<br><br>
+                        
+                        <b>() => {} 화살표 함수(arrow function)</b><br>
+                        여기서 ()는 함수의 매개변수 목록을 나타내며, 위의 예제에서는 비어있는 매개변수 목록을 가지고 있습니다. 즉, 인자를 받지 않는 함수를 나타냅니다.
+                        {} 내부에는 함수의 본문이 들어갑니다. 이 부분에 실제로 함수가 수행할 작업을 작성합니다.<br><br>
+                        
+                        <b>.value</b><br>
+                        .value는 HTML 요소의 속성(attribute) 중 하나입니다. 이 속성은 주로 사용자가 입력한 내용을 나타내는 값을 가져오거나 설정하는 데 사용됩니다.value 속성은 사용자가 입력 필드에 입력한 값을 문자열로 반환합니다. 사용자가 입력한 내용이 숫자, 텍스트, 또는 다른 형식이든 상관없이 해당 값을 가져올 수 있습니다.value 속성은 다양한 HTML 요소에서 사용될 수 있으며, 특히 입력 필드(input field) 요소 (예: 텍스트 입력 필드, 비밀번호 입력 필드, 라디오 버튼, 체크박스 등)에서 주로 사용됩니다.value 속성은 사용자가 입력 필드에 입력한 값을 문자열로 반환합니다. 사용자가 입력한 내용이 숫자, 텍스트, 또는 다른 형식이든 상관없이 해당 값을 가져올 수 있습니다.
+
+
+
+                    </p>
+                </div>
+                <!-- //sample01 -->
+            </script> -->

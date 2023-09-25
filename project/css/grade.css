@@ -3,6 +3,7 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    height: 100vh;
 }
 .quiz__wrap {
 
@@ -70,6 +71,8 @@ body {
 .overlay-container {
     position: relative;
     display: inline-block;
+    text-decoration: none;
+    color: #000;
 }
 .overlay-text {
     position: absolute;
