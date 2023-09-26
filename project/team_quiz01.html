@@ -164,20 +164,22 @@
                     } else if(currentIndex => quizInfo.length) {
                         alert("모든 문제를 풀었습니다.");
                         console.log(totalScore);
-                        window.location.href = "grade.html";
+                        if (totalScore >= 100) {
+                            window.location.href = "grade1.html";
+                        } else if (totalScore >= 70) {
+                            window.location.href = "grade2.html";
+                        } else if (totalScore >= 40) {
+                            window.location.href = "grade3.html";
+                        } else if (totalScore >= 0) {
+                            window.location.href = "grade4.html";
+                        }
                     };
                 });
             });
-            
         };
-            // 데이터 받아오기
-            // 그리고 등급 페이지 보내기
-         
-            
-
+        
         document.addEventListener("DOMContentLoaded", () => {
             updateQuiz(currentIndex);   
-            
         });
     </script>
 </body>
