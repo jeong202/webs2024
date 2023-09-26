@@ -70,17 +70,20 @@ a {
 }
 
 body {
-    background-image: url(../img/bg01.jpg);
+    background-image: url(../img/bg02.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
 }
+body.fixed {
+    background-attachment: fixed;
+}
 body::after {
     content: '';
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.3);
     position: absolute;
     left: 0;
     top: 0;
@@ -145,7 +148,7 @@ body::after {
     background-color: #fff;
     padding: 40px 30px;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
     margin: 10px;
 }
 .quiz__wrap > .quiz.good {
@@ -191,7 +194,7 @@ body::after {
 }
 .quiz__header {
     margin-bottom: 20px;
-    color: #5364e0;
+    color: #696969;
 }
 .quiz__date {
     display: inline-block;
@@ -201,6 +204,7 @@ body::after {
 .quiz__type {
     color: #696969;
 }
+.quiz__main {}
 .quiz__question {
     margin-bottom: 20px;
     font-size: 24px;
@@ -210,6 +214,7 @@ body::after {
 .quiz__question em {
     font-size: 24px;
     font-style: normal;
+    font-weight: 400;
 }
 .quiz__question span {
     font-size: 24px;
@@ -344,7 +349,7 @@ body::after {
 }
 
 .quiz__animation {
-    border: 1px dashed rgb(98, 89, 131);
+    border: 1px dashed #b8a8ff;
     margin-bottom: 10px;
 }
 .quiz__input {
@@ -353,19 +358,19 @@ body::after {
 .quiz__input input {
     width: 100%;
     padding: 20px;
-    border: 1px solid rgb(98, 89, 131);
+    border: 1px solid #b8a8ff;
     border-radius: 3px;
 }
 .quiz__answer {
-    background-color: #dedef5;
-    border: 1px solid rgb(98, 89, 131);
+    background-color: #f5f2ff;
+    border: 1px solid #e0d9ff;
     padding: 20px;
     margin-bottom: 10px;
     line-height: 1.5;
     color: #666;
 }
 .quiz__answer::before {
-    content: "💙 정답 : ";
+    content: "�Ⅹ �뺣떟 : ";
 }
 .quiz__desc {
     border: 1px solid #eaeaea;
@@ -375,10 +380,12 @@ body::after {
     color: #666;
 }
 .quiz__desc::before {
-    content: "💙 설명 : ";
+    content: "�Ⅳ �ㅻ챸 : ";
 }
+.quiz__footer {}
+
 .quiz__confirm {
-    background-color: rgb(98, 89, 131);
+    background-color: #412E91;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -397,11 +404,11 @@ body::after {
 }
 .quiz__next {
     width: 100%;
-    border: 1px dashed rgb(98, 89, 131);
+    border: 1px dashed #412E91;
     padding: 15px 20px;
     background-color: #fff;
     cursor: pointer;
-    color: rgb(98, 89, 131);
+    color: #412E91;
     transition: all 0.3s;
 }
 .quiz__next:hover {
@@ -417,11 +424,11 @@ body::after {
     display: inline-block;
     width: 20px;
     height: 20px;
-    border: 1px solid rgb(98, 89, 131);
-    box-shadow: 1px 1px rgb(98, 89, 131);
+    border: 1px solid #412E91;
+    box-shadow: 1px 1px #412E91;
 }
 .quiz__indicator span.correct {
-    background-color: rgb(98, 89, 131);
+    background-color: #412E91;
     position: relative;
 }
 .quiz__indicator span.correct::before {
@@ -445,7 +452,7 @@ body::after {
     width: 14px;
     height: 4px;
     border-radius: 4px;
-    background-color: rgb(98, 89, 131);
+    background-color: #412E91;
     transform: rotate(-45deg);
 }
 .quiz__indicator span.incorrect::after {
@@ -456,9 +463,8 @@ body::after {
     width: 14px;
     height: 4px;
     border-radius: 4px;
-    background-color: rgb(98, 89, 131);
+    background-color: #412E91;
     transform: rotate(45deg);
-
 }
 .quiz__check {
     position: fixed;
@@ -467,18 +473,18 @@ body::after {
     width: 100px;
     height: 100px;
     line-height: 100px;
-    background-color: rgb(98, 89, 131);
-    color:#fff;
+    background-color: #412E91;
+    color: #fff;
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s;
-    border: 1px dashed rgb(98, 89, 131);
+    border: 1px dashed transparent;
 }
 .quiz__check:hover {
-    background-color: rgb(222, 219, 233);
-    border: 1px dashed rgb(98, 89, 131);
-    color: rgb(98, 89, 131);
+    background-color: #e1d9ff;
+    border: 1px dashed #412E91;
+    color: #412E91;
 }
 
 /* footer */
@@ -513,15 +519,16 @@ body::after {
         padding: 7px;
     }
     .quiz__wrap {
-        padding: 0 16px;
+        padding: 0 6px;
         margin-top: 0;
     }
     .quiz__wrap > .quiz {
         width: 100%;
-        padding: 20px;
+        padding: 30px 20px;
     }
     .quiz__header {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 14px;
     }
     .quiz__date {
         font-size: 14px;
@@ -530,7 +537,7 @@ body::after {
         font-size: 14px;
     }
     .quiz__question {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         line-height: 1.5;
         font-size: 20px;
     }
@@ -552,210 +559,143 @@ body::after {
     .quiz__choice label span {
         padding: 13px;
     }
+    .quiz__confirm {
+        padding: 13px;
+    }
 }
-/* modal__wrap */
-.modal__btn {
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    display: inline-block;
-    padding: 10px 20px;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    cursor: pointer;
-}
-.modal__cont {
+
+/* cbt */
+.cbt__box {
     width: 100%;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.7);
-    position: fixed;
-    left: 0;
-    top: 0;
-    overflow-x: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    transform: scale(0);
-}
-.modal__box {
-    width: 70%;
+    max-width: 600px;
+    background-color: #fff;
     border-radius: 10px;
-    background-color: #ccc;
-    transform: scale(0);
-}
-.modal__box .title {
-    padding: 1rem;
-    background-color: #1b1c2e;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    height: 50px;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-}
-.modal__box .title .dot {
-    width: 15px;
-    height: 15px;
-    background-color: #3b3d63;
-    display: inline-block;
-    border-radius: 50%;
-    position: relative;
-    margin-left: 2rem;
-}
-.modal__box .title .dot::before {
-    content: '';
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 10%);
     position: absolute;
-    left: 25px;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    background-color: #3b3d63;
-    border-radius: 50%;
-}
-.modal__box .title .dot::after {
-    content: '';
-    position: absolute;
-    right: 25px;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    background-color: #3b3d63;
-    border-radius: 50%;
-}
-
-
-.modal__box .title .tabs {
-    display: flex;
-    margin-left: 50px;
-}
-.modal__box .title .tabs > div {
-    color: #7a7d9d;
-    background-color: #282936;
-    padding: 0.35rem 0.8rem 0.25rem 0.8rem;
-    margin-right: 0.5rem;
-    display: flex;
-    align-items: center;
-    border-radius: 0.4rem;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-.modal__box .title .tabs > div.active {
-    background-color: #1f224a;
-}
-.modal__box .title .tabs > div em {
-    font-style: normal;
-}
-.modal__box .title .tabs > div .favicon {
-    margin-right: 0.4rem;
-    margin-top: 0.2rem;
-}
-.modal__box .title .tabs > div .close {
-    margin-left: 3rem;
-    margin-top: 0.2rem;
-}
-.modal__box .cont {
-    background-color: #282936;
-    height: 100%;
-    overflow-y: auto;
-    box-sizing: border-box;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-}
-.modal__box .cont > div {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    text-align: center;
     display: none;
 }
-.modal__box .cont > div.active {
-    display: block;
-    height: 100%;
+.cbt__box h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
 }
-.modal__close {
+.cbt__box select {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.cbt__box p {
+    font-size: 20px;
+    line-height: 2;
+    text-align: center;
+    margin-top: 20px;
+}
+.cbt__box p i {
+    font-size: 16px;
+    color: #666;
+    font-style: normal;
+}
+.cbt__box em {
+    font-style: normal;
+    font-size: 20px;
+    position: relative;
+}
+.cbt__box em::before {
+    content: '';
+    width: 100%;
+    height: 50%;
+    background-color: #eeeaff;
     position: absolute;
-    right: 20px;
-    top: 20px;
-    background-color: #ffffff;
-    padding: 1rem 1rem 0.8rem 1rem;
-    border-radius: 5px;
+    left: 0; 
+    bottom: 0;
+    z-index: -1;
+}
+.cbt__box input {
+    border: 1px solid #9378ff;
+    padding: 10px 20px;
+    border-radius: 40px;
+}
+.cbt__box button {
+    display: inline-block;
+    border: 1px solid #9378ff;
+    background-color: #eeeaff;
+    padding: 20px 40px;
+    border-radius: 40px;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
     cursor: pointer;
-    transition: all 0.3s;
-    opacity: 0;
-}
-.modal__close:hover {
-    background-color: #b9bdff;
 }
 
-@media (max-width: 1100px){
-    .modal__box .title {
-        overflow: hidden;
-    }
-    .modal__box .title .dot {
-        display: none;
-    }
-    .modal__box .title .tabs {
-        margin-left: 0;
-    }
-    .modal__box .title .tabs > div .close {
-        display: none;
-    }
+.cbt__wrap {
+    padding: 20px;
 }
-@media (max-width: 800px){
-    #header {
-        width: 100%;
-        text-align: center;
-    }
-    #header h1 {
-        line-height: 1.4;
-    }
-    .modal__box {
-        width: 96%;
-    }
+.cbt__header {
+    position: fixed;
+    left: 20px;
+    top: 80px;
+    z-index: 1000;
+    width: calc(100% - 370px);
+    height: 80px;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #e2e2e2;
 }
-
-/* 모달 애니메이션 */
-.modal__cont.show {
-    animation: foldOut 1s ease forwards;
+.cbt__title {
+    font-size: 28px;
 }
-.modal__cont.show .modal__box {
-    animation: zoomOut 0.5s 1s ease forwards;
+.cbt__info {
+    display: flex;
 }
-.modal__cont.show .modal__close {
-    animation: opacityOut 0.5s 1.5s ease forwards;
+.cbt__time {
+    background-color: #412E91;
+    color: #fff;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 40px;
+    cursor: pointer;
 }
-
-.modal__cont.show.hide {
-    animation: foldIn 0.3s 0.5s ease backwards;
+.cbt__conts {
+    width: calc(100% - 330px);
+    height: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px ;
 }
-.modal__cont.show.hide .modal__box {
-    animation: zoomIn 0.5s ease forwards;
+.cbt__aside {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
 }
-.modal__cont.show.hide .modal__close {
-    animation: opacityIn 0.5s ease forwards;
+.cbt__name {
+    background-color: #412E91;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-align: center;
+    margin-bottom: 10px;
 }
-
-@keyframes foldOut {
-    0% {transform: scaleX(0.0001) scaleY(1);}
-    50% {transform: scaleX(0.0001) scaleY(1);}
-    100% {transform: scaleX(1) scaleY(1);}
-}
-@keyframes foldIn {
-    0% {transform: scaleX(1) scaleY(1);}
-    50% {transform: scaleX(0.0001) scaleY(1);}
-    100% {transform: scaleX(0.0001) scaleY(1);}
-}
-@keyframes zoomOut {
-    0% {transform: scale(0);}
-    100% {transform: scale(1);}
-}
-@keyframes zoomIn {
-    0% {transform: scale(1);}
-    100% {transform: scale(0);}
-}
-@keyframes opacityOut {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-@keyframes opacityIn {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+.cbt__submit {
+    background-color: #412E91;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
 }

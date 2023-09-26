@@ -15,6 +15,7 @@
 #skip a:focus {
     left: 0;
 }
+
 /* bg */
 .gray {
     background-color: var(--primary-color);
@@ -39,18 +40,24 @@
     border-radius: 50%;
     overflow: hidden;
 }
+.intro__img.main {
+    max-width: 500px;
+    height: 300px;
+    border-radius: 250px;
+}
 .intro__text {
     font-size: 1.4rem;
-    padding: 5% 20% 0% 20%;
+    padding: 5% 20% 0 20%;
     word-break: keep-all;
     font-weight: 300;
 }
-@media(max-width: 800px){
+
+@media (max-width: 800px){
     .intro__inner {
         padding: 50px 0;
     }
     .intro__text {
-        padding: 5% 10% 0% 10%;
+        padding: 5% 10% 0 10%;
     }
     .intro__img {
         max-width: 200px;
@@ -86,6 +93,7 @@
     top: -8px;
     background-color: var(--black);
 }
+
 /* input__style : 회원가입 input */
 .input__style {
     width: 100%;
@@ -97,8 +105,8 @@
     font-size: 1.2rem;
 }
 
-/* btn__Style */
-.btn__Style {
+/* btn__style */
+.btn__style {
     display: block;
     background-color: var(--black);
     color: var(--white);
@@ -108,16 +116,19 @@
     margin: 0 auto;
     cursor: pointer;
 }
+
 /* required */
 .required::after {
     content: ' *';
     color: #ff0000;
 }
+
 /* main */
 #main {
     min-height: 100vh;
 }
-/* #footer */
+
+/* footer */
 #footer {
     text-align: center;
 }
@@ -131,14 +142,14 @@
 }
 
 /* 마진 간격 */
-.mt0 {margin-top: 0px !important;}
-.mt10 {margin-top: 10px !important;}
-.mt20 {margin-top: 20px !important;}
-.mt30 {margin-top: 30px !important;}
-.mt40 {margin-top: 40px !important;}
-.mt50 {margin-top: 50px !important;}
-.mt60 {margin-top: 60px !important;}
-.mt70 {margin-top: 70px !important;}
-.mt80 {margin-top: 80px !important;}
-.mt90 {margin-top: 90px !important;}
+.mt0   {margin-top: 0px !important;}
+.mt10  {margin-top: 10px !important;}
+.mt20  {margin-top: 20px !important;}
+.mt30  {margin-top: 30px !important;}
+.mt40  {margin-top: 40px !important;}
+.mt50  {margin-top: 50px !important;}
+.mt60  {margin-top: 60px !important;}
+.mt70  {margin-top: 70px !important;}
+.mt80  {margin-top: 80px !important;}
+.mt90  {margin-top: 90px !important;}
 .mt100 {margin-top: 100px !important;}

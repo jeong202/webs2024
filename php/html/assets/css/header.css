@@ -9,7 +9,8 @@
     background-color: var(--black);
     position: absolute;
     left: 0;
-    
+    top: 49%;
+    z-index: 1;
 }
 .header__inner .left {
     position: absolute;
@@ -25,6 +26,7 @@
     border-radius: 40px;
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='11' viewBox='0 0 12 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 0L7.34708 4.1459H11.7063L8.17963 6.7082L9.52671 10.8541L6 8.2918L2.47329 10.8541L3.82037 6.7082L0.293661 4.1459H4.65292L6 0Z' fill='black'/%3E%3C/svg%3E");
     background-position: center;
+    background-color: var(--primary-color);
     transition: transform 1s;
 }
 .header__inner .left a:hover {
@@ -32,15 +34,16 @@
 }
 .header__inner .logo {
     text-align: center;
-    padding: 1rem;
-    font-size: 1.25rem;
-    background-color: var(--primary-color);
 }
 .header__inner .logo a {
     font-size: 1.25rem;
     font-weight: 900;
     font-family: var(--main-gmark);
     background-color: var(--primary-color);
+    padding: 1rem;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
 }
 .header__inner .right {
     position: absolute;
@@ -56,6 +59,7 @@
     border: 1px solid var(--black);
     padding: 4px 12px;
     border-radius: 30px;
+    background-color: var(--primary-color);
 }
 .header__inner .right li a:hover {
     background-color: var(--black);
@@ -83,9 +87,9 @@
     color: var(--white);
 }
 
-@media(max-width: 800px) {
+@media (max-width: 800px){
     .nav__inner {
-        top: 47px;
+        top: 46px;
     }
     .header__inner .left {
         display: none;
