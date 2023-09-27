@@ -9,9 +9,16 @@
             <a href="../main/main.php">Jeong Blog</a>
         </div>
         <div class="right">
+            <?php if(isset($_SESSION['memberID'])){ ?>
             <ul>
-                <li><a href="../join/join.php">회원가입</a></li>
+                <li><a href="#"><?=$_SESSION['youName']?>님 환영합니다</a></li>
+                <li><a href="../login/logout.php">로그아웃</a></li>
             </ul>
+            <?php } else { ?>
+                <ul>
+                    <li><a href="../join/join.php">회원가입</a></li>
+                </ul>
+            <?php } ?>
         </div>
     </div>
     <nav class="nav__inner">
