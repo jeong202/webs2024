@@ -126,3 +126,34 @@ body {
     position: absolute;
     bottom: -40px;
 }
+
+@media (max-width: 850px) {
+    #wrap {
+        width: 90vw;
+    }
+    #header {
+        width: 90%;
+        position: relative;
+    }
+    .test_name {
+        position: absolute;
+        width: 80vw;
+        left: 50px;
+        font-size: 40px;
+        bottom: 10px;
+    }
+}
+@media (max-width: 460px) {
+    #header {
+        width: 90%;
+        position: relative;
+    }
+    .test_name {
+        position: absolute;
+        width: 80vw;
+        left: 50px;
+        font-size: 30px;
+        bottom: 10px;
+    }
+}
+

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀 퀴즈 프로젝트 Q.01</title>
+    <link rel="stylesheet" href="assets/css/quiz.css" />
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <main id="line_main">
+        <div class="quiz_wrap">
+            <!-- <div class="quiz01">
+                <div class="quiz01_header">
+                    <div class="quiz_num"> 1/10</div>
+                    <div class="question">
+                        <h1>Q1. 다음 중 'OO논쟁' 시리즈에 해당되는 것이 아닌 것은?</h1>
+                        <div class="img">
+                            <img src="assets/img/quiz01.jpg" alt="퀴즈01이미지">
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz01_choice">
+                    <label for="choice1">
+                        <input type="radio" id="choice1" name="choice" value="1">
+                        <span></span>
+                    </label>
+                    <label for="choice2">
+                        <input type="radio" id="choice2" name="choice" value="2">
+                        <span></span>
+                    </label>
+                    <label for="choice3">
+                        <input type="radio" id="choice3" name="choice" value="3">
+                        <span></span>
+                    </label>
+                    <label for="choice4">
+                        <input type="radio" id="choice4" name="choice" value="4">
+                        <span></span>
+                    </label>
+                </div>
+            </div> -->
+        </div>
+    </main>
+
+    <script>
+        const quizWrap = document.querySelector(".quiz_wrap");
+
+        const quizInfo = [
+            {
+                question: "아이돌 그룹 세 팀을 묶어서 부르는 [즈즈즈]에 해당하지 않는 그룹은?",
+                choice: ["스트레이키즈", "에이티즈", "마스터즈", "더보이즈"],
+                answer: "3",
+                desc:"프로그램 '킹덤: 레전더리 워'에서 1위를 차지한 스트레이키즈와 2위 더보이즈 그리고 3위 에이티즈를 묶어서 부르는 팬들의 애칭이다."
+            },
+            {
+                question: "MZ세대가 묶어 부르는 [네카라쿠배당토]에 포함되는 회사는?",
+                choice: ["네이처리퍼블릭", "라이엇게임즈", "당근마켓", "토마토저축은행"],
+                answer: "3",
+                desc:"네이버, 카카오, 라인플러스, 쿠팡, 배달의 민족, 당근마켓, 토스를 말하는 단어입니다."
+            },
+            {
+                question: "열심히 사는 삶을 뜻하는 MZ세대 신조어로 옳은 것을 고르시오",
+                choice: ["갓생", "소확생", "힙생", "찐생"],
+                answer: "1",
+                desc:"부지런하고 타의 모범이 되는 삶을 뜻하는 신조어입니다"
+            },
+            {
+                question: "MZ세대 언어 중 칭찬의 의미로 해석하기 어려운 것을 고르시오",
+                choice: ["노답이다", "혼쭐내자", "뿌셨다", "미쳤다"],
+                answer: "1",
+                desc:"'답이 없다'는 뜻으로, 어떤 상황에서 해결 방법이 없거나 어떤 사람의 행동이 변변치 않음을 이르는 말."
+            },
+            {
+                question: "다음 중 화가 났을 때 사용하는 밈 (Meme)과 관련이 없는 것은?",
+                choice: ["kg받네", "군싹", "킹받드라슈", "쫑받네"],
+                answer: "2",
+                desc:"군싹은 군침이 싹 돌 만큼 맛있거나 좋아보이는 것을 수식하는 말입니다"
+            },
+            {
+                question: "다음 중 '가게가 농협은행'의 뜻으로 올바른 것은?",
+                choice: ["가게가 농협은행 안에 있다.", "가게 인테리어가 예쁘다.", "가게가 농협은행처럼 시원하다.", "가게 이름이 농협은행이다."],
+                answer: "2",
+                desc:"외국인이 농협은행이 어디있는지 길을 묻는 과정에서 너무 예쁘네요라고 오해했고 이후 너무 예쁘다는 밈으로 사용되고 있습니다"
+            },
+            {
+                question: "다음 중 '어쩔티비'에 대응하는 방법으로 알맞은 것은?",
+                choice: ["안물안궁~ 안물티비~ 안궁티비~ 뇌절티비~", "시원하게 욕을 한바가지 한다", "킹정하는 부분.", "한심하단 듯 쳐다보며 아무 대답도 하지 않고 무시한다"],
+                answer: "1",
+                desc:"상대방이 이야기하는 것을 차단함과 동시에 더 이상 듣기 싫다는 의미는 물론 조롱의 의미도 함께 담고 있다."
+            },
+            {
+                question: "얌미하움의 뜻으로 올바른 것을 고르시오?",
+                choice: ["연남동 신상 도넛 맛집 이름", "맛있는 것을 먹었을 때의 감탄사", "상대방의 말이 지루할 때 하는 하품", "인플루언서 반려묘 유튜브 채널명"],
+                answer: "2",
+                desc:"맛있는 음식을 먹기 전 '잘 먹겠습니다'의 의미로 하는 일종의 감사 인사"
+            },
+            {
+                question: "'여행 바로 캘박해버리자'의 뜻으로 올바른 것을 고르지오?",
+                choice: ["여행 예산을 짜자.", "캘리포니아에서 1박 하자.", "각자 스케줄에 추가하자.", "여행을 몇박 며칠로 갈지 정하자."],
+                answer: "3",
+                desc:"캘린더 박제의 줄임말로 일정을 캘린더에 저장할때 쓰이는 용어입니다"
+            },
+            {
+                question: "스불재의 뜻으로 옳은 것을 고르시오",
+                choice: ["스스로 불러온 재미", "스스로 불러온 재앙", "스스로 불러온 재주", "스스로 불러온 재수"],
+                answer: "2",
+                desc:"본인 스스로의 행동 때문에 부정적인 결과가 발생핼을 때 사용되는 용어입니다"
+            }
+        ];
+
+        let currentIndex = 0;
+        let totalScore = 0;
+
+        const updateQuiz = (index) => {
+            let quizWrapTag = `<div class="quiz01">
+                <div class="quiz01_header">
+                    <div class="quiz_num"> ${index + 1}/10</div>
+                    <div class="question">
+                        <h1>Q${index + 1}. ${quizInfo[index].question}</h1>
+                        <div class="img">
+                            <img src="assets/img/quiz${index+1}.jpg" alt="퀴즈01이미지">
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz01_choice">
+                    <label for="choice1-${quizInfo[index].choice[0]}">
+                        <input type="radio" id="choice1-${quizInfo[index].choice[0]}" name="choice" value="1">
+                        <span>${quizInfo[index].choice[0]}</span>
+                    </label>
+                    <label for="choice2-${quizInfo[index].choice[1]}">
+                        <input type="radio" id="choice2-${quizInfo[index].choice[1]}" name="choice" value="2">
+                        <span>${quizInfo[index].choice[1]}</span>
+                    </label>
+                    <label for="choice3-${quizInfo[index].choice[2]}">
+                        <input type="radio" id="choice3-${quizInfo[index].choice[2]}" name="choice" value="3">
+                        <span>${quizInfo[index].choice[2]}</span>
+                    </label>
+                    <label for="choice4-${quizInfo[index].choice[3]}">
+                        <input type="radio" id="choice4-${quizInfo[index].choice[3]}" name="choice" value="4">
+                        <span>${quizInfo[index].choice[3]}</span>
+                    </label>
+                </div>
+            </div>`;
+            quizWrap.innerHTML = quizWrapTag;
+            
+            // 인풋 값이 네 개이기 때문에 각 버튼마다 클릭이벤트를 적용시켜주어야 한다.
+            // 버튼눌러서 정답 확인
+            const buttons = quizWrap.querySelectorAll(".quiz01_choice input");
+            buttons.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const selectedChoice = quizWrap.querySelectorAll("input[name='choice']:checked");
+
+                    if (selectedChoice.length > 0) {
+                        const userAnswer = selectedChoice[0].value;
+                    };
+                    // 다음 문제 넘어가기 
+                    currentIndex++;
+                    if(currentIndex < quizInfo.length){
+                        updateQuiz(currentIndex);
+                    } else if(currentIndex => quizInfo.length) {
+                        alert("모든 문제를 풀었습니다.");
+                        
+                        // 한번 더 변수에 저장해서 가져와야 함 
+                        const userScore = totalScore;
+
+
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const score = urlParams.set('userScore', userScore);
+                        // age와 name 매개변수 값을 추출합니다.
+                        const age = urlParams.get('age');
+                        const name = urlParams.get('name');
+
+                        // 데이터를 활용하여 필요한 작업을 수행합니다.
+                        console.log(`나이대: ${age}`);
+                        console.log(`이름: ${name}`);
+
+                        // 세 번째 페이지로 이동하면서 URL 매개변수를 그대로 전달합니다.
+                        const thirdPageUrl = `grade.html?age=${age}&name=${name}&userScore=${userScore}`;
+                        window.location.href = thirdPageUrl;
+
+                    };
+                });
+            });
+            
+        };
+            // 데이터 받아오기
+            // 그리고 등급 페이지 보내기
+         
+            
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateQuiz(currentIndex);   
+            
+        });
+    </script>
+</body>
+
+</html>

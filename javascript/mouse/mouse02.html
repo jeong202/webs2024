@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트02</title>
+
+    <link rel="stylesheet" href="css/mouse.css">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        .mouse__wrap {
+            cursor: none;
+        }
+
+        .mouse__text {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .mouse__text p {
+            font-size: 2.4vw;
+            line-height: 1.9;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .mouse__text p span {
+            color: rgb(5, 250, 156);
+            border-bottom: 1px dashed rgb(5, 250, 156);
+            cursor: pointer;
+        }
+
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            z-index: 10001;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s;
+        }
+
+        .mouse__cursor2 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            z-index: 10000;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s;
+        }
+
+        .mouse__cursor.active {
+            transform: scale(0);
+        }
+
+        .mouse__cursor2.active {
+            transform: scale(5);
+            background-color: rgba(0, 85, 254, 0.3);
+        }
+    </style>
+</head>
+
+<body class="img06">
+    <header id="header">
+        <h1>Javascript Mouse Effect02</h1>
+        <p>마우스 이펙트 - 마우스 따라다니기(GSAP)</p>
+        <ul>
+            <li><a href="mouse01.html">1</a></li>
+            <li class="active"><a href="mouse02.html">2</a></li>
+            <li><a href="mouse03.html">3</a></li>
+            <li><a href="mouse04.html">4</a></li>
+            <li><a href="mouse05.html">5</a></li>
+            <li><a href="mouse06.html">6</a></li>
+        </ul>
+    </header>
+    <main id="main">
+        <div class="mouse__wrap">
+            <div class="mouse__cursor"></div>
+            <div class="mouse__cursor2"></div>
+            <div class="mouse__text">
+                <p>Believe you <span>can</span> and you're <span>halfway</span> there.</p>
+                <p>할 수 있다고 <span>믿으면</span> 이미 <span>절반은</span> 성취한 것이다.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // 선택자
+        const mouseCursor = document.querySelector(".mouse__cursor");
+        const mouseCursor2 = document.querySelector(".mouse__cursor2");
+
+        window.addEventListener("mousemove", (e) => {
+            // mouseCursor.style.left = e.pageX + "px";
+            // mouseCursor.style.top = e.pageY + "px";
+            // mouseCursor2.style.left = e.pageX + "px";
+            // mouseCursor2.style.top = e.pageY + "px";
+
+            gsap.to(mouseCursor, { duration: 0.3, left: e.pageX - 5, top: e.pageY - 5 });
+            gsap.to(mouseCursor2, { duration: 0.8, left: e.pageX - 20, top: e.pageY - 20 });
+        });
+
+        document.querySelectorAll(".mouse__text span").forEach(span => {
+            span.addEventListener("mouseenter", () => {
+                mouseCursor.classList.add("active");
+                mouseCursor2.classList.add("active");
+            })
+            span.addEventListener("mouseleave", () => {
+                mouseCursor.classList.remove("active");
+                mouseCursor2.classList.remove("active");
+            })
+        })
+    </script>
+</body>
+
+</html>

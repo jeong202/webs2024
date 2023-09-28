@@ -28,7 +28,7 @@
         <section class="join__inner container">
             <h2>회원가입</h2>
             <div class="join__form">
-                <form action="#" name="#" method="post">
+                <form action="joinSave.php" name="join" method="post">
                     <fieldset>
                         <legend class="blind">회원가입 영역</legend>
                         <div>
