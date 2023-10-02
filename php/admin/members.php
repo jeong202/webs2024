@@ -38,25 +38,25 @@
     $sql = "SELECT * FROM members";
     $result = $connect -> query($sql);
 
-    if($result){
-        $count = $result -> num_rows;
+        if($result){
+                $count = $result -> num_rows;
 
-        if($count > 0){
-            for($i=0; $i<$count; $i++){
-                $info = $result -> fetch_array(MYSQLI_ASSOC);
+                if($count > 0){
+                    for($i=0; $i<$count; $i++){
+                        $info = $result -> fetch_array(MYSQLI_ASSOC);
 
-                echo "<tr>";
-                echo "<td>".$info['memberID']."</td>";
-                echo "<td>".$info['youEmail']."</td>";
-                echo "<td>".$info['youName']."</td>";
-                echo "<td>".$info['youPass']."</td>";
-                echo "<td>".$info['youPhone']."</td>";
-                echo "<td>".date('Y-m-d', $info['regtime'])."</td>";
-                echo "</tr>";
+                        echo "<tr>";
+                        echo "<td>".$info['memberID']."</td>";
+                        echo "<td>".$info['youEmail']."</td>";
+                        echo "<td>".$info['youName']."</td>";
+                        echo "<td>".$info['youPass']."</td>";
+                        echo "<td>".$info['youPhone']."</td>";
+                        echo "<td>".date('y-m-d'), $info['regtime']."</td>";
+                        echo "</tr>";
+                    }
+                }
             }
-        }
-    }
-?>
+        ?>
                 </tbody>
             </table>
         </div>
