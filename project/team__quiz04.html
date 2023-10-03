@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀 퀴즈 프로젝트 Lv.4</title>
+    <link rel="stylesheet" href="assets/css/quiz.css" />
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <main id="line__main">
+        <div class="quiz__wrap">
+
+        </div>
+    </main>
+
+    <script>
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        const quizInfo = [
+            {
+                question: "디토합니다의 뜻으로 옳바른 것을 고르시오",
+                choice: ["나도 그렇게 생각해", "디토 릴스 찍자", "뉴진스를 좋아해", "디지게 토한다"],
+                answer: "1",
+                desc:"영어 me too 와 비슷한 의미로 상대방 의견이나 이야기에 동의한다는 뜻"
+            },
+            {
+                question: "다음 중 불소의 뜻으로 옳은 것을 고르시오",
+                choice: ["불타는 소통", "불로 소득", "불긴한 소문", "불안한 소식"],
+                answer: "1",
+                desc:"유튜브, 틱톡 같은 SNS 메신저나 댓글, 채팅창 등에서 활발한 대화를 통해 열심히 교류하고 소통하자는 의미입니다."
+            },
+            {
+                question: "다음 중 자낳괴의 뜻으로 옳은 것을 고르시오",
+                choice: ["자본이 낳은 괴생명체", "자식을 낳으면 괴로움", "자연이 낳은 괴이현상", "자본주의가 낳은 괴물"],
+                answer: "4",
+                desc:"자본주의(돈,물질)을 위해 본인의 철학이나 가치관, 명예, 자존심 등을 버리고 움직이는것을 말합니다."
+            },
+            {
+                question: "다음 중 런치플레이션의 뜻으로 옳은 것은?",
+                choice: ["점심을 거르겠다", "점심 메뉴를 정하다", "점심 어디서 먹을래?", "점심값이 비싸졌다"],
+                answer: "4",
+                desc:"점심(lunch)과 가격 급등(inflation)을 결합한 신조어로 미국에서 생겨났습니다."
+            },
+            {
+                question: "다음 중 궁사물사 중 '궁사'의 뜻으로 옳은 것을 고르시오",
+                choice: ["궁서체 사건", "궁금한 사람", "궁금한 사생활", "궁금해 사사건건"],
+                answer: "2",
+                desc:"궁금한 사람? 물어본 사람?을 줄여서 궁사물사로 사용한다."
+            },
+            {
+                question: "유튜버가 영상 중에 외치는 '좋댓구알' 말의 뜻은 무엇인가?",
+                choice: ["좋아요 댓가는 조개구이 알탕이에요", "좋아요 댓글 구독 알람설정", "좋기는 개뿔 댓글에 조개구이 알탕", "좋아 오늘은 댓츠 올라잇! 구하고 말 테다 알바"],
+                answer: "2",
+                desc:"유튜브 영상에서 영상을 보는 사람들에게 하는 말로 좋아요 댓글 구독 좋아요를 줄인 말이다"
+            },
+            {
+                question: "다음 중 '하남자 특'을 유행시킨 유투버를 고르시오",
+                choice: ["침착맨", "숏박스", "다나카상", "피식대학"],
+                answer: "1",
+                desc:"아주 남자다운 남자를 뜻하는 상남자에 반대되는 말로 속이 좁은 남자를 뜻하는 신조어입니다"
+            },
+            {
+                question: "다음 중 예상치 못한 어려운 일도 긍정적으로 보자는 의미의 신조어는?",
+                choice: ["오히려 좋아", "드가자!", "오케이 가자!", "아겨내!"],
+                answer: "1",
+                desc:"안 좋은 상황이 발생한 경우에 이를 좋다고 받아들이자는 맥락에서 사용되는 말이자 인터넷 밈의 일종이다."
+            },
+            {
+                question: "Z세대 MD가 기획해 큰 인기를 얻은 CU의 PB 제품으로, 상품의 절반 이상이 크림으로 채워진 이 제품의 이름은?",
+                choice: ["서울우유 크림빵", "연세우유 크림빵", "건국우유 크림빵", "매일우유 크림빵"],
+                answer: "2",
+                desc:"우유 생크림으로 시작해 초코 생크림 메론 생크림 옥수수 생크림 등 라인업이 더욱 다양해지고 있습니다."
+            },
+            {
+                question: "9년차 편의점 알바생 '하루'가 겪는 이야기를 유쾌하게 풀어 숏 드라마의 이름은?",
+                choice: ["편의점 공감", "편의점 고인물", "편의점 알바생", "편의점 라이브"],
+                answer: "2",
+                desc:"<편의점 고인물>은 편의점 알바생이거나 편의점에 가본 사람이라면 한 번쯤 경험했을 법한 내용으로 구성되어 있습니다."
+            }
+        ];
+
+        let currentIndex = 0;
+        let totalScore = 0;
+        let desc = [];
+        
+        const updateQuiz = (index) => {
+            let quizWrapTag = `<div class="quiz">
+                <div class="quiz__header">
+                    <div class="quiz__num">
+                         <div class="this__level">Lv:4</div> 
+                         <div class="this__round"><em>${index + 1}</em>/10</div>
+                    </div>
+                    <div class="question">
+                        <h1><em>Q${index + 1}.</em> ${quizInfo[index].question}</h1>
+                        <div class="img">
+                            <img src="assets/img/quiz${index+31}.jpg" alt="퀴즈01이미지">
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__choice">
+                    <label for="choice1-${quizInfo[index].choice[0]}">
+                        <input type="radio" id="choice1-${quizInfo[index].choice[0]}" name="choice" value="1">
+                        <span>${quizInfo[index].choice[0]}</span>
+                    </label>
+                    <label for="choice2-${quizInfo[index].choice[1]}">
+                        <input type="radio" id="choice2-${quizInfo[index].choice[1]}" name="choice" value="2">
+                        <span>${quizInfo[index].choice[1]}</span>
+                    </label>
+                    <label for="choice3-${quizInfo[index].choice[2]}">
+                        <input type="radio" id="choice3-${quizInfo[index].choice[2]}" name="choice" value="3">
+                        <span>${quizInfo[index].choice[2]}</span>
+                    </label>
+                    <label for="choice4-${quizInfo[index].choice[3]}">
+                        <input type="radio" id="choice4-${quizInfo[index].choice[3]}" name="choice" value="4">
+                        <span>${quizInfo[index].choice[3]}</span>
+                    </label>
+                </div>
+            </div>`;
+            quizWrap.innerHTML = quizWrapTag;
+            
+            // 인풋 값이 네 개이기 때문에 각 버튼마다 클릭이벤트를 적용시켜주어야 한다.
+            // 버튼눌러서 정답 확인
+            const userAnswers = [];
+            const buttons = quizWrap.querySelectorAll(".quiz__choice input");
+            buttons.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const selectedChoice = quizWrap.querySelectorAll("input[name='choice']:checked");
+
+                    if (selectedChoice.length > 0) {
+                        const userAnswer = selectedChoice[0].value;
+                        userAnswers[index] = userAnswer; // 사용자의 답변을 배열에 저장
+                        if(userAnswer == quizInfo[index].answer){
+                            
+                            totalScore += 10;
+                        } else {
+                            // 틀린 문제 설명을 배열에 추가(여러개일 수 있기 때문에 배열에 저장)
+                            desc.push(index + 1 + "번 : " +quizInfo[index].desc);
+                        };
+                    }
+                    // 다음 문제 넘어가기 
+                    currentIndex++;
+                    if(currentIndex < quizInfo.length){
+                        updateQuiz(currentIndex);
+                    } else if(currentIndex >= quizInfo.length) {
+                        alert("모든 문제를 풀었습니다.");
+                        
+                        // 한번 더 변수에 저장해서 가져와야 함 
+                        const userScore = totalScore;
+
+                        // URL 매개변수를 조작하기 위해 URLSearchParams를 사용
+                        const urlParams = new URLSearchParams(window.location.search);
+
+                        // 사용자의 틀린 문제 번호와 설명을 URL에 추가
+                        urlParams.set('userScore', totalScore);
+                        
+                        // 배열로 저장한 desc를 map()함수를 이용해서 URL 매개변수에 추가(url은 문자열로만 값을 저장하므로 배열 형태로 저장하면 문제 생김)
+                        urlParams.set('desc', desc.map(item => item).join(','));
+
+                        // age와 name 매개변수 값을 추출합니다.
+                        const age = urlParams.get('age');
+                        const name = urlParams.get('name');
+
+                        urlParams.set('age', age);
+                        urlParams.set('name', name);
+
+
+                        // 데이터를 활용하여 필요한 작업을 수행합니다.
+                        console.log(`나이대: ${age}`);
+                        console.log(`이름: ${name}`);
+
+                        // 다음 페이지로 이동하면서 URL 매개변수를 그대로 전달합니다.
+                        const nextPageUrl = `grade04.html?${urlParams.toString()}`;
+                        window.location.href = nextPageUrl;
+                    };
+                });
+            });
+        };            
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateQuiz(currentIndex);   
+            
+        });
+    </script>
+</body>
+
+</html>

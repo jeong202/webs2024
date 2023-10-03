@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀 퀴즈 프로젝트 Lv.5</title>
+    <link rel="stylesheet" href="assets/css/quiz.css" />
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <main id="line__main">
+        <div class="quiz__wrap">
+
+        </div>
+    </main>
+
+    <script>
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        const quizInfo = [
+            {
+                question: "다음 중 억텐의 반댓말로 옳은 것을 고르시오",
+                choice: ["텐텐", "썬텐", "빡텐", "찐텐"],
+                answer: "4",
+                desc:"억텐은 억지텐션. 찐텐은 진짜텐션을 의미합니다"
+            },
+            {
+                question: "다음 중 갑통알의 뜻으로 옳은 것을 고르시오",
+                choice: ["갑자기 통장을 보니 알바를 해야 할 것 같다", "갑자기 통증이 알통에", "갑오징어 통째로 먹으면 알라뷰", "갑자기 통통한 알이 가득한 알탕을 먹고싶다"],
+                answer: "1",
+                desc:"'갑자기 통장을 보니 알바(아르바이트)를 해야겠다'를 줄인 말이다."
+            },
+            {
+                question: "다음 중 '제당슈만'의 의미로 옳은 것을 고르시오",
+                choice: ["제일 제당 슈가 만세", "제가 당신을 꼭 슈퍼스타로 만들어 드릴게요.", "제가 당신과 슈퍼에서 만나도 될까요?", "제빵은 당연히 슈크림빵! 만들어볼까?"],
+                answer: "2",
+                desc:"팬들 사이에서 자기가 좋아하는 연예인을 응원하는 마음으로 사용되는 말입니다"
+            },
+            {
+                question: "다음 중 '제곧네'와 같은 뜻을 가진 신조어를 고르시오?",
+                choice: ["완내스", "니곧내", "냉무", "쟤같네"],
+                answer: "3",
+                desc:"제목이 곧 내용. 내용이 없다를 의미합니다"
+            },
+            {
+                question: "다음 중 '법블레스유'의 상황으로 맞는 것을 고르시오?",
+                choice: ["누군가 재채기를 했을 때", "동생이 화나게 했을 때", "노블리스 오블리제를 실천할 때", "친구가 취뽀했을때"],
+                answer: "2",
+                desc:"법 때문에 참는다는 의미입니다"
+            },
+            {
+                question: "MZ세대들이 사용하는'ㅈㅂㅈㅇ'의 뜻으로 옳은 것은?",
+                choice: ["제발좀요", "정보좀요", "장봐줘요", "전번좀요"],
+                answer: "2",
+                desc:"주로 게시글 작성자에게 정보를 달라는 뜻으로 ‘ㅈㅂㅈㅇ’를 덧글로 남긴다."
+            },
+            {
+                question: "다음 중 레게노의 의미로 옳은 것을 고르시오",
+                choice: ["레전드", "레바논", "레전드 오브 레전드", "레미제라블"],
+                answer: "1",
+                desc:"레게노는 레전드를 잘못 읽어 생겨난 밈입니다"
+            },
+            {
+                question: "다음 중 주불의 의미로 옳은 것을 고르시오?",
+                choice: ["주식으로 불로소득", "주술 불일치", "주어 불명확", "주소 불러"],
+                answer: "4",
+                desc:"택배보낼 주소 불러의 줄임말입니다."
+            },
+            {
+                question: "다음 중 완내스와 같은 뜻을 가진 신조어를 고르시오",
+                choice: ["스몸비", "사바사", "취저", "스라밸"],
+                answer: "3",
+                desc:"완내스는 완전 내 스타일의 줄임말 입니다, 취저는 취향저격'을 줄인 말로 취향을 저격당한 것처럼 어떤 것이 매우 마음에 들 때 사용하는 신조어입니다"
+            },
+            {
+                question: "다음 중 '알잘딱깔센' 줄임말 안에 포함되지 않은 단어는?",
+                choice: ["알맞게", "알아서", "깔끔하게", "센스있게"],
+                answer: "1",
+                desc:"알아서 잘하는 딱 깔끔하고 센스 있는 사람이라는 뜻의 신조입니다."
+            }
+        ];
+
+        let currentIndex = 0;
+        let totalScore = 0;
+        let desc = [];
+
+        const updateQuiz = (index) => {
+            let quizWrapTag = `<div class="quiz">
+                <div class="quiz__header">
+                    <div class="quiz__num">
+                         <div class="this__level">Lv:5</div> 
+                         <div class="this__round"><em>${index + 1}</em>/10</div>
+                    </div>
+                    <div class="question">
+                        <h1><em>Q${index + 1}.</em> ${quizInfo[index].question}</h1>
+                        <div class="img">
+                            <img src="assets/img/quiz${index+41}.jpg" alt="퀴즈01이미지">
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__choice">
+                    <label for="choice1-${quizInfo[index].choice[0]}">
+                        <input type="radio" id="choice1-${quizInfo[index].choice[0]}" name="choice" value="1">
+                        <span>${quizInfo[index].choice[0]}</span>
+                    </label>
+                    <label for="choice2-${quizInfo[index].choice[1]}">
+                        <input type="radio" id="choice2-${quizInfo[index].choice[1]}" name="choice" value="2">
+                        <span>${quizInfo[index].choice[1]}</span>
+                    </label>
+                    <label for="choice3-${quizInfo[index].choice[2]}">
+                        <input type="radio" id="choice3-${quizInfo[index].choice[2]}" name="choice" value="3">
+                        <span>${quizInfo[index].choice[2]}</span>
+                    </label>
+                    <label for="choice4-${quizInfo[index].choice[3]}">
+                        <input type="radio" id="choice4-${quizInfo[index].choice[3]}" name="choice" value="4">
+                        <span>${quizInfo[index].choice[3]}</span>
+                    </label>
+                </div>
+            </div>`;
+            quizWrap.innerHTML = quizWrapTag;
+            
+            // 인풋 값이 네 개이기 때문에 각 버튼마다 클릭이벤트를 적용시켜주어야 한다.
+            // 버튼눌러서 정답 확인
+            const userAnswers = [];
+            const buttons = quizWrap.querySelectorAll(".quiz__choice input");
+            buttons.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const selectedChoice = quizWrap.querySelectorAll("input[name='choice']:checked");
+
+                    if (selectedChoice.length > 0) {
+                        const userAnswer = selectedChoice[0].value;
+                        userAnswers[index] = userAnswer; // 사용자의 답변을 배열에 저장
+                        if(userAnswer == quizInfo[index].answer){
+                            
+                            totalScore += 10;
+                        } else {
+                            // 틀린 문제 설명을 배열에 추가(여러개일 수 있기 때문에 배열에 저장)
+                            desc.push(index + 1 + "번 : " +quizInfo[index].desc);
+                        };
+                    }
+                    // 다음 문제 넘어가기 
+                    currentIndex++;
+                    if(currentIndex < quizInfo.length){
+                        updateQuiz(currentIndex);
+                    } else if(currentIndex >= quizInfo.length) {
+                        alert("모든 문제를 풀었습니다.");
+                        
+                        // 한번 더 변수에 저장해서 가져와야 함 
+                        const userScore = totalScore;
+
+                        // URL 매개변수를 조작하기 위해 URLSearchParams를 사용
+                        const urlParams = new URLSearchParams(window.location.search);
+
+                        // 사용자의 틀린 문제 번호와 설명을 URL에 추가
+                        urlParams.set('userScore', totalScore);
+                        
+                        // 배열로 저장한 desc를 map()함수를 이용해서 URL 매개변수에 추가(url은 문자열로만 값을 저장하므로 배열 형태로 저장하면 문제 생김)
+                        urlParams.set('desc', desc.map(item => item).join(','));
+
+                        // age와 name 매개변수 값을 추출합니다.
+                        const age = urlParams.get('age');
+                        const name = urlParams.get('name');
+
+                        urlParams.set('age', age);
+                        urlParams.set('name', name);
+
+
+                        // 데이터를 활용하여 필요한 작업을 수행합니다.
+                        console.log(`나이대: ${age}`);
+                        console.log(`이름: ${name}`);
+
+                        // 다음 페이지로 이동하면서 URL 매개변수를 그대로 전달합니다.
+                        const nextPageUrl = `grade05.html?${urlParams.toString()}`;
+                        window.location.href = nextPageUrl;
+                    };
+                });
+            });
+        };           
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateQuiz(currentIndex);   
+            
+        });
+    </script>
+</body>
+
+</html>

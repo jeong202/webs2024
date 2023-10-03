@@ -33,7 +33,6 @@
 } 
 * {
     font-family: 'NanumMyeongjo';
-    
 }
 h1 {
     font-size: 30px;
@@ -54,10 +53,11 @@ body {
     margin: 0 auto;
     width: 100%;
     height: 100vh;
-    padding: 50px 50px 0 0;
+    padding: 50px 0 0 0;
     background-color: rgba(66, 66, 66, 0.136);
+    box-sizing: border-box;
 }
-#main .quiz_wrap {
+.quiz__wrap1 {
     background-image: url("../img/bgi.jpg");
     color: #000000;
     text-align: center;
@@ -69,21 +69,23 @@ body {
     background-color: rgba(66, 66, 66, 0.136);
     
 }
-.age_choice {
+.age__choice {
+    width: 100%;
+    height: 500px;
     flex-direction: column;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     margin: 0 auto;
 }
-.age_choice h1 {
+.age__choice h1 {
     font-size: 32px;
     padding-top: 30px;
 }
-.age_choice label {
+.age__choice label {
 
 }
-.age_choice label span {
+.age__choice label span {
     width: 690px;
     position: relative;
     border: 1px solid #d9d9d9;
@@ -101,7 +103,7 @@ body {
     transition: all 0.3s;
     cursor: pointer;
 }
-.age_choice label input {
+.age__choice label input {
     position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;
@@ -109,27 +111,29 @@ body {
     margin: -1px;
     overflow: hidden;
 }
-.age_choice label span:hover {
+.age__choice label span:hover {
     color: rgb(67, 67, 67);
     background-color: #b6b6b6;
 }
-.age_choice label input:checked + span::before {
+.age__choice label input:checked + span::before {
     box-shadow: inset 0 0 0 9px #9f9f9f;
 }
-.age_choice label input:checked + span {
+.age__choice label input:checked + span {
     border-color: #9f9f9f;
     color: rgb(0, 0, 0);
     box-shadow: 1px 1px 0px #505050;
     background-color: #9f9f9f;
 }
-.name_input {
+.name__input {
+    width: 100%;
+    height: 300px;
     flex-direction: column;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
 }
-.name_input input {
+.name__input input {
     width: 674px;
     height: 23px;
     line-height: 8px;
@@ -142,12 +146,12 @@ body {
     font-size: 29px;
     cursor: pointer;
 }
-.name_input span {
+.name__input span {
     padding: 10px;
     line-height: 10px;
     color: #8a8a8a;
 }
-.name_input .btn {
+.name__input .btn {
     padding: 0;
     margin: 0;
     width: 97%;
@@ -162,20 +166,54 @@ body {
     font-size: 27px;
     cursor: pointer;
 }
-​
-.name_input .btn:hover {
+.name__input .btn:hover {
     color: #000000;
     background-color: #9f9f9f;
 }
+@media (max-width:800px) {
+    .quiz__wrap1 {
+        width: 90vw;
+        height: 90vh;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    .age__choice label span {
+        width: 70vw;
+        font-size: 22px;
+    }
+    .name__input span {
+        width: 67vw;
+        font-size: 12px;
+        align-items: center;
+    }
+    .name__input input {
+        width: 67vw;
+        font-size: 22px;
+        align-items: center;
+    }
+    
+    .name__input a {
+        width: 75vw;
+        font-size: 22px;
+        align-items: center;
+    }
 
-/*------------------------------------------ 01 ----------------------------------------*/
-#line_main {
+    .name__input .btn {
+        width: 77.5vw;
+        align-items: center;
+    }
+}
+
+/*------------------------------------------ 01~05 ----------------------------------------*/
+#line__main {
     width: 100%;
     height: 100vh;
-    padding: 50px 50px 0 0;
+    padding: 50px 0 0 0;
     background-color: rgba(66, 66, 66, 0.136);
+    box-sizing: border-box;
 }
-.quiz_wrap {
+.quiz__wrap {
     height: 800px;
     max-width: 750px;
     max-height: 800px;
@@ -185,44 +223,77 @@ body {
     box-shadow: 1px 1px 0px #a2a2a2;
     
 }
-.quiz01_header {
-    padding: 50px;
+.quiz__header {
+    padding: 30px;
     width: 100%;
-    height: 490px;
+    height: 550px;
     box-sizing: border-box;
     position: relative;
     
 }
-.quiz_num {
-    width: 60px;
-    height: 29px;
-    line-height: 31px;
-    font-size: 18px;
+.quiz__num {
+    /* width: 150px;
+    font-size: 20px;
+    display: flex;
+    justify-content: ;
     font-weight: 800;
+    text-align: center; */
+    height: 25px;
+    display: flex;
+    color: #4a4a4a; 
+    font-size: 20px;
+    font-weight: 800;
+}
+.this__level {
+    width: 60px;
     text-align: center;
-    border: 1px solid #d9d9d9;
-    background-color: #d9d9d9;
-    color: #4a4a4a;
+    border: 1px solid #837d7d60;
+    background-color: #d9d9d9; 
+    box-shadow: 1px 1px 1px 0.1px #5a5a5a;
+    color: #8e2223;
 }
-.quiz01_header img {
-    position: absolute;
-    top: 250px;
-    left: 189px;
+.this__round {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #837d7d60;
+    background-color: #d9d9d9; 
+    box-shadow: 1px 1px 1px 0.1px #5a5a5a;
+    margin-left: 10px;
+    font-size: 19px;
 }
-.quiz01_header img {
-    width: 377px;
-    height: 250px;
+.this__round em {
+    font-style: normal;
+    color: #000000;
 }
-.quiz01_choice {
+.question .title {
+    height: 130px;
+}
+.question .img {
+    height: 395px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.question h1 {
+    font-size: 27px;
+    font-weight: 800;
+}
+.question h1 em {
+    color: #8e2223;
+    font-size: 30px;
+    font-style: normal;
+}
+.quiz__choice {
     display: grid;
     grid-template-areas: 
     "choice1 choice2"
     "choice3 choice4";
-    gap: 20px; /* 각 요소 사이의 간격 설정 */
-    margin: 50px auto 50px auto;  /* 가운데 정렬 */
-    padding: 20px; /* 선택사항: input 요소를 감싸는 배경의 안쪽 간격 설정 */
+    gap: 25px; /* 각 요소 사이의 간격 설정 */
+    padding: 20px 20px 60px 20px; /* 선택사항: input 요소를 감싸는 배경의 안쪽 간격 설정 */
+    height: 250px;
+    box-sizing: border-box;
 }
-.quiz01_choice label span {
+.quiz__choice label {
     width: 100%;
     display: flex;
     border: 1px solid #d9d9d9;
@@ -231,14 +302,15 @@ body {
     color: #4a4a4a;
     border-radius: 5px;
     justify-content: center;
-    font-size: 24px;
+    align-items: center;
+    font-size: 23px;
     font-weight: 700;
     line-height: 1.4;
     transition: all 0.3s;
     cursor: pointer;
-    padding: 18px 0 18px 0;
+    padding: 18px 0 14px 0;
 }
-.quiz01_choice label input {
+.quiz__choice label input {
     position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;
@@ -246,84 +318,60 @@ body {
     margin: -1px;
     overflow: hidden;
 }
-.quiz01_choice label:hover {
+.quiz__choice label:hover {
     color: rgb(67, 67, 67);
     background-color: #b6b6b6;
 }
-.quiz01_choice label input:checked + span::before {
+.quiz__choice label input:checked + span::before {
     box-shadow: inset 0 0 0 9px #9f9f9f;
 }
-.quiz01_choice label input:checked + span {
+.quiz__choice label input:checked + span {
     border-color: #9f9f9f;
     color: rgb(0, 0, 0);
     box-shadow: 1px 1px 0px #505050;
     background-color: #9f9f9f;
 }
 
+
 @media (max-width:800px) {
-    #main .quiz_wrap {
+    .quiz__wrap {
         width: 90%;
         height: 90vh;
+        background-image: url(../img/bgi.jpg);
     }
-    h1 {
-        font-size: 28px;
-    }
-    .age_choice h1 {
-        
-    }
-    .age_choice label span {
-        width: 70vw;
-        font-size: 22px;
-    }
-    .name_input span {
-        width: 67vw;
-        font-size: 12px;
-        align-items: center;
-    }
-    .name_input input {
-        width: 67vw;
-        font-size: 22px;
-        align-items: center;
-    }
-    .name_input .btn {
-        width: 77.5vw;
-        align-items: center;
-    }
-}
-@media (max-width:745px) {
-    #line_main .quiz_wrap {
-        width: 90%;
-        height: 90vh;
-    }
-    .quiz01_header > h1 {
-        font-size: 22px ;
+    .question h1 {
+        font-size: 24px ;
         line-height: 40px;
         word-wrap: break-word;
     }
-    .quiz01_header label span {
+    .question label span {
         width: 70vw;
         font-size: 22px;
     }
-    .quiz01_header img {
-        margin: 50px 0 0 85px;
-        width: 50vw;
+    .question img {
+        width: 60vw;
+    }
+    .quiz__choice label {
+        font-size: 20px;
     }
 }
 
 @media (max-width:540px){
-    .quiz01_header {
+    .quiz__header {
         padding: 30px;
     }
-    .quiz01_header img {
-        width: 70vw;
-        margin: 60px 0 0 10px;
+    .quiz__header img {
+        width: 80vw;
     }
-    .quiz01_header > h1 {
-        font-size: 22px;
+    .quiz__header > h1 {
+        font-size: 18px;
         line-height: 40px;
         word-wrap: break-word;
     }
-    .quiz01_choice {
+    .quiz__choice {
         margin: 0 auto;
+    }
+    .quiz__choice label {
+        font-size: 17px;
     }
 }

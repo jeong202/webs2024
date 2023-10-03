@@ -1,3 +1,6 @@
+* {
+    font-family: 'NanumMyeongjo';
+}
 body {
     background-image: url(../img/bgi.jpg);
     background-size: cover;
@@ -8,23 +11,34 @@ body {
 a {
     text-decoration: none;
     color: #000;
-    font-family: "NanumMyeongjo";
+}
+#grade {
+    width: 100%;
+    height: 100vh;
+    padding: 50px 0 0 0;
+    background-color: rgba(66, 66, 66, 0.136);
 }
 .quiz__wrap {
     margin: 0 auto;
-    padding: 0;
     background-image: url(../img/QRbg.png);
-    width: 100%;
-    max-width: 750px;
+    width: 750px;
     height: 800px;
     position: relative;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 0px #a2a2a2;
+}
+
+
+
+
+.quiz__header {
+    height: 200px;
 }
 .quiztitle {
-    font-family: "NanumMyeongjo";
     text-align: center;
     font-size: 50px;
     position: absolute;
-    top: -15px;
+    top: 26px;
     width: 100%;
 }
 
@@ -35,57 +49,85 @@ a {
 }
 .quiz__header1 {
     display: inline-block;
-    font-family: "NanumMyeongjo";
     font-size: 27px;
     position: absolute;
     top: 115px;
-    left: 170px;
+    left: 174px;
 }
 .name,
 .youname {
     display: inline-block;
     margin: 5px;
-    margin-top: 6px;
+    margin-top: 3px;
 }
 
 .quiz__header2{
     display: inline-block;
-    font-family: "NanumMyeongjo";
     font-size: 27px;
     position: absolute;
-    top: 108px;
-    right: 205px;
+    top: 110px;
+    right: 201px;
 }
 .age,
 .youage {
     display: inline-block;
-    margin: 12px;
-    margin-top: 13px;
+    margin: 5px;
+    margin-top: 8px;
 }
-.youage {
-    margin-left: 15px;
-}
+/*--------- quiz__header END ---------*/
+
+
+
 .quiz__main {
-    font-family: "NanumMyeongjo";
     display: flex;
-    position: absolute;
-    top: 200px;
+    height: 600px;
 }
-.quiz__main .grade{
-    margin: 20px 30px;
+.quiz__grade{
+    width: 50%;
+    box-sizing: border-box;
 }
-.quiz__main .grade .en {
+.en {
     font-size: 250px;
     color: #B24238;
-    margin-bottom: 50px;
+    margin: 0 20px 0 48px;
+    line-height: 320px;
 }
-.quiz__main .grade .num {
-    font-size: 50px;
-    margin-bottom: 50px;
+.box {
+    width: 100%;
+    height: 75px;
+    display: flex;
 }
-.overlay-container {
+.level {
+    width: 35%;
+    border: 2px solid #000;
+    background-color: #e9e8e8;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.num {
+    width: 65%;
+    border: 2px solid #000;
+    background-color: #e9e8e8;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.level em,
+.num em {
+    color: #8e2223;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+/* .overlay-container {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
     text-decoration: none;
 }
 .overlay-container a {
@@ -97,27 +139,74 @@ a {
 }
 .overlay-container a:hover {
     color: #f70000fb;
+} */
+
+.overlay-container {
+    position: relative;
+    display: inline-flex;
+    margin: 102px 0 0 16px;
+}
+.overlay-container img {
+    width: 150px;
+    height: 70px;
+    margin: 10px;
+}
+.overlay-container a {
+    position: absolute;
+    left: 54px;
+    top: 29px;
+    font-size: 18px;
+    font-weight: 800;
+}
+.overlay-container .btn__right a {
+    left: 221px;
+}
+.overlay-container a:hover {
+    color: #f70000fb;
+}
+.overlay-container .btn__right .special {
+    left: 234px;
+    top: 25px;
+    font-size: 25px;
+    color: #0019f7fb;
+}
+.overlay-container .btn__right .special:hover {
+    color: #f70000fb;
 }
 
-.quiz__main .desc {
-    font-size: 20px;
-    line-height: 2;
-    margin-top: 50px;
+
+.quiz__desc {
+    width: 50%;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    padding: 30px 10px 0 15px;
+    word-break: break-all;
 }
+.quiz__desc1 {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000;
+}
+.quiz__desc2 {
+    position: relative;
+    background-color: #e9e8e8;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 18px;
+}
+.quiz__desc2 em {
+    font-weight: 800;
+    font-size: 20px;
+    color: #5c1515;
+}
+/*--------- quiz__main END ---------*/
 
 /* 화면이 800px 이하일 때 */
 @media (max-width: 800px) {
     .quiz__wrap {
         width: 90vw;
-        height: 800px; 
+        height: 100vh; 
         background-image: url(../img/bgi.jpg);
-    }
-    .quiz {
-        align-items: center;
-        justify-content: center;
-        display: flex;
-       flex-direction: column;
-       align-items: center;
     }
     .quiz__header {
         width: 100%;
@@ -139,40 +228,58 @@ a {
         top: 115px;
         left: 10px;
     }
- 
     .quiz__header2{
-        top: 108px;
+        top: 115px;
         right: 10px;
     }
     .age,
     .youage {
         display: inline-block;
-        margin: 12px;
+        margin: 5px;
+        margin-top: 3px;
     }
     .quiz__main {
        max-width: 100%;
        max-height: 100%;
     }
 
-    .quiz__main .grade {
+    .grade {
         margin: 20px 0; /* 상단, 하단 여백 조절 */
     }
 
-    .quiz__main .grade .en {
+    .en {
         font-size: 150px; /* 폰트 크기 줄이기 */
         margin-bottom: 20px; /* 하단 여백 조절 */
     }
-
-    .quiz__main .grade .num {
-        font-size: 30px; /* 폰트 크기 줄이기 */
-        margin-bottom: 20px; /* 하단 여백 조절 */
+    .level {
+        font-size: 20px;
     }
-
-    .overlay-text {
-        font-size: 18px; /* 폰트 크기 줄이기 */
+    .num {
+        font-size: 20px; /* 폰트 크기 줄이기 */
     }
-
-    .quiz__main .desc {
+    .overlay-container {
+        margin: 75px 0 0 10px;
+        position: relative;
+    }
+    .overlay-container img {
+        
+        width: 121px;
+        height: 70px;
+        margin: 10px;
+    }
+    .overlay-container a {
+        position: absolute;
+        left: 40px;
+        top: 29px;
+    }
+    .overlay-container .btn__right a {
+        position: absolute;
+        left: 177px;
+    }
+    .overlay-container .btn__right .special {
+        left: 190px;
+    }
+    .quiz__desc {
         word-wrap: break-word;
         margin-left: 20px;
         font-size: 16px; /* 폰트 크기 줄이기 */
@@ -180,38 +287,108 @@ a {
         padding: 10px;
         border-left: 3px solid #000;
     }
+  
 }
 @media (max-width: 600px){
     .quiztitle {
-        text-align: center;
         font-size: 45px;
-        top: -5px;
     }
     .quiz__main {
         display: block;
     }
-
-    .quiz__main .grade .en {
+    .quiz__grade {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .en {
+        width: 100%;
         text-align: center;
-        font-size: 100px; /* 폰트 크기 줄이기 */
-        margin-bottom: 20px; /* 하단 여백 조절 */
+        font-size: 165px; /* 폰트 크기 줄이기 */
+        line-height: 195px;
+    }
+    .box {
+        width: 50%;
+    }
+    .overlay-container {
+        width: 50%;
+        padding: 0;
+        margin: 0;
+    }
+    .overlay-container img {
+        width: 80%;
+        position: relative;
+    }
+    .overlay-container a {
+        font-size: 14px;
+        height: 50%;
+        top: 31px;
+        left: 30px;
+    }
+    .overlay-container .btn__right a {
+        left: 154px;
+        display: block;
+    }
+    .overlay-container .btn__right .special {
+        left: 168px;
     }
 
-    .quiz__main .grade .num {
-        text-align: center;
-        font-size: 20px; /* 폰트 크기 줄이기 */
-        margin-bottom: 20px; /* 하단 여백 조절 */
+    .quiz__desc {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        border: none;
     }
-    .grade {
-        text-align: center;
+    .quiz__desc1 {
+        padding-left: 10px;
+        border-right: 2px solid #000;
+        border-bottom: none;
     }
-    .quiz__main .desc {
-        margin-left: 80px; 
+    .quiz__desc2 {
+        padding: 15px;
+        margin-right: 10px;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 550px) {
     .quiztitle {
         font-size: 34px;
     }
+    .box {
+        width: 100%;
+        height: 50%;
+        margin-bottom: 15px;
+    }
+    .level em,
+    .num em {
+        margin-bottom: 0;
+    }
+    .overlay-container a {
+        width: 100%;
+        height: 21px;
+        font-size: 14px;
+        top: -72px;
+        left: 13px;
+    }
+    a.overlay-text {
+        /* width: 26%;
+        border: 1px solid #000000;
+        text-align: center; */
+    }
+    .overlay-container .btn__right a {
+        display: inline-block;
+        left: 190px;
+    }
+    .overlay-container img {
+        display: none;
+    }
+    .quiz__desc1 {
+        background-color: #ecebeb;
+    }
+    .quiz__desc2 em {
+        font-size: 18px;
+        word-break: break-all;
+    }
+
 }

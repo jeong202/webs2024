@@ -109,13 +109,13 @@
         }
 
         .sliderWrap {
-            width: 400%;
+            width: 400%; /* 이미지1+이미지2+이미지3+클론의 너비 */
             height: 100%;
-            display: flex;
+            display: flex; /* 이미지 가로로 정렬 */
         }
 
         .sliderWrap .slider {
-            position: relative;
+            position: relative; /* .slider span의 기준점 */
             width: 100%;
             height: 100%;
             background-size: cover;
@@ -193,45 +193,45 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
         //JQ
-        $(function () {
-            let currentIndex = 0; //현재 이미지
-            $(".sliderWrap").append($(".slider").first().clone(true)); //첫번째 이미지를 복사해서 마지막에 추가
+        // $(function () {
+        //     let currentIndex = 0; //현재 이미지
+        //     $(".sliderWrap").append($(".slider").first().clone(true)); //첫번째 이미지를 복사(clone), 마지막에 추가(append)
 
-            setInterval(() => {
-                currentIndex++;     //혅재 이미지를 1씩 추가
-                $(".sliderWrap").animate({ marginLeft: -100 * currentIndex + "%" }, 600);   //이미지 애니메이션
+        //     setInterval(() => { 
+        //         currentIndex++;     //현재 이미지를 3초에 한번씩 1씩 추가, currentIndex1=이미지2, currentIndex2=이미지3. currentIndex3=이미지4(클론)
+        //         $(".sliderWrap").animate({ marginLeft: -100 * currentIndex + "%" }, 600);   //이미지 애니메이션 0.6s동안
 
-                if (currentIndex == 3) {  //마지막 이미지
-                    setTimeout(() => {
-                        $(".sliderWrap").animate({ marginLeft: 0 }, 0);   //애니메이션 정지
-                        currentIndex = 0;   //현재 이미지 초기화
-                    }, 700);
-                }
-            }, 3000);
-        });
-
-        //JS
-        // window.onload = function () {
-        //     let currentIndex = 0;   //현재 이미지
-        //     const sliderWrap = document.querySelector(".sliderWrap");   //전체 이미지 설정
-        //     const slider = document.querySelectorAll(".slider");    //각각의 이미지
-        //     const sliderClone = sliderWrap.firstElementChild.cloneNode(true);   //첫번째 이미지를 저장
-        //     sliderWrap.appendChild(sliderClone);    //이미지 마지막 영역에 추가
-
-        //     setInterval(() => {     //3초에 한번씩 실행
-        //         currentIndex++;     //현재 이미지를 1씩 추가
-        //         sliderWrap.style.transition = "all 0.6s";   //애니메이션 효과 추가
-        //         sliderWrap.style.marginLeft = -currentIndex * 100 + "%"; //왼쪽으로 100%씩 이동
-
-        //         if (currentIndex == slider.length) {
-        //             setTimeout(() => {
-        //                 sliderWrap.style.transition = "0s";     //애니메이션 효과 정지
-        //                 sliderWrap.style.marginLeft = "0";    //이미지 위치를 초기화
-        //                 currentIndex = 0;   //현재 이미지를 초기화
+        //         if (currentIndex == 3) {  //마지막 이미지currentIndex3=이미지4(클론)
+        //             setTimeout(() => {  ////setTimeout은 한 번만 실행
+        //                 $(".sliderWrap").animate({ marginLeft: 0 }, 0);   //애니메이션 정지
+        //                 currentIndex = 0;   //현재 이미지 초기화
         //             }, 700);
         //         }
         //     }, 3000);
-        // };
+        // });
+
+        //JS
+        window.onload = function () {
+            let currentIndex = 0;   //현재 이미지
+            const sliderWrap = document.querySelector(".sliderWrap");   //전체 이미지
+            const slider = document.querySelectorAll(".slider");    //각각의 이미지
+            const sliderClone = sliderWrap.firstElementChild.cloneNode(true);   //첫번째 이미지 복사하기
+            sliderWrap.appendChild(sliderClone);     //복사한 이미지(sliderClone)를 마지막 영역에 추가(appendChild)
+
+            setInterval(() => {     //3초에 한번씩 실행
+                currentIndex++;     //현재 이미지를 1씩 추가
+                sliderWrap.style.transition = "all 0.6s";   //애니메이션 효과 추가
+                sliderWrap.style.marginLeft = -currentIndex * 100 + "%"; //왼쪽으로 100%씩 이동
+
+                if (currentIndex == slider.length) {    //마지막 이미지  currentIndex3=이미지4(클론)
+                    setTimeout(() => {  //한 번만 실행
+                        sliderWrap.style.transition = "0s";     //애니메이션 정지
+                        sliderWrap.style.marginLeft = "0";    //이미지 위치를 초기화
+                        currentIndex = 0;   //현재 이미지를 초기화
+                    }, 700);    //0.7초동안 이미지 초기화가 이루어짐
+                }
+            }, 3000);
+        };
     </script>
 </body>
 

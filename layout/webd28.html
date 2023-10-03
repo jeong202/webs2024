@@ -186,7 +186,7 @@
             const sliderWrap = document.querySelector(".sliderWrap"); //전체 이미지
             const slider = document.querySelectorAll(".slider");    //각각의 이미지 
             const sliderClone = sliderWrap.firstElementChild.cloneNode(true);   //첫번째 이미지 복사하기 
-            sliderWrap.appendChild(sliderClone);    //복사한 이미지(sliderClone)를 마지막에 추가(appendChild)
+            sliderWrap.appendChild(sliderClone);    //복사한 이미지(sliderClone)를 마지막 영역에 추가(appendChild)
 
             setInterval(() => {  //3초에 한번씩 실행
                 currentIndex++;     //현재 이미지를 1씩 증가
@@ -198,7 +198,7 @@
                         sliderWrap.style.transition = "0s"; //애니메이션 정지
                         sliderWrap.style.marginLeft = "0";  //이미지 위치 초기화
                         currentIndex = 0;   //현재 이미지 초기화
-                    }, 700);    //0.7초에 이미지 초기화
+                    }, 700);    //0.7초동안 이미지 초기화가 이루어짐
                 }
             }, 3000);
         }

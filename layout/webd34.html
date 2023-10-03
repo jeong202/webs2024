@@ -94,10 +94,12 @@
 
         /* popup */
         #wrap {
+            /* .popup-view 가운데 정렬의 기준점 */
             position: relative;
         }
 
         .content3 {
+            /* 가운데 정렬 */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -107,19 +109,27 @@
             background-color: rgba(255, 255, 255, 0.6);
             padding: 10px;
             display: inline-block;
+            /* display: inline-block;으로 변경한 이유는 팝업 버튼이 한 줄에 나타나도록 하기 위해서입니다.
+            a태그는 인라인 요소이며, display: inline-block;으로 설정해 인라인 요소처럼 행동하지만, 블록 요소처럼 크기와 여백(패딩)을 조정할 수 있게 만듦
+            .content3(section)은 블록 레벨 요소이기 때문에, 새로운 줄에서 시작 그래서 내부에 있는 링크(a)도 기본적으로는 새로운 줄에서 표시됨
+            그러나 inline-block 스타일이 적용되면, .content3(section)은 블록 레벨 특성을 유지하면서도 인라인 요소처럼 행동(inline-block).
+            이렇게 되면 섹션과 링크가 한 줄에 나타나 팝업 버튼이 한줄로 나타남
+            */
         }
 
         .popup-view {
+            /* #wrap기준으로 가운데 정렬 */
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+            /* ------------------------------- */
             width: 400px;
             height: 400px;
             background-color: #a2a2a2;
             border: 3px solid #000;
             z-index: 1000;
-            display: none;
+            display: none; /* 팝업뷰를 보이지 않게 처리함. 보이게하는 처리는 스크립트로 */
         }
 
         .popup-close {
@@ -170,20 +180,20 @@
         //JQ
         // $(function () {
         //     $(".popup-btn").click(function () {
-        //         $(".popup-view").show();
+        //         $(".popup-view").show();    // 보이지않게 처리한(display: none;) 팝업뷰를 보여줌(show)
         //     });
         //     $(".popup-close").click(function () {
-        //         $(".popup-view").hide();
+        //         $(".popup-view").hide();    //보이게 처리한(show) 팝업뷰를 보이지않게함(hide)
         //     });
         // });
 
         //JS
         window.onload = function () {
             document.querySelector(".popup-btn").addEventListener("click", function () {
-                document.querySelector(".popup-view").style.display = "block";
+                document.querySelector(".popup-view").style.display = "block"; //보이지않게 처리한(display: none;) 팝업뷰를 보여줌(display: block;)
             });
             document.querySelector(".popup-close").addEventListener("click", function () {
-                document.querySelector(".popup-view").style.display = "none";
+                document.querySelector(".popup-view").style.display = "none";   //보이게 처리한(display: block;) 팝업뷰를 보이지않게함(display: none;)
             });
         }
     </script>

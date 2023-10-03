@@ -96,21 +96,24 @@
         .tab-menu {
             padding: 20px;
         }
-
+        .tab-menu .tab-btn {}
         .tab-menu .tab-btn ul {
             display: flex;
+            /* li에 인라인블록을 설정해 가로정렬을 할 수 있지만 여백생기는게 취향에 맞지 않아서 ul에 플랙스를 줌 */
         }
 
         .tab-menu .tab-btn li {
             list-style: none;
         }
-
+        .tab-menu .tab-btn li.active {
+            text-decoration: underline;
+        }
         .tab-menu .tab-btn li a {
             display: block;
             padding: 10px;
             background-color: #6b6b6b;
         }
-
+        .tab-menu .tab-cont {}
         .tab-menu .tab-cont>div {
             padding: 10px;
             background-color: #b0b0b0;
@@ -119,7 +122,7 @@
 
         /* .tab-menu .tab-cont > div:nth-child(2){
             display: none;
-        } */
+        } 스크립트처리함*/
     </style>
 </head>
 
@@ -173,33 +176,37 @@
     <script>
         //JQ
         // $(function () {
-        //     let tabBtn = $(".tab-btn > ul > li");   // 버튼 설정
+        //     let tabBtn = $(".tab-btn > ul > li");   // 버튼 설정(텝메뉴1,텝메뉴2)
         //     let tabCont = $(".tab-cont > div");     // 콘텐츠 설정
-        //     tabCont.hide().eq(0).show();            // 첫번째 콘텐츠만 보이게 설정
+        //     tabCont.hide().eq(0).show();            // 첫번째 콘텐츠만 보이게 설정(텝메뉴1의 콘텐츠)
 
         //     tabBtn.click(function () {
-        //         const index = $(this).index();      // 클릭한 번호를 저장
-        //         // alert(index);
+        //         const index = $(this).index();      // 클릭한(this) 번호(index)를 저장
+        //         // alert(index); //첫번째 버튼은0 두번째 버튼은1
 
         //         $(this).addClass("active").siblings().removeClass("active");
-        //         tabCont.eq(index).show().siblings().hide();     // 내가 클릭한 버튼의 콘텐츠는 보여주고 나머지는 숨김
+        //         //내가 클릭한 버튼(thise)의 클래스는 보여주고(addClass("active"))
+        //         //나머지(siblings) 버튼의 클래스는 삭제(removeClass("active")) =>클릭한 탭메뉴에 밑줄이 생성
+
+        //         tabCont.eq(index).show().siblings().hide();
+        //         //내가 클릭한 버튼(index)의 콘텐츠는 보여주고(show) 나머지는(siblings) 숨김(hide) 
         //     });
         // });
 
         //JS
-        const tabBtn = document.querySelectorAll(".tab-btn > ul > li"); // 버튼설정
+        const tabBtn = document.querySelectorAll(".tab-btn > ul > li"); // 버튼 설정(텝메뉴1,텝메뉴2)
         const tabCont = document.querySelectorAll(".tab-cont > div");   // 콘텐츠 설정
 
         tabCont.forEach(el => el.style.display = "none");       // 모든 콘텐츠를 숨김
-        tabCont[0].style.display = "block";                 // 첫 번째 콘텐츠를 보이게 설정
+        tabCont[0].style.display = "block";                 // 첫번째 콘텐츠만 보이게 설정(텝메뉴1의 콘텐츠)
 
-        tabBtn.forEach((tab, index) => {
+        tabBtn.forEach((tab, index) => {    //tab는 .tab-btn > ul > li 즉 li을 의미함. index는 각각 li의 순서를 의미함
             tab.addEventListener("click", () => {
-                tabBtn.forEach(tab => tab.classList.remove("active"));      //모든 버튼 클래스 삭제
-                tab.classList.add("active");                        //클릭한 버튼만 클래스 추가
+                tabBtn.forEach(tab => tab.classList.remove("active"));      //버튼 클릭시(addEventListener("click"))모든 버튼(forEach(tab)) 클래스 삭제
+                tab.classList.add("active");                        //클릭한 버튼만(addEventListener("click")) 클래스 추가
 
-                tabCont.forEach(cont => cont.style.display = "none");       //모든 콘텐츠를 숨기
-                tabCont[index].style.display = "block";             //클릭한 버튼의 콘텐츠 내용을 보여줌
+                tabCont.forEach(cont => cont.style.display = "none");       //모든 콘텐츠를 숨김
+                tabCont[index].style.display = "block";             //클릭한 버튼의(addEventListener("click"))[index] 콘텐츠 내용을 보여줌
             });
         });
     </script>
