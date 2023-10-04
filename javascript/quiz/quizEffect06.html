@@ -48,6 +48,7 @@
 
     // 문제 정보
     let quizInfo = [];
+    let quizScore = 0;
 
     // 문제 가져오기
     const fetchQuiz = () => {
@@ -115,7 +116,6 @@
             </div>
         `);
         })
-
         quizWrap.innerHTML = quizArray.join("");
     }
 

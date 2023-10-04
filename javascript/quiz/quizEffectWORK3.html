@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트05</title>
+
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    <style>
+        .quiz__confirm {
+            margin-top: 10px;
+        }
+
+        .quiz__answer {
+            margin-top: 10px;
+        }
+
+        .quiz__footer {
+            margin-top: 10px;
+        }
+        .quiz__input {
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body class="fixed">
+    <header id="header">
+        <h1><a href="../index.html">Quiz</a></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffectWORK1.html">1</a></li>
+                <li><a href="quizEffectWORK2.html">2</a></li>
+                <li class="active"><a href="quizEffectWORK3.html">3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:jhyjhy968@gmail.com">jhyjhy968@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {   //이벤트 리스너를 등록합니다. 이벤트는 "DOMContentLoaded"로, 문서의 모든 요소가 로드되면 발생합니다. 
+            const quizWrap = document.querySelector(".quiz__wrap");
+            let quizInfo = [];  //빈 배열 quizInfo를 생성합니다. 
+            let currentIndex = 0;
+
+            const fetchQuiz = async () => {
+                const res = await fetch("https://webstoryboy.github.io/webstoryboy/w_json/gineungsaShort.json");    //함수는 외부에서 퀴즈 데이터를 가져오기 위해 fetch 함수를 사용합니다.
+                const items = await res.json(); //가져온 데이터를 JSON 형식으로 변환하고, quizInfo 배열에 저장합니다.
+                quizInfo = items.map(item => ({
+                    infoDate: `정보처리 ${item.time}`,
+                    infoQuestion: item.question,
+                    infoAdd: item.question_desc,
+                    infoAnswer: item.correct_answer
+                }));
+                updateQuiz(currentIndex);
+            };
+
+            const updateQuiz = index => {
+                if (quizInfo.length > 0 && index < quizInfo.length) {
+                    const formattedQuiz = quizInfo[index];
+                    const quizWrapTag = `
+                <div class="quiz long">
+                    <div class="quiz__header">
+                        <span class="quiz__date">${formattedQuiz.infoDate}</span>
+                    </div>
+                    <div class="quiz__main">
+                        <div class="quiz__question">
+                            <span>${formattedQuiz.infoQuestion}</span>
+                        </div>
+                        <div class="quiz__add">${formattedQuiz.infoAdd || ''}</div>
+                        <div class="quiz__answer none">${formattedQuiz.infoAnswer}</div>
+                    </div>
+                    <div class="quiz__footer">
+                        <div class="quiz__input">
+                            <input type="text" placeholder="정답메모">
+                        </div>
+                        <button class="quiz__confirm">정답 확인하기</button>
+                        <button class="quiz__next none">다음 문제</button>
+                    </div>
+                </div>
+            `;
+                    quizWrap.innerHTML = quizWrapTag;
+
+                    const quizAdd = document.querySelector(".quiz__add");
+                    if (!formattedQuiz.infoAdd) quizAdd.classList.add("none");
+                  
+
+                    const quizAnswer = quizWrap.querySelector(".quiz__answer");
+                    const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+                    const quizNext = quizWrap.querySelector(".quiz__next");
+
+                    quizConfirm.addEventListener("click", () => {
+                        quizAnswer.classList.remove("none");
+                        quizConfirm.classList.add("none");
+                        quizNext.classList.remove("none");
+                    });
+                    
+                    quizNext.addEventListener("click", () => {
+                        currentIndex = (currentIndex + 1) % quizInfo.length;
+                        updateQuiz(currentIndex);
+                    });
+                }
+            };
+            fetchQuiz();
+        });
+    </script>
+</body>
+
+</html>

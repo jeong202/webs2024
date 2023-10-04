@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        //1.선언적 함수
+        {
+            function func(){
+                const x = 100;
+                console.log(x);
+            }
+            func();
+        }
+        //2.익명 함수
+        {
+            const func = function(){
+                const x = 200;
+                console.log(x);
+            }
+            func();
+        }
+        //3.매개변수 함수
+        {
+            function func(x){
+                console.log(x);
+            };
+            func(300);
+        }
+        //4.리턴값 함수
+        {
+            function func(){
+                const x = 400
+                return x;
+            }
+            console.log(func())
+        }
+        //5.매개변수 함수 + 리턴값 함수
+        {
+            function func(x){
+                return x;
+            }
+            console.log(func(500))
+        }
+        //6.선언적 함수(화살표 함수)
+        {
+            func = () => {
+                const x = 600;
+                console.log(x);
+            }
+            func();
+        }
+        //7.익명 함수(화살표 함수)
+        {
+            const func = () => {
+                const x = 700;
+                console.log(x);
+            }
+            func();
+        }
+        //8.매개변수 함수(화살표 함수)
+        {
+            func = (x) => {
+                console.log(x);
+            };
+            func(800);
+        }
+        //9.리턴값 함수(화살표 함수)
+        {
+            func = () => {
+                const x = 400
+                return x;
+            }
+            console.log(func())
+        }
+        //10.매개변수 함수 + 리턴값 함수(화살표 함수)
+        {
+            func = (x) => {
+                return x;
+            }
+            console.log(func(1000))
+        }
+    </script>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside id="aside"></aside>
+            <section id="contents">
+                <article id="article1"></article>
+                <article id="article2"></article>
+                <article id="article3"></article>
+            </section>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

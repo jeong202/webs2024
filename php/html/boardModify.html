@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP 블로그 만들기</title>
+    <title>게시글 수정</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -44,16 +44,39 @@
     <!-- //header -->
 
     <main id="main" role="main">
-        <div class="intro__inner bmStyle container">
-            <div class="intro__img main">
+        <div class="intro__inner container bmStyle">
+            <div class="intro__img small">
                 <img srcset="../assets/img/intro02@1x.jpg 1x, assets/img/intro02@2x.jpg 2x, assets/img/intro02@3x.jpg 3x"  alt="소개 이미지">
             </div>
             <div class="intro__text">
-                어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.
-                신입의 열정과 도전정신을 깊숙히 새기며 배움에 있어 겸손함을 
-                유지하며 세부적인 곳까지 파고드는 개발자가 되겠습니다.
+                <h2>게시글 수정하기</h2>
+                <p>
+                    웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 게시판입니다.
+                    <br>게시글을 수정할 수 있습니다.
+                </p>
             </div>
         </div>
+        <section class="board__inner container">
+            <div class="board__write">
+                <form action="#" name="#" method="post">
+                    <fieldset>
+                        <legend class="blind">게시글 수정하기</legend>
+                        <div>
+                            <label for="boardTitle">제목</label>
+                            <input type="text" id="boardTitle" name="boardTitle" class="input__style">
+                        </div>
+                        <div>
+                            <label for="boardContents">내용</label>
+                            <textarea name="boardContents" id="boardContents" rows="20" class="input__style"></textarea>
+                        </div>
+                        <div class="board__btns">
+                            <button type="submit" class="btn__style3 mr10">목록보기</button>
+                            <button type="submit" class="btn__style3">수정하기</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
     </main>
     <!-- //main -->
 

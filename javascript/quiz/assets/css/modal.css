@@ -77,7 +77,7 @@
 }
 .modal__box .title .tabs > div {
     color: #7a7d9d;
-    background-color: #282936;
+    background-color: #461f69;
     padding: 0.35rem 0.8rem 0.25rem 0.8rem;
     margin-right: 0.5rem;
     display: flex;
@@ -87,7 +87,7 @@
     cursor: pointer;
 }
 .modal__box .title .tabs > div.active {
-    background-color: #1f224a;
+    background-color: #eeeaff;
 }
 .modal__box .title .tabs > div em {
     font-style: normal;
@@ -128,7 +128,7 @@
     opacity: 0;
 }
 .modal__close:hover {
-    background-color: #b9bdff;
+    background-color: #592883;
 }
 
 @media (max-width: 1100px){
