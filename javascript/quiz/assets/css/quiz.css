@@ -370,7 +370,7 @@ body::after {
     color: #666;
 }
 .quiz__answer::before {
-    content: "🔷: ";
+    content: "정답🔍: ";
 }
 .quiz__desc {
     border: 1px solid #eaeaea;

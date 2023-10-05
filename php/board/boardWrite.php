@@ -5,40 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP 블로그 만들기</title>
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <?php include "../include/head.php" ?>
+    <!-- CSS -->
 </head>
 <body class="gray"> 
-    <div id="skip">
-    <a href="#header">헤더 영역 바로가기</a>
-    <a href="#main">콘텐츠 영역 바로가기</a>
-    <a href="#footer">푸터 영역 바로가기</a>
-</div>    <!-- //skip -->
-
-    <header id="header" role="banner">
-    <div class="header__inner container">
-        <div class="left">
-            <a href="../index.html">
-                <span class="blind">메인으로</span>
-            </a>
-        </div>
-        <div class="logo">
-            <a href="../main/main.php">Jeong Blog</a>
-        </div>
-        <div class="right">
-                            <ul>
-                    <li><a href="../join/join.php">회원가입</a></li>
-                </ul>
-                    </div>
-    </div>
-    <nav class="nav__inner">
-        <ul>
-            <li><a href="../join/join.php">회원가입</a></li>
-            <li><a href="../login/login.php">로그인</a></li>
-            <li><a href="../board/borar.php">게시판</a></li>
-            <li><a href="../blog/blog.php">블로그</a></li>
-        </ul>
-    </nav>
-</header>    <!-- //header -->
+    <?php include "../include/skip.php" ?>
+    <!-- //skip -->
+    <?php include "../include/header.php" ?>
+    <!-- //header -->
 
     <main id="main" role="main">
         <div class="intro__inner container bmStyle">
@@ -46,7 +20,7 @@
                 <img srcset="../assets/img/intro02@1x.jpg 1x, assets/img/intro02@2x.jpg 2x, assets/img/intro02@3x.jpg 3x"  alt="소개 이미지">
             </div>
             <div class="intro__text">
-                <h2>게시글</h2>
+                <h2>게시글 작성하기</h2>
                 <p>
                     웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 게시판입니다.
                     <br>게시글을 작성은 여기서 해주세요!
@@ -76,12 +50,7 @@
     </main>
     <!-- //main -->
 
-    <footer id="footer" role="contentinfo">
-        <div class="footer__inner container btStyle">
-            <div>Copyright 2023 Jeonghaeyeon</div>
-            <div>blog by Jeonghaeyeon</div>
-        </div>
-    </footer>
+    <?php include "../include/footer.php" ?>
     <!-- //foter -->
 </body>
 </html>
