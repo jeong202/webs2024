@@ -1,0 +1,335 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    /* 전체 선택자로 컬러를 지정해도 적용이 되지 않는 태그가 있다,a태그 */
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+li {
+    list-style: none;
+}
+img {
+    width: 100%;
+    vertical-align: top;
+     /* 이미지 여백 초기화 */
+    
+}
+
+/* wrap */
+#wrap {
+    width: 100%;
+    position: relative;
+     /* .popup-view  기준점 */
+}
+
+/* container */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    /* 가운데 정렬(m0-a)를 적용하기 위해서는 너비값(width)이 있어야한다 */
+    height: inherit;
+    /* background-color: rgba(0,0,0,0.3); 헤더와 풋터 사이의 영역을 잡기 위해 사용한 css*/
+}
+
+/* header */
+#header {
+    width: 100%;
+    background-color: #f3f3f3;
+    z-index: 1000;
+    position: relative;
+}
+#header .container {
+    display: flex;
+    align-items: end;
+    position: relative;
+    /* #header .container::after 의 기준점 */
+}
+#header .container::after {
+    content: '';
+    width: 100%;
+    height: 0;
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+     /* 기준점 #header .container */
+    top: 99px;
+    left: 0;
+    z-index: -1;
+    transition: all 400ms;
+}
+#header .container.on::after {
+    height: 160px;
+}
+#header .container .logo {
+    width: 20%;
+}
+#header .container .logo a {
+    padding: 30px;
+    display: inline-block;
+}
+#header .container .nav {
+    width: 80%;
+}
+#header .container .nav > ul {
+    display: flex;
+    justify-content: right;
+}
+#header .container .nav > ul > li {
+    position: relative;
+}
+#header .container .nav > ul > li > a {
+    display: block;
+    padding: 15px 40px;
+    font-weight: bold;
+    /* background-color: #ccc; */
+}
+#header .container .nav > ul > li > a:hover {
+    background-color: #ffe39c;
+}
+#header .container .nav > ul > li > ul {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    display: none;
+}
+#header .container .nav > ul > li > ul > li > a {
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+}
+#header .container .nav > ul > li > ul > li > a:hover {
+    background-color: #ffe090;
+    color: #000;
+}
+
+/* slider */
+#slider {
+    width: 100%;
+    height: 300px;
+}
+#slider .container {
+    overflow: hidden;
+}
+#slider .container .sliderWrap {
+    display: flex;
+    width: 400%;
+}
+#slider .container .sliderWrap .slider {
+    position: relative;
+     /* .slider .text의 기준점 */
+    width: 1200px;
+}
+#slider .container .sliderWrap .slider a {
+    display: block;
+}
+#slider .container .sliderWrap .slider .text {
+    position: absolute;
+    /* 기준점 .sliderWrap .slider*/
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    /* translateY는 수직 방향으로 이동시키는 함수이며, 값으로 -50%를 사용하면 해당 요소를 부모 요소의 높이의 50%만큼 위로 이동시킵니다. 즉, 요소의 중심이 부모 요소의 중앙에 위치하게 됩니다. */
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 50px;
+}
+#slider .container .sliderWrap .slider .text h2 {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 3px;
+}
+#slider .container .sliderWrap .slider .text h2 strong {
+    color: orange;
+}
+#slider .container .sliderWrap .slider .text p {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* contents */
+#contents {
+    width: 100%;
+}
+#contents .container {
+    display: flex;
+}
+
+/* contents : notice */
+#contents .container .notice {
+    width: 400px;
+    height: 200px;
+    padding: 25px 20px;
+    background-color: #fff4e0;
+    box-sizing: border-box;
+}
+#contents .container .notice h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#contents .container .notice li {
+    display: flex;
+    line-height: 1.8;
+    position: relative;
+    /*.notice li::before 의 기준점 */
+    padding-left: 14px;
+}
+#contents .container .notice li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #333;
+    position: absolute;
+    /* 기준점 .notice li */
+    left: 0;
+    top: 11px;
+    border-radius: 50%;
+}
+#contents .container .notice li a {
+    width: 70%;
+}
+#contents .container .notice li a:hover {
+    text-decoration: underline;
+}
+#contents .container .notice li span {
+    width: 30%;
+    text-align: right;
+}
+
+/* contents : gallery */
+#contents .container .gallery {
+    width: 400px;
+    height: 200px;
+    padding: 25px 20px;
+    box-sizing: border-box;
+}
+#contents .container .gallery h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#contents .container .gallery ul {
+    display: flex;
+    justify-content: space-between;
+    /* 이미지 정렬 */
+}
+#contents .container .gallery li {
+    width: 114px;
+}
+#contents .container .gallery li a {
+    display: block;
+    /* 인라인 구조라 영역이 안잡히기 때문에 영역 잡기위해 block 사용 */
+    /* border: 2px solid #333;  영역 확인용*/
+}
+}
+#contents .container .gallery li a:hover img {
+    opacity: 0.8;
+}
+
+/* contents : banner */
+#contents .container .banner {
+    width: 400px;
+    background-image: url(../images/banner.jpg);
+    text-align: center;
+}
+#contents .container .banner h3 {
+    padding-top: 40px;
+    font-size: 24px;
+    color: #fff;
+}
+#contents .container .banner a {
+    background-color: orange;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    border-radius: 40px;
+    transition: all 0.3s;
+    /* 0.3초동안 바뀜 */
+    margin-top: 3px;
+}
+#contents .container .banner a:hover {
+    border-radius: 0;
+}
+
+/* footer */
+#footer {
+    width: 100%;
+    background-color: #e5e5e5;
+}
+#footer .container {
+    display: flex;
+}
+#footer .container .footer1 {
+    width: 80%;
+}
+#footer .container .footer1 .footer1-1 {
+    width: 100%;
+    height: 50px;
+}
+#footer .container .footer1 .footer1-1 li {
+    display: inline;
+    border-right: 1px solid #333;
+}
+#footer .container .footer1 .footer1-1 li:last-child {
+    border: 0;
+}
+#footer .container .footer1 .footer1-1 li a {
+    padding: 18px 10px 16px 0;
+    display: inline-block;
+     /* a는 인라인 구조이다. 인라인 요소에는 width, height, margin-top, margin-bottom, padding-top, padding-bottom 속성이 적용되지 않습니다 */
+}
+#footer .container .footer1 .footer1-1 li a:hover {
+    text-decoration: underline;
+}
+#footer .container .footer1 .footer1-2 {
+    width: 100%;
+    height: 50px;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+#footer .container .footer2 {
+    width: 20%;
+    height: 100px;
+}
+#footer .container .footer2 select {
+    margin-top: 34px;
+    width: 100%;
+    height: 30px;
+}
+
+/* popup */
+.popup-view {
+    position: absolute;
+     /* 기준점 #wrap */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-color: #ffe4b5;
+    border: 4px solid orange;
+    padding: 20px;
+    display: none;
+}
+.popup-view h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+}
+.popup-view a {
+    display: inline-block;
+    padding: 8px 20px;
+    color: #fff;
+    background-color: orange;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+}

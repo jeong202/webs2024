@@ -1,0 +1,320 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+} 
+    /* 모든 선택자 선택해서 여백 제거 */
+    /* 기본 텍스트 색 */
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+    width: 100%;
+}
+    /* 이미지 여백 제거 및 너비 반응형 처리*/
+
+/* wrap */
+#wrap {
+    width: 1200px;
+    margin: 0 auto; /* 가운데 정렬 */
+    position: relative; /* pupup-view의 기준점 */
+}
+/* header */
+#header {
+    width: 100%;
+    display: flex;
+    background-color: #558ae5;
+}
+#header .logo {
+    width: 20%;
+    height: 100px;
+}
+#header .logo a {
+    display: inline-block;
+    color: #fff;
+    padding: 30px 40px;
+    /* 가운데로 위치시키기 위해 padding로 위치를 조정함 위아래 패딩 값을 주기 위해 인라인 구조인 a태그를 인라인&블록화함 inline-block을 사용해 위아래도 패딩값이 적용됨 */
+}
+#header .nav {
+    width: 80%;
+    height: 100px;
+    /* js메뉴 하나씩 나오기 적용시 슬라이더와 네비가 겹쳐서 안보이는 현상을 없애기 위해 z-index를 줌 z-index는 position과 같이 사용해야함*/
+    position: relative;
+    z-index: 1000;
+}
+#header .nav > ul {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+}
+/* justify-content 속성은 부모 컨테이너 내의 아이템들을 어떻게 배치할지를 결정하며 주로 수평 방향으로 아이템을 정렬하는 데에 활용됩니다. Flexbox와 Grid 레이아웃에서 사용할 수 있습니다 */
+/* align-items 속성은 부모 컨테이너 내의 아이템들을 어떻게 배치할지를 결정하며 주로 수직 방향으로 아이템을 정렬하는 데에 활용됩니다. 따라서 height값이 필요. Flexbox와 Grid 레이아웃에서 사용할 수 있습니다 */
+
+#header .nav > ul > li {
+    position: relative;
+}
+#header .nav > ul > li > a {
+    color: #fff;
+    padding: 15px 45px;
+    background-color: #4772bd;
+    display: block;
+}
+/*글씨 끝나는 부분이 아니라 박스 아래로 아예 다른 글자들을 내리기 위해 인라인 구조인 a를 display: block; 적용*/
+#header .nav > ul > li > a:hover {
+    background-color: #2e68cc;
+}
+#header .nav > ul > li > ul {
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    display: none; /* js작업을 통해 클릭했을때 하나씩 보이게 설정 */
+}
+/* 기준점은 #header .nav > ul > li*/
+#header .nav > ul > li > ul > li {}
+#header .nav > ul > li > ul > li > a {
+    padding: 10px 20px;
+    display: block;
+}
+#header .nav > ul > li > ul > li > a:hover {
+    background-color: #94b8f5;
+}
+
+/* slider */
+#slider {
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+}
+#slider .sliderWrap {
+    position: relative;
+    /*#slider .sliderWrap .slider의 기준점  */
+}
+#slider .sliderWrap .slider{
+   position: absolute;
+   /* js슬라이드 효과를 위해 이미지를 한군데에 뭉쳐야해서 position: absolute를 사용해야한다 그런데
+   #slider .sliderWrap .slider .text의 기준점으로서 position: relative;가 이미 사용되어있기때문에 이것을 지우고 position: absolute를 사용 즉 두개를 같이 못쓰기 때문에 한개만 남긴다*/
+}
+
+#slider .sliderWrap .slider .text{
+    position: absolute; /* 기준점 #slider .sliderWrap .slider */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* translate는 이동을 의미하며, 첫 번째 값은 가로 방향의 이동을 나타내고 두 번째 값은 세로 방향의 이동을 나타냅니다.-50%로 설정되어 있기 때문에, 요소는 자신의 가로와 세로 크기의 50%만큼 이동됩니다. 이 코드는 요소를 화면의 중앙으로 정렬하기 위해 사용됩니다. 예를 들어, 절대 위치로 위치가 지정된 요소의 경우, translate(-50%, -50%)를 사용하여 요소를 정확히 가운데로 이동시킬 수 있습니다.
+    */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+}
+#slider .sliderWrap .slider .text h2 {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 3px;
+}
+#slider .sliderWrap .slider .text p {
+    color: #fff;
+    font-size: 16px;
+}
+/* contents */
+#contents {
+    width: 100%;
+    display: flex;
+    
+}
+/* contents : info */
+#contents .info {
+    width: 400px;
+    height: 200px;
+    background-color: #e5f1ff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#contents .info .info-menu {
+    margin-bottom: 5px;
+}
+#contents .info .info-menu a {
+    font-size: 24px;
+}
+#contents .info .info-menu a.active {
+    text-decoration: underline;
+}
+
+#contents .info .info-cont .notice {
+    display: none;
+}
+#contents .info .info-cont .notice li {
+    display: flex;
+}
+#contents .info .info-cont .notice li a {
+    width: 75%;
+    font-size: 16px;
+    line-height: 1.8;
+    
+}
+#contents .info .info-cont .notice li a:hover {
+    text-decoration: underline;
+}
+#contents .info .info-cont .notice li span {
+    width: 25%;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: right;
+}
+#contents .info .info-cont .gallery {}
+#contents .info .info-cont .gallery ul {
+    display: flex;
+    justify-content: space-between;
+    /* 첫 번째 아이템은 컨테이너의 시작 부분에, 마지막 아이템은 컨테이너의 끝 부분에 정렬되며, 나머지 아이템들은 공간을 최대한 활용하여 동일한 간격으로 배치됩니다. */
+}
+#contents .info .info-cont .gallery ul li {}
+#contents .info .info-cont .gallery ul li a {
+    border: 2px solid transparent;
+    /* transparent은 CSS에서 색상을 나타내는 값 중 하나입니다. 이 값은 완전히 투명한 색을 나타냅니다. border 속성을 이용해 요소의 테두리를 만들 때, border-color 값을 transparent로 설정하면 실제로는 테두리가 보이지 않습니다. */
+    display: block;
+}
+#contents .info .info-cont .gallery ul li a:hover {
+    border-color: #4772bd;
+}
+
+
+/* contents : banner */
+#contents .banner {
+    width: 400px;
+    height: 200px;
+    background-image: url(../images/banner.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#contents .banner h3 {
+    color: #fff;
+    font-size: 26px;
+}
+#contents .banner a {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+#contents .banner a:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+/* contents : link*/
+#contents .link {
+    width: 400px;
+    height: 200px;
+    background-image: url(../images/link.jpg)
+}
+#contents .link h3 {
+    color: #fff;
+    padding: 20px;
+}
+#contents .link a {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    line-height: 100px;
+    margin: 0 auto;
+}
+#contents .link a:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+/* footer */
+#footer {
+    width: 100%;
+    display: flex;
+    background-color: #e7e7e7;
+}
+#footer .footer1 {
+    width: 20%;
+    height: 100px;
+}
+#footer .footer1 h4 {
+    font-size: 30px;
+    color: #7f7f7f;
+    padding: 30px 30px;
+}
+#footer .footer2 {
+    width: 80%;
+}
+#footer .footer2 .footer2-1 {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+#footer .footer2 .footer2-1 ul {
+    padding-top: 20px;
+}
+#footer .footer2 .footer2-1 li {
+    display: inline-block;
+    border-right: 1px solid #333;
+}
+#footer .footer2 .footer2-1 li:last-child {
+    border: 0;
+}
+#footer .footer2 .footer2-1 li a {
+    padding: 10px;
+}
+#footer .footer2 .footer2-1 li a:hover {
+    text-decoration: underline;
+}
+#footer .footer2 .footer2-2 {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+/* popup */
+.popup-view {
+    position: absolute;
+    /* 기준점wrap */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-color: #efefef;
+    border: 4px solid #333;
+    padding: 20px;
+    display: none;
+}
+.popup-view h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
+    color: #2b4470;
+    padding-bottom: 5px;
+}
+.popup-close {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    background-color: #2b4470;
+    color: #fff;
+    padding: 8px 20px;
+
+
+}

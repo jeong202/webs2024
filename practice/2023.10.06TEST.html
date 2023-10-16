@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    {
+        //즉시실행함수
+        (function () {
+            console.log("함수가 실행되었습니다.");
+        })();
+    }
+    {
+        //파라미터함수
+        function func(str = "함수가 실행되었습니다.") {
+            document.write(str);
+        }
+        func();
+    }
+    {
+        let sum = 0;
+        for (var i = 1; i <= 10; i += 2) {
+            sum += i;
+        };
+        document.write(sum);
+    }
+    {
+        const obj = {
+            a: 100,
+            b: 200,
+            c: "javascript"
+        }
+        const { a, b, c } = _______;
+
+        document.write(a);
+        document.write(b);
+        document.write(c);
+
+        //100
+        //200
+        //javascript
+    }
+    {
+        const objA = {
+            a: 100,
+            b: 200
+        }
+        const objB = {
+            c: "javascript",
+            d: "jquery"
+        }
+        const spread = { ______, ______ }
+
+        document.write(spread.a);
+        document.write(spread.b);
+        document.write(spread.c);
+        document.write(spread.d);
+
+        //100
+        //200
+        //javascript
+        //jquery
+    }
+    {
+        if (_____) {
+            document.write("조건문이 실행되었습니다.(true)");
+        } else {
+            document.write("조건문이 실행되었습니다.(false)");
+        }
+
+        //document.write("조건문이 실행되었습니다.(false)");
+        //보기
+        //true, false, 1, "1", "", 0, null, undefined, [], {}
+    }
+    {
+        //다음의 if문은 삼항 연산자로 변경하시오.
+        if (num == 100) {
+            document.write("true");
+        } else {
+            document.write("false");
+        }
+    }
+    {
+        for (var i = 1; i <= 1; i++) {
+            document.write(i);
+            for (var j = 1; j <= 5; j++) {
+                document.write(j);
+            }
+        }
+    }
+    {
+        const num = [100, 200, 300, 400, 500];
+
+        for (let i = 0; i < num.length; i++) {
+            document.write(_______);
+        }
+
+        //100 200 300 400 500
+    }
+    {
+        const num = [100, 200, 300, 400, 500];
+
+        num.forEach(function (el) {
+            document.write(________);
+        });
+
+        //100 200 300 400 500
+    }
+    {
+        const func = str => {
+            return str;
+        }
+    }
+    {
+        const num = [100, 200, 300, 400, 500];
+
+        for (let index of _____) {
+            document.write(index);
+        }
+
+        //결과값
+        //100 200 300 400 500
+    }
+    {
+        function func() {
+            let i = 5, j = 4, k = 1, l, m;
+            l = i > 5 || j != 0;
+            m = j <= 4 && k < 1;
+            document.write(l);
+            document.write(m);
+        }
+        func();
+    }
+    {
+        const arr = [100, 200, 300, 400, 500];
+        const text = arr.push(600);
+
+        document.write(arr);
+
+        const arr2 = [100, 200, 300, 400, 500];
+        const text2 = arr2.unshift(600);
+
+        document.write(arr2);
+    }
+    {
+        const obj = {
+            a: 100,
+            b: 200
+        };
+
+        for (let key in obj) {
+            console.log(key);
+        }
+    }
+    {
+        let num = 0;
+
+        while (false) {
+            num++;
+            if (num == 3) {
+                continue;
+            }
+            if (num > 6) {
+                break;
+            }
+        }
+        console.log(num);
+    }
+    {
+        //비트연산자
+        let a, b, result;
+        a = 7, b = 4
+        result = a & b;
+
+        console.log(result, a, b)
+    }
+    {
+        //전치 후치 연산자
+        let a = 1, b = 2, c = 3, result;
+        result = ++a + b++ + ++c;
+
+        console.log(result);
+        console.log(a);
+        console.log(b + c);
+        console.log(c);
+    }
+    {
+        let data = [70, 80, 75, 60, 90];
+        let best = 0;
+        let score = 0;
+
+        for (let i = 0; i < data.length; i++) {
+            if (data[i] > 80) {
+                best++;
+            }
+            if (score < data[i]) {
+                score = data[i];
+            }
+        }
+
+        console.log(best, score)
+    }
+    {
+        function func(num1, num2) {
+            if (num1 > num2) return num1
+            else return num2
+        }
+        console.log(func(10, 23) + func(40, 50))
+    }
+</script>

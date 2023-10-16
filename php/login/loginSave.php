@@ -17,7 +17,7 @@
     <main id="main" role="main">
     <div class="intro__inner container">
             <div class="intro__img">
-                <img srcset="../assets/img/intro01.jpg 1x, ../assets/img/intro01@2x.jpg 2x, ../assets/img/intro01@3x.jpg 3x"  alt="소개 이미지">
+            <img srcset=" ../assets/img/intro01@1x.jpg 1x, ../assets/img/intro01@2x.jpg 2x, ../assets/img/intro01@3x.jpg 3x" alt="소개 이미지">
             </div>
             <div class="intro__text">
 <?php

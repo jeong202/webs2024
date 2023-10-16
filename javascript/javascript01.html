@@ -64,6 +64,7 @@
                     <li><a href="#sample19">19. 객체 : 데이터 저장(키와값 || 속성과 매서드) : 표현방법8 : 객체 + 함수가 있는 방식</a></li>
                     <li><a href="#sample20">20. 객체 : 데이터 저장(키와값 || 속성과 매서드) : 표현방법9 : 객체 구조 분해 할당</a></li>
                     <li><a href="#sample21">21. 객체 : 데이터 저장(키와값 || 속성과 매서드) : 표현방법10 : 객체 펼침 연산자</a></li>
+                    <li><a href="#sample22">22. 파일 : 데이터 교환(JSON)</a></li>
                 </ul>
                 <ul>
                     <li><a href="#sample_01">++지역변수/전연변수</a></li>
@@ -1866,6 +1867,22 @@
 
             
         }
+        // 22. 파일 : 데이터 교환(JSON)
+        
+        // json 데이터를 객체로 변환
+        const jsonString = '{"name": "webs", "age": "30"}';
+        const jsonObject = JSON.parse(jsonString);
+        console.log(jsonObject.name); //webs
+
+        // 객체를 json 데이터로 변환
+        const person = {name: "webs", age: 30};
+        const jsonPerson = JSON.stringify(person);
+        console.log(jsonPerson); // '{"name": "webs", "age": "30"}
+
+            
+
+            
+        
 
         // ++지역변수/전연변수
         // ++연산자(산술/대입/증감/비교/논리/비트)
