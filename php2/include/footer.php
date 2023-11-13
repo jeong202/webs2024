@@ -3,5 +3,4 @@
         <div>Copyright 2023 Jeong</div>
         <div>blog by Jeong</div>
     </div>
-    
 </footer>

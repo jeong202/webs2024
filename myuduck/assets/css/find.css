@@ -1,0 +1,57 @@
+.find__inner {
+    padding-top: 140px;
+    display: block;
+    margin: 0 auto;
+    color: var(--white);
+    background-position: 100% 100%;
+    background-size: cover;
+    height: 80vh;
+    font-family: var(--primary-Hahmlet);
+}
+
+
+/* find__inner */
+.find__inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.find__inner h3 {
+    margin-bottom: 40px;
+    font-size: 1.9rem;
+}
+.find__from span {
+    margin-bottom: 40px;
+    font-size: 0.9rem;
+}
+
+.find__inner fieldset {
+    margin-top: 1.2rem;
+    width: 100%;
+    height: 4rem;
+}
+
+.find__inner label {
+    display: inline-block;
+    padding: 10px 0 5px 0;
+}
+
+.find__inner input {
+    padding: 20px;
+    color: var(--white);
+    width: 100%;
+    height: 5vh;
+    border: 1px solid var(--white);
+    background: transparent;
+    margin: 10px 0;
+}
+.find__inner button {
+    font-family: var(--primary-Hahmlet);
+    border-radius: 5px;
+    margin: 60px auto;
+}
+.find__inner button:hover {
+    border: 1px solid var(--black);
+    color: var(--white);
+    background-color: var(--black200);
+}

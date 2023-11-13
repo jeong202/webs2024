@@ -1,0 +1,100 @@
+/* parallax_cont */
+#parallax_cont {
+    overflow: hidden;
+}
+.parallax_item {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.parallax_item_num {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 5vw;
+    line-height: 1;
+    z-index: 100;
+    color: #747474a2;
+}
+.parallax_item_img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: 100% 100%; 
+    background-position: center;
+}
+.parallax_item_img::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+#section1 .parallax_item_img {
+    background-image: url("../img/section1.jpg");
+}
+#section2 .parallax_item_img {
+    background-image: url("../img/section2.jpg");
+}
+#section3 .parallax_item_img {
+    background-image: url("../img/section3.jpg");
+}
+#section4 .parallax_item_img {
+    background-image: url("../img/section4.jpg");
+}
+#section5 .parallax_item_img {
+    background-image: url("../img/section5.jpg");
+}
+#section6 .parallax_item_img {
+    background-image: url("../img/section6.jpg");
+}
+.parallax_text {
+    width: 100%;
+    text-align: right;
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: 40vw;
+    margin-right: 4vw;
+    margin-left: auto;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: keep-all;
+    color: #ffffffa2;
+}
+.parallax_item_title {
+    width: 100%;
+    font-size: 3vw;
+    font-family: var(--mapo);
+    padding-bottom: 75px;
+    z-index: 100;
+}
+
+.parallax_item_desc {
+
+}
+
+.parallax_item_desc {
+    width: 100%;
+    padding-left: 45%;
+    font-size: 1.5vw;
+    line-height: 1.3;
+    font-family: var(--nanum);
+    box-sizing: border-box;
+    /* width: 600px; */
+    /* margin-top: 47vw;
+    margin-left: -8vw; */
+    z-index: 100;
+    /* position: absolute;
+    right: 10%;
+    bottom: 8%;
+    word-break: keep-all; */
+}

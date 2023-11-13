@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>섭씨와 화씨 변환하기</title>
+</head>
+<body>
+    <h1>화씨(fat)를 섭씨(cel)로 변환하기</h1>
+    <script>
+        // 프롬프트 창으로 입력된 값은 문자열이기 때문이 parseFloat()를 사용해 실수로 변환함
+        let fat = parseFloat(prompt("변경할 화씨 온도를 입력하세요"))
+        //섭씨온도를 선언하고 섭씨온도 구하는 공식을 써줌.
+        let cel = ((fat - 32) / 1.8)
+
+        alert(`화씨(fat)${fat}도는 섭씨(cel)${cel}도 입니다`)
+         
+    </script>
+</body>
+</html>

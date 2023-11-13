@@ -140,7 +140,6 @@
     margin-bottom: 10px;
 }
 
-
 .join__form .check__msg {
     color: var(--red);
     padding-top: 5px;
@@ -149,5 +148,79 @@
 @media (max-width: 800px){
     .join__form {
         padding: 5% 20px;
+    }
+}
+/* join__insert */
+fieldset {
+    text-align-last: left;
+}
+.join__insert {
+    padding: 0 10%;
+}
+.join__insert .join {
+    margin-top: 50px;
+}
+.join__insert div label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+.join__insert div input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.join__insert div .msg {
+    color: var(--red);
+    margin-bottom: 3rem;
+}
+.join__insert .check {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.join__insert .check label {
+    width: 100%;
+}
+.join__insert .check input {
+    width: 69%;
+    height: 58px;
+}
+.join__insert .check .btn {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 1rem;
+    padding: 0 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 58px;
+}
+.join__btn {
+    margin-top: 70px;
+    text-align: center;
+}
+.join__btn a {
+    display: inline-block;
+}
+@media (max-width: 800px){
+    .join__insert {
+        padding: 0;
+    }
+}
+@media (max-width: 600px){
+    .join__insert .check {
+        flex-direction: column;
+    }
+    .join__insert .check input {
+        width: 100%;
+        height: 47px;
+    }
+    .join__insert .check .btn {
+        width: 100%;
+        height: 47px;
+        margin-bottom: 10px;
     }
 }

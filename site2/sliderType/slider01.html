@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .blind {
+            /* 영역을 없애고 */
+            width: 0;
+            height: 0;
+            line-height: 0;
+            overflow: hidden;
+            position: absolute;
+            text-indent: -9999px;
+            /* 들여쓰기 */
+        }
+
+        /* 시각리더기는 읽어주나 우리 눈에는 안보이이게 */
+        .ir {
+            display: block;
+            font-size: 0;
+            line-height: 0;
+            overflow: hidden;
+            text-indent: -9999px;
+        } /* ir=이미지대체효과 */
+
+
+        /* sliderType */
+        .slider {
+            position: relative;
+            /*  .slider__arrow a과 slider__dot의 기준점 */
+        }
+
+        /* slider__img */
+        .slider__img {
+            background: url(img/slider_bg01.jpg) no-repeat center center / cover;
+            /* 속기형 */
+            /* 상세형
+                background-image: url(img/imgText_bg01.jpg);
+                background-repeat: no-repeat;
+                background-position: center center; 
+                background-size: cover;
+            */
+            /* width: 100%;
+            height: 580px; */
+        }
+
+        .slider__img .desc {
+            width: 1160px;
+            margin: 0 auto;
+            /* 가운데 정렬 */
+            padding: 100px 20px;
+            /* 위아래 오른쪽왼쪽 */
+        }
+
+        .slider__img .desc span {
+            font-size: 16px;
+            background-color: #fff;
+            padding: 1px 14px 0 14px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            /* 대문자로 */
+            margin-bottom: 10px;
+            display: inline-block;
+            /* span은 기본적으로 인라인 구조기 때문에 margin-bottom이 적용되지 않는다.그래서 인라인블럭 구조로 바꿔준다 */
+
+        }
+
+        .slider__img .desc h3 {
+            font-size: 110px;
+            font-weight: 300;
+            line-height: 1;
+            /* 글자의 이상한 여백은 라인하이트때문에 주로 발생 라인하이트가 없으면 자동으로 라인하이트가 들어가니 한 줄 문장일때 라인하이트 값을 주어서 이상한 여백을 없앰 */
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            margin-left: -8px;
+        }
+
+        .slider__img .desc p {
+            font-size: 20px;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 130px;
+        }
+
+        .slider__img .desc .btn a {
+            font-size: 16px;
+            background: #fff;
+            padding: 11px 50px;
+            display: inline-block;
+            /* 이상한 여백은 보통 인라인 구조기 때문에 발생 따라서 기본적으로 인라인 구조인 a태그를 블록성질을 가진 인라인-블록 구조로 바꿔줌 */
+        }
+
+        /* slider__arrow */
+        /* 이미지 스프라이트(image sprite) 기법 여러 개의 작은 이미지를 하나의 이미지 파일로 합치고, CSS를 사용하여 필요한 부분만 보이도록 처리하는 방식입니다. 이 기술은 주로 아이콘, 버튼 등과 같은 작은 이미지들에 적용되며, 대규모 이미지나 배경 이미지에는 적합하지 않을 수 있습니다. */
+        .slider__img .desc .btn a.black {
+            background: #000;
+            color: #fff;
+        }
+
+        .slider__arrow a {
+            /* 가운데로 위치 조정 */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            /* 화살표 크기 */
+            width: 30px;
+            height: 56px;
+
+            /* svg 화살표 삽입, svg 0 0 위치에 해당하는 이지미가 왼쪽 화살표 이므로 left는 따로 위치 조정을 하지 않아도 left화살표가 들어감  */
+            background-image: url(img/slider_icon.svg);
+        }
+
+
+        .slider__arrow a.left {
+            left: 20px;
+        }
+
+        .slider__arrow a.right {
+            right: 20px;
+            /* svg 화살표 위치 조정 */
+            background-position: -50px 0;
+        }
+
+        /*slider__dot  */
+        .slider__dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 25px;
+        }
+
+        .slider__dot a {
+            display: inline-block;
+            /* 영역을 잡기 위해 인라인 구조를 인라인 블록화 */
+            width: 16px;
+            height: 16px;
+            background-image: url(img/slider_icon.svg);
+            background-position: -20px -70px;
+        }
+
+        .slider__dot a.active {
+            background-position: 0px -70px;
+        }
+
+        .slider__dot a.play {
+            background-position: -40px -70px;
+        }
+
+        .slider__dot a.stop {
+            background-position: -60px -70px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="sliderType" class="slider__wrap nexon">
+        <h2 class="blind">슬라이드 유형</h2>
+        <div class="slider__inner">
+            <div class="slider">
+                <div class="slider__img">
+                    <div class="desc">
+                        <span>developer</span>
+                        <h3>new frontend</h3>
+                        <p>
+                            너무 무리하지 말아요! 이미 당신은 잘하고 있고!<br />
+                            앞으로도 잘 할 수 있어요!
+                        </p>
+                        <div class="btn">
+                            <a href="/">자세히 보기</a>
+                            <a href="/" class="black">사이트 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__arrow">
+                    <a href="/" class="left"><span class="ir">이전 이미지</span></a>
+                    <a href="/" class="right"><span class="ir">다음 이미지</span></a>
+                </div>
+                <div class="slider__dot">
+                    <a href="/" class="dot active"><span class="ir">1</span></a>
+                    <a href="/" class="dot"><span class="ir">2</span></a>
+                    <a href="/" class="dot"><span class="ir">3</span></a>
+                    <a href="/" class="play"><span class="ir">플레이</span></a>
+                    <a href="/" class="stop"><span class="ir">정지</span></a>
+                </div>
+            </div>

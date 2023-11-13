@@ -1,0 +1,101 @@
+.like-button {
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 2px solid var(--white);
+    border-radius: 20px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* star_rating */
+.rating {
+    margin-top: 80px;
+    position: relative;
+    width: 210px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3em;
+    padding: 5px;
+    /* overflow: hidden; */
+    border-radius: 20px;
+    box-shadow: 0 0 2px var(--white);
+    padding-left: 55px;
+ }
+ 
+ .rating_result {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    transform: translateY(-10px) translateX(2px);
+    z-index: 10000;
+    font: 2em Arial, Helvetica, sans-serif;
+    color: #e6ff004a;
+    pointer-events: none;
+ }
+ 
+ .rating_star {
+    font-size: 1.3em;
+    cursor: pointer;
+    color: yellow;
+    transition: filter linear .3s;
+ }
+ 
+ .rating_star:hover {
+    filter: drop-shadow(1px 1px 4px gold);
+ }
+
+
+.intro_actor {
+    z-index: 2; /* 이미지(z-index:1) 위에 배치하기 위해 z-index를 높게 설정 */
+    width: 1280px;
+    height: 540px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+}
+
+.image_wrap {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+.intro_actor .image_wrap img {
+    width: 299px;
+    height: 400px;
+}
+
+.intro_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+    text-align: left;
+    padding-left: 400px;
+}
+.intro_info .name {
+    display: flex;
+    margin-bottom: 70px;
+}
+.intro_info .name h1 {
+    font-family: var(--mapo);
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    padding-left: 20px;
+}
+.intro_info .name h1:first-child {
+    border-right: 4px solid var(--white);
+    padding-right: 20px;
+    padding-left: 0;
+}
+.intro_info p {
+    padding-top: 25px;
+    font-size: 34px;
+}

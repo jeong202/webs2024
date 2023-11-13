@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지/텍스트 유형01</title>
+    <style>
+        /* fonts */
+        /* 폰트는 제일 먼저 읽어야 하기 때문에 상단에 위치해야 한다 */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .blind {
+            /* 영역을 없애고 */
+            width: 0;
+            height: 0;
+            line-height: 0;
+
+            overflow: hidden;
+            position: absolute;
+            text-indent: -9999px;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            /* 전체영역 중 컨테츠가 들어가는 가운데 영역
+            background: rgba(0, 0, 0, 0.4);  rgba값으로 영역 확인하면 보기에 편함*/
+        }
+        .section {
+            padding: 120px 0;
+        }
+
+        /* imTextType */
+        .imgText__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .imgText__inner>div {
+            width: 32%;
+            height: 500px;
+        } /* imgText__txt와 imgText__img의 영역 잡기 */
+
+        /* imgText__txt */
+        .imgText__txt .small {
+            font-size: 16px;
+            color: #666;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .imgText__txt .title {
+            font-size: 50px;
+            font-weight: 300;
+            word-break: keep-all; /* 단어별로 잘라서 내리기 wrap */
+            line-height: 1.4; /* 폰트 세로 크기의 1.4배를 의미함 따라서 폰트 크기와 관계가 있다 */
+            margin-bottom: 20px;
+        }
+
+        .imgText__txt .desc {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .imgText__txt .list {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .imgText__txt .list li {
+            /* list-style: circle; 기본 형태는 잘 깨지기 쉬워서 사용 잘 안함 따라서 reset list-style: none;을 사용함.기본형태말고 여러형태가 있음 이런식으로 줄 수 있다. 실무에서 잘 사용되지 않고 가상요소를 줘서 따로 동그라미를 만들어 준다*/
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .imgText__txt .list li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: #666;
+            border-radius: 50%;
+            position: absolute;
+            left: 5px;
+            top: 9px;
+        }
+
+        .imgText__txt .list li a {
+            color: #666;
+        }
+
+        /* imgText__img */
+        .imgText__img {
+            border-radius: 10px;
+            position: relative; /* imgText__img a의 기준점 */
+        }
+
+        .imgText__img a {
+            background-color: #7C2B39;
+            color: #fff;
+            padding: 10px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            display: inline-block;
+
+            /* 글씨 하단에 위치시키기 */
+            position: absolute; /* 기준점 .imgText__img */
+            left: 30px;
+            bottom: 30px;
+        }
+
+        .imgText__img a.blue {
+            background-color: #2B387C;
+        }
+
+        .imgText__img.img1 {
+            background: url(img/imgText_bg01.jpg) no-repeat center / cover;
+            /* 속기형 background*/
+            /* 상세형
+                background-image: url(img/imgText_bg01.jpg);
+                background-repeat: no-repeat;
+                background-position: center center; 
+                background-size: cover;
+            */
+        }
+
+        .imgText__img.img2 {
+            background: url(img/imgText_bg02.jpg) no-repeat center / cover;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="imTextType" class="imgText__wrap section nexon">
+        <h2 class="blind">이미지 텍스트 유형</h2>
+        <div class="imgText__inner container">
+            <div class="imgText__txt">
+                <span class="small">이미지 텍스트 유형01</span>
+                <h3 class="title">유용한 사이트 살펴보기</h3>
+                <p class="desc">웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 유용한 사이트입니다.</p>
+                <ul class="list">
+                    <li><a href="/">튜토리얼 사이트</a></li>
+                    <li><a href="/">레퍼런스 사이트</a></li>
+                    <li><a href="/">웹폰트 사이트</a></li>
+                    <li><a href="/">CSS 사이트</a></li>
+                    <li><a href="/">WebGL 사이트</a></li>
+                    <li><a href="/">Youtube 사이트</a></li>
+                </ul>
+            </div>
+            <div class="imgText__img img1">
+                <a href="/">레퍼런스 사이트</a>
+            </div>
+            <div class="imgText__img img2">
+                <a href="/" class="blue">튜토리얼 사이트</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

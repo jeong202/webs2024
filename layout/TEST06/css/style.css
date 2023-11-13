@@ -1,0 +1,336 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+/* wrap */
+#wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* 자식들이 자기 자신의 width값만 딱 들어가고 줄바꿈 */
+    position: relative;
+    /* .popup-view의 기준점 */
+}
+
+/* aside */
+#aside {
+    width: 200px;
+    height: 650px;/* 아래 항목에서 마진을 줘서 높이 차이가 발생해 높이를 직접 지정해줌 */
+}
+#aside .logo {
+    width: 100%;
+    height: 100px;
+    
+    /* 가운데 정렬 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* //가운데 정렬 */
+}
+#aside .logo a {
+    display: block;
+    font-size: 26px;
+    margin-top: 5px;
+}
+#aside .nav {
+    height: 550px;
+}
+#aside .nav > ul {
+    margin: 5px;
+}
+#aside .nav > ul > li {
+    margin-bottom: 5px;
+}
+#aside .nav > ul > li > a {
+    padding: 10px;
+    display: inline-block;
+
+    background-color: #ffd139;
+
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+
+    border: 2px solid #dead0c;
+}
+#aside .nav > ul > li > a:hover {
+    text-decoration: underline;
+}
+#aside .nav > ul > li > ul {
+    display: none;
+}
+#aside .nav > ul > li > ul > li a {
+    display: block;
+    padding: 10px;
+
+    background-color: #ffebab;
+
+    text-align: center;
+
+    border-bottom: 2px solid #dead0c;
+}
+#aside .nav > ul > li > ul > li a:hover {
+    background-color: #ffe281;;
+}
+
+/* main */
+#main {
+    width: calc(100% - 200px);
+    /* -사이에 띄어쓰기 해야지 적용 */
+}
+
+/* slider */
+#slider {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+#slider .imageWrap {
+    width: calc(100% - 230px);
+    height: 400px;
+}
+#slider .imageWrap .image {
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;/* 수직방향으로 아래로 */
+}
+
+/* 동급인 클래스 간에는 붙여서 쓴다 띄어쓰기 x,띄어쓰면 자식관계 */
+#slider .imageWrap .image.i1 {
+    background-image: url(../images/slider01.jpg);
+}
+#slider .imageWrap .image.i2 {
+    background-image: url(../images/slider02.jpg);
+}
+#slider .imageWrap .image.i3 {
+    background-image: url(../images/slider03.jpg);
+}
+
+#slider .imageWrap .image .text {
+    background-color: #dead0c8f;
+    width: 100%;
+    padding: 20px;
+}
+#slider .imageWrap .image .text h2 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+#slider .imageWrap .image .text p {
+    color: #fff;
+    font-size: 16px;
+}
+#slider .banner {
+    width: 230px;
+    height: 400px;
+    background-image: url(../images/banner.jpg);
+    /* 글씨 가운데 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 가운데 정렬한 글씨(6월~달, 알아보기) 두줄로 표현하기 */
+    flex-direction: column;
+
+    border: 10px solid #ffd139;
+    box-sizing: border-box;
+
+    transition: all 0.3s;
+}
+#slider .banner:hover {
+    border: 5px solid #ffd139;
+}
+#slider .banner h3 {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+#slider .banner h3 em {
+    color: #ffd139;
+    font-style: normal;
+    
+    /* 줄바꿈 위해서 6월은 줄바꿈 여행가는 달 */
+    display: block
+}
+#slider .banner a {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+/* contents */
+#contents {
+    width: 100%;
+    display: flex;
+}
+
+/* contents : notice */
+#contents .notice {
+    width: 50%;
+    height: 250px;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #fff6d6;
+    position: relative;
+    /* #contents .notice .more의 기준점 */
+}
+#contents .notice h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+#contents .notice li {
+    display: flex;
+    line-height: 1.7;
+    position: relative;
+    /* #contents .notice li::before의 기준점 */
+    padding-left: 16px;
+}
+#contents .notice li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #a58109;
+    border-radius: 50%;
+    position: absolute;
+    /* 기준점 #contents .notice li */
+    left: 0;
+    top: 8px;
+}
+#contents .notice li a {
+    width: 75%;
+
+    /* 글 두줄로 나올때 ...이하로 숨기기 반응형이기 때문에 필요 */
+    overflow: hidden;
+    text-overflow: ellipsis;/* 넘치면 ...으로 바꾸기 */
+    white-space: nowrap;/* 글씨 한줄로 나오게 */
+}
+#contents .notice li a:hover {
+    text-decoration: underline;
+}
+#contents .notice li span {
+    width: 25%;
+    text-align: right;
+}
+#contents .notice .more {
+    position: absolute;
+    /* 기준점 #contents .notice*/
+    right: 30px;
+    top: 30px;
+}
+#contents .notice .more:hover {
+    text-decoration: underline;
+}
+
+/* contents : gallery */
+#contents .gallery {
+    width: 50%;
+    height: 250px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+#contents .gallery h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+#contents .gallery ul {
+    display: flex;
+}
+#contents .gallery li {
+    width: 120px;
+    margin-right: 10px;
+}
+#contents .gallery li a {
+    display: block;
+    /* li span에 패딩값 적용시키기 위해 */
+}
+#contents .gallery li a span {
+    padding: 10px 0;
+    display: inline-block;
+    /* li span에 패딩값 적용시키기 위해 */
+}
+#contents .gallery li a span:hover {
+    text-decoration: underline;
+}
+
+/* footer */
+#footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center; /* 수직방향 가운데 정렬 */
+    background-color: #fffbea;
+}
+#footer .footer1 {
+    width: 200px;
+    display: flex;
+    align-items: center; /* 수직방향 가운데 정렬 */
+    justify-content: center;/* 수평방향 가운데 정렬 */
+}
+#footer .footer1 h4 {
+    font-size: 20px;
+    color: #858585;
+}
+#footer .footer2 {
+    width: calc(100% - 430px);
+    line-height: 1.5;
+}
+#footer .footer3 {
+    width: 230px;
+}
+#footer .footer3 select {
+    width: 90%;
+    height: 30px;
+}
+
+/* popup */
+.popup-view {
+    position: absolute;
+    /* 기준#wrap */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-color: #fff8e2;
+    border: 8px solid #ffe17d;
+    padding: 20px;
+    display: none;
+}
+.popup-view h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+.popup-close {
+    background-color: #ffc400;
+    padding: 8px 20px;
+    display: inline-block;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}

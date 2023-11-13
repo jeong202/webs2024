@@ -2,9 +2,9 @@
 include "../connect/connect.php";
 include "../connect/session.php";
 
-// echo "<pre>";
-// var_dump($_SESSION);
-// echo "</pre>";
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
 
 //총 페이지 갯수
 $sql = "SELECT count(boardID) FROM board";
@@ -68,7 +68,6 @@ $boardTotalCount = $boardTotalCount['count(boardID)'];
                 <table>
                     <colgroup>
                         <col style="width: 5%;">
-                        <col>
                         <col style="width: 10%;">
                         <col style="width: 15%;">
                         <col style="width: 7%;">

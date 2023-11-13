@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.search__title h1 {
+    font-family: 'LotteriaDdag';
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+i {
+    font-style: normal
+}
+body {
+    background-color: #333;
+    color: #fff;
+}
+li {
+    list-style: none;
+}
+
+
+/* header */
+#header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#header h1 a {
+    display: inline-block;
+    color: #fff;
+    padding: 20px;
+    font-size: 36px;
+}
+#header nav {
+    padding-right: 20px;
+}
+#header nav li {
+    display: inline-block;
+}
+#header nav li a {
+    padding: 10px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #fff;
+    text-align: center;
+    box-shadow: 1px 1px 0px #fff;
+    line-height: 1;
+    color: #fff;
+}
+#header nav li.active a {
+    background-color: #fff;
+    color: #000;
+}
+
+/* search_wrap */
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid #000;
+    border-radius: 20px;
+    background-color: #525558;
+    padding: 30px;
+    text-align: center;
+    min-height: 80vh;
+}
+
+
+/* search__title */
+.search__title {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #fff;
+}
+.search__title span {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.search__title h1,
+.search__title h2 {
+    margin-bottom: 20px;
+}
+/* search__star */
+.search__star li {
+    display: inline-block;
+    margin: 15px 15px 20px 15px;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+}
+.search__star li:hover {
+    border-color: #ff7300;
+    color:  #ff7300;
+    cursor: pointer;
+}
+.search__star li span {
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+    font-size: 0.8rem;
+}
+.search__star li::after{
+    content: attr(data-desc);
+}
+/* search__select */
+.search__select {
+    margin: 30px 0 20px 0;
+}
+.search__select span {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 10px;
+    border: 2px dashed #ff7300;
+    font-size: 20px;
+    font-weight: 900;
+}
+.search__select span:hover {
+    background-color: #f07f1536;
+    border-style: solid;
+}
+
+/* search__box */
+.search__box {
+    margin-bottom: 20px;
+    position: relative;
+}
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.search__box input {
+    border: 2px solid #ccc;
+    padding: 15px 40px;
+    width: 40%;
+    font-size: 20px;
+}
+.search__box .searchButton {
+    border: 2px solid #ffffff;
+    padding: 15px 20px;
+    border-radius: 50px;
+    background-color: #ff7300;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+.search__box p {
+    margin-top: 10px;
+}
+.search__box p em {
+    text-decoration: underline;
+    text-underline-position: under;
+    font-style: normal;
+}
+.search__box__result {
+    padding: 50px;
+    border-bottom: #fff dashed 2px;
+}
+.search__box__result::before {
+    content: '🧡 ';
+}
+
+/* search__list */
+.search__list {
+    text-align: left;
+    padding: 30px;
+    line-height: 2.0;
+}
+
+.search__list li strong {
+    position: relative;
+    padding: 0 5px;
+    font-size: 20px;
+}
+.search__list li strong::before {
+    content: '';
+    width: 100% !important;
+    height: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #f07f1536;
+    border-radius: 30px;
+    display: block;
+}
+.search__list li.show {
+    display: block;
+}
+
+.search__list li.hide {
+    display: none;
+}
+.search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #bdb7b7;
+    border-radius: 50px;
+    margin: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.search__list span:hover {
+    background-color: #f07f1536;
+    border: 1px solid #ff7300;
+}
+
+/* footer */
+#footer {
+    border-top: 2px solid #fff;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+#footer a {
+    display: block;
+    color: #fff;
+    padding: 40px;
+}
+#footer a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}

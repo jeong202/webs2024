@@ -1,0 +1,51 @@
+/* 스킵메뉴 */
+#skip {
+    position: relative;
+    z-index: 10000;
+}
+#skip a {
+    background: #000;
+    color: #fff;
+    position: absolute;
+    padding: 20px 40px;
+    left: -400px;
+    top: 5px;
+}
+#skip a:active,
+#skip a:focus {
+    left: 5px;
+}
+
+/* 컨테이너 */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/* 섹션 공통요소 */
+.section {
+    padding: 120px 0;
+}
+.section > h2 {
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+.section > p {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 70px;
+    color: #666;
+    text-align: center;
+}
+.section span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: underline;
+    margin-bottom: 14px;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../php/assets/css/style.css">
+    <style>
+        * {
+            color: #fff;
+        }
+        body {
+            padding: 10%;
+            font-family: var(--main-poppins);
+            font-size: 1.6rem;
+                     
+        }
+        a:hover {
+            text-decoration: underline;
+            text-underline-position: under;
+            font-size: 1.7rem;
+            transition: all 0.2s;
+        }
+        .boxWrap {
+            border: 1px solid #9d9d9d;
+            background-color: #9d9d9d;
+            border-radius: 20px;
+            width: 100%;
+        }
+        body h2 {
+            color: #9d9d9d;
+            font-size: 60px;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #9d9d9d;
+            padding: 20px;
+        }
+        .box {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 20px;
+        }
+        .box > div > h3 {
+            font-size: 50px;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-left: -20px;
+        }
+
+        .box__figma,
+        .box__html,
+        .box__php {
+            line-height: 1.7;
+            border-right: 1px dashed #fff;
+            margin-left: 10px;
+            padding-right: 50px;
+        }
+        .box__php {
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>myuduck</h2>
+    <div class="boxWrap">
+        <div class="box">
+            <div class="box__figma">
+                <h3>FIGMA</h3>
+                <ul>
+                    <li><a href="">메인</a></li><br>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">회원가입완료</a></li><br>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">로그인(아이디 찾기)</a></li>
+                    <li><a href="#">로그인(비밀번호 찾기)</a></li>
+                    <li><a href="#">로그아웃</a></li><br>
+                    <li><a href="#">마이페이지</a></li>
+                    <li><a href="#">나의찜목록</a></li>
+                    <li><a href="#">회원정보 수정</a></li><br>
+                    <li><a href="#">회원탈퇴</a></li><br>
+                    <li><a href="#">문의 사항</a></li>
+                    <li><a href="#">문의 사항 글쓰기</a></li>
+                    <li><a href="#">문의 사항 글보기</a></li>
+                    <li><a href="#">문의 사항 글수정</a></li><br>
+                    <li><a href="#">카테고리 극장(메인)</a></li>
+                    <li><a href="#">카테고리 극장(상세 페이지)</a></li>
+                    <li><a href="#">카테고리 뮤지컬(메인)</a></li>
+                    <li><a href="#">카테고리 뮤지컬(상세 페이지)</a></li>
+                    <li><a href="#">카테고리 배우(메인)</a></li>
+                    <li><a href="#">카테고리 배우(상세 페이지)</a></li>
+                </ul>
+            </div>
+            <div class="box__html">
+                <h3>HTML</h3>
+                <ul>
+                    <li><a href="html/main.html">메인</a></li><br>
+                    <li><a href="html/join_agree.html">회원가입 약관</a></li>
+                    <li><a href="html/join.html">회원가입</a></li>
+                    <li><a href="#">회원가입완료</a></li><br>
+                    <li><a href="html/login.html">로그인</a></li>
+                    <li><a href="#">로그인 완료</a></li>
+                    <li><a href="html/id_find.html">로그인(아이디 찾기)</a></li>
+                    <li><a href="#">로그인(아이디 찾기) 완료</a></li>
+                    <li><a href="html/password_find.html">로그인(비밀번호 찾기)</a></li>
+                    <li><a href="#">로그인(비밀번호 찾기) 완료</a></li><br>
+                    <li><a href="#">마이페이지</a></li>
+                    <li><a href="#">나의찜목록</a></li>
+                    <li><a href="#">회원정보 수정</a></li><br>
+                    <li><a href="html/join_cancel_agree.html">회원탈퇴 약관</a></li>
+                    <li><a href="html/join_cancel.html">회원탈퇴하기</a></li>
+                    <li><a href="#">회원탈퇴 완료</a></li><br>
+                    <li><a href="#">문의 사항</a></li>
+                    <li><a href="#">문의 사항 글쓰기</a></li>
+                    <li><a href="#">문의 사항 글보기</a></li>
+                    <li><a href="#">문의 사항 글수정</a></li><br>
+                    <li><a href="html/kategorie_theater.html">카테고리 극장(메인)</a></li>
+                    <li><a href="html/kategorie_theater_detail.html">카테고리 극장(상세 페이지)</a></li>
+                    <li><a href="#">카테고리 뮤지컬(메인)</a></li>
+                    <li><a href="#">카테고리 뮤지컬(상세 페이지)</a></li>
+                    <li><a href="#">카테고리 배우(메인)</a></li>
+                    <li><a href="#">카테고리 배우(상세 페이지)</a></li>
+                </ul>
+            </div>
+            <div class="box__php">
+                <h3>PHP</h3>
+                <ul>
+                    <li><a href="#">메인</a></li><br>
+                    <li><a href="join/joinAgree.php">회원가입 약관</a></li>
+                    <li><a href="join/joinInsert.php">회원가입</a></li>
+                    <li><a href="join/joinResult.php">회원가입완료</a></li><br>
+
+                    <li><a href="create/create.php">멤버 테이블 만들기</a></li><br>
+                    
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">로그인(아이디 찾기)</a></li>
+                    <li><a href="#">로그인(비밀번호 찾기)</a></li>
+                    <li><a href="#">로그아웃</a></li><br>
+                    <li><a href="#">마이페이지</a></li>
+                    <li><a href="#">나의찜목록</a></li>
+                    <li><a href="#">회원정보 수정</a></li><br>
+                    <li><a href="#">회원탈퇴</a></li><br>
+                    <li><a href="#">문의 사항</a></li>
+                    <li><a href="#">문의 사항 글쓰기</a></li>
+                    <li><a href="#">문의 사항 글보기</a></li>
+                    <li><a href="#">문의 사항 글수정</a></li><br>
+                    <li><a href="#">카테고리 극장(메인)</a></li>
+                    <li><a href="#">카테고리 극장(상세 페이지)</a></li>
+                    <li><a href="#">카테고리 뮤지컬(메인)</a></li>
+                    <li><a href="#">카테고리 뮤지컬(상세 페이지)</a></li>
+                    <li><a href="#">카테고리 배우(메인)</a></li>
+                    <li><a href="#">카테고리 배우(상세 페이지)</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

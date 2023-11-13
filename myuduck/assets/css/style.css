@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/* 기본 설정 */
+@import "fonts.css";
+@import "resets.css";
+@import "vars.css";
+
+
+
+/* 섹션별 설정 */
+@import "header.css";
+@import "join.css";
+@import "find.css";
+@import "login.css";
+@import "footer.css";
+@import "sidebar.css";
+@import "kate__theater.css";
+@import "cate__theater.css";
+@import "joinResult.css";
+@import "QA.css";
+
+/* 섹션별 설정(서현) */
+@import "main.css";
+@import "search.css";
+@import "category_actor.css";
+@import "category_ac_detail.css";

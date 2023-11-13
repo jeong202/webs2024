@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤더 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        li {
+            list-style: none;
+        }
+        em {
+            font-style: normal; /* em태그 사용시 기울어진 형식이 기본 폰트 스타일 따라서 리셋을 통해 일반 형식으로 변경 */
+        }
+
+        /* headerType */
+        .header__inner {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;/* 수직정렬 */
+            justify-content: space-between;/* 수평정렬 */
+            padding: 0 20px;/* 위아래, 왼쪽오른쪽 */
+            box-sizing: border-box; /* padding이 너비 width: 100%; 안에 포함되게 해서 딱 너비를 맞춰 좌우스크롤바 생기는걸 막음 */
+            border-bottom: 1px solid #ccc;
+        }
+        .header__logo {
+            font-size: 30px;
+            font-weight: 700;
+            text-transform: uppercase; /* 대문자로 변경 */
+            width: 20%;
+        }
+        .header__logo em {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .header__menu {
+            width: 60%;
+            text-align: center;
+        }
+        .header__menu li {
+            display: inline; /* li는 기본적으로 블럭구조 */
+        }
+        .header__menu li a {
+            padding: 13px 30px;
+            margin: 0 5px;
+            transition: background-color 0.33s;
+        }
+        .header__menu li a:hover {
+            background-color: #F1F1F1;
+            border-radius: 5px;
+        }
+        .header__member {
+            width: 20%;
+            text-align: right;
+        }
+        .header__member a {
+            font-size: 16px;
+            border: 1px solid #000;
+            padding: 10px 30px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header id="headerType" class="header__wrap nexon">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">web <em>site</em></a>
+            </div>
+            <nav class="header__menu">
+                <ul>
+                    <li><a href="#">헤더 영역</a></li>
+                    <li><a href="#">슬라이드 영역</a></li>
+                    <li><a href="#">배너 영역</a></li>
+                    <li><a href="#">컨텐츠 영역</a></li>
+                    <li><a href="#">푸터 영역</a></li>
+                </ul>
+            </nav>
+            <div class="header__member">
+                <a href="#">로그인</a>
+            </div>
+        </div>
+    </header>
+</body>

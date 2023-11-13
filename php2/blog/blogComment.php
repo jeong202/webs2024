@@ -1,0 +1,1 @@
+<article class="blog__comment">bloog__comment</article>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYUDUCK 모아 보기</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+    <div id="wrap">
+        <nav id="nav">
+            <div class="menu">
+                <ul>
+                    <li>디자인</li>
+                    <li class="active">코딩</li>
+                    <li>개발</li>
+                </ul>
+            </div>
+            <div class="contents">
+                <div>
+                    <h3>메인 디자인</h3>
+                    <ul>
+                        <li class="active"><a href="http://kiwowki.dothome.co.kr/MYUDUCK/html/main.html">메인 페이지</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>메인 코딩</h3>
+                    <ul>
+                        <li><a class="active" href="http://kiwowki.dothome.co.kr/MYUDUCK/html/main.html">메인 페이지</a></li>
+                    </ul>
+            
+                    <h3>회원가입</h3>
+                    <ul>
+                        <li><a href="http://ljy16.dothome.co.kr/myuduck/html/join_agree.html">회원가입 : 이용약관(join_agree)</a></li>
+                        <li><a href="http://ljy16.dothome.co.kr/myuduck/html/join.html">회원가입 : 정보입력(join_insert)</a></li>
+                        <li><a href="http://jhyjhy968.dothome.co.kr/project2/result_join.html">회원가입 : 완료(join_result)</a></li>
+                    </ul>
+                    <h3>회원탈퇴</h3>
+                    <ul>
+                        <li><a href="http://ljy16.dothome.co.kr/myuduck/html/join_cancel_agree.html">회원탈퇴 : 회원탈퇴안내(join_)</a></li>
+                        <li><a href="http://ljy16.dothome.co.kr/myuduck/html/join_cancel.html">회원탈퇴 : 본인확인(join__insert)</a></li>
+                        <li><a href="http://jhyjhy968.dothome.co.kr/project2/result_out.html">회원탈퇴 : 완료(join__result)</a></li>
+                    </ul>
+            
+                    <h3>로그인</h3>
+                    <ul>
+                        <li><a href="http://ljy16.dothome.co.kr/myuduck/html/login.html">로그인(login)</a></li>
+                        <li><a href="http://ljy16.dothome.co.kr/myuduck/html/id_find.html">아이디 찾기(findID)</a></li>
+                        <li><a href="http://jhyjhy968.dothome.co.kr/project2/result_ID.html">아이디 찾기 완료(findID_result)</a>
+                        </li>
+                        <li><a href="http://ljy16.dothome.co.kr/myuduck/html/password_find.html">비밀번호 찾기(findPW)</a></li>
+                        <li><a href="http://jhyjhy968.dothome.co.kr/project2/result_PW.html">비밀번호 찾기 완료(findPW_result)</a></li>
+                    </ul>
+            
+                    <h3>마이페이지</h3>
+                    <ul>
+                        <li><a href="http://">마이페이지(myPage)</a></li>
+                    </ul>
+            
+                    <h3>문의게시판</h3>
+                    <ul>
+                        <li><a href="http://jhyjhy968.dothome.co.kr/project2/QA.html">게시판(board)</a></li>
+                        <li><a href="http://jhyjhy968.dothome.co.kr/project2/QA_write.html">게시판 글쓰기(board_write)</a></li>
+                        <li><a href="http://jhyjhy968.dothome.co.kr/project2/QA_modify.html">게시판 글수정(board_modify)</a></li>
+                    </ul>
+            
+                    <h3>검색</h3>
+                    <ul>
+                        <li><a href="http://kiwowki.dothome.co.kr/MYUDUCK/html/search.html">검색하기(search)</a></li>
+                    </ul>
+            
+                    <h3>카테고리 뮤지컬</h3>
+                    <ul>
+                        <li><a href="http://jhyjhy968.dothome.co.kr/project2/kategorie_musical.html">뮤지컬 : 메인 페이지</a></li>
+                        <li><a href="http://jhyjhy968.dothome.co.kr/project2/kategorie_mu_detail.html">뮤지컬 : 상세 페이지</a></li>
+                    </ul>
+            
+                    <h3>카테고리 극장</h3>
+                    <ul>
+                        <li><a href="http://ljy16.dothome.co.kr/myuduck/html/kategorie_theater.html">극장 : 메인 페이지</a></li>
+                        <li><a href="http://">극장 : 상세 페이지</a></li>
+                    </ul>
+            
+                    <h3>카테고리 배우</h3>
+                    <ul>
+                        <li><a href="http://kiwowki.dothome.co.kr/MYUDUCK/html/category_actor.html">배우 : 메인 페이지</a></li>
+                        <li><a href="http://">배우 : 상세 페이지</a></li>
+                    </ul>
+                </div>
+            
+                <div>
+                    <h3>메인 개발</h3>
+                    <ul>
+                        <li class="active"><a href="http://kiwowki.dothome.co.kr/MYUDUCK/html/main.html">메인 페이지</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main id="main">
+            <iframe src="http://kiwowki.dothome.co.kr/MYUDUCK/html/main.html" frameborder="0"></iframe>
+        </main>
+
+        <script>
+            document.querySelectorAll("#nav ul li").forEach((li) => {
+                li.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    const href = li.querySelector("a").getAttribute("href");
+                    document.querySelector("#main iframe").src = href;
+                });
+            });
+
+            const menus = document.querySelectorAll(".menu ul li");
+            const cont = document.querySelectorAll(".contents > div > ul > li > a");
+            const contents = document.querySelectorAll(".contents > div");
+
+            menus.forEach((li, index) => {
+                li.addEventListener("click", () => {
+                    menus.forEach(menu => {
+                        menu.classList.remove("active")
+                    });
+                    li.classList.add("active");
+
+                    contents.forEach(content => {
+                        content.style.display = "none";
+                    });
+                    contents[index].style.display = "block";
+                });
+            });
+
+            cont.forEach((li, index) => {
+                li.addEventListener("click", () => {
+                    cont.forEach(content => {
+                        content.classList.remove("active");
+                    });
+
+                    li.classList.add("active");
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

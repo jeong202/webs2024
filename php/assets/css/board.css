@@ -117,7 +117,7 @@
     border-bottom: 2px solid var(--black);
 }
 .board__view table th {
-    background-color: var(--black500);
+    background-color: var(--black400);
 }
 .board__view table th,
 .board__view table td {

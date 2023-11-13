@@ -41,26 +41,26 @@ include "../connect/session.php";
                         <col style="width: 80%">
                     </colgroup>
                     <tbody>
-                        <?php
-                        $boardID = $_GET['boardID'];
+<?php
+$boardID = $_GET['boardID'];
 
-                        //보드 뷰 + 1
-                        $sql = "UPDATE board SET boardview = boardview + 1 WHERE boardID = {$boardID}";
-                        $connect -> query($sql);
+//보드 뷰 + 1
+$sql = "UPDATE board SET boardview = boardview + 1 WHERE boardID = {$boardID}";
+$connect -> query($sql);
 
-                        $sql = "SELECT b.boardTitle, m.youName, b.regTime, b.boardView, b.boardContents FROM board b JOIN members m ON(b.memberID = m.memberID) WHERE b.boardID = {$boardID}";
-                        $result = $connect->query($sql);
+$sql = "SELECT b.boardTitle, m.youName, b.regTime, b.boardView, b.boardContents FROM board b JOIN members m ON(b.memberID = m.memberID) WHERE b.boardID = {$boardID}";
+$result = $connect->query($sql);
 
-                        if ($result) {
-                            $info = $result->fetch_array(MYSQLI_ASSOC);
+if ($result) {
+    $info = $result->fetch_array(MYSQLI_ASSOC);
 
-                            echo "<tr><th>제목</th><td>" . $info['boardTitle'] . "</td></tr>";
-                            echo "<tr><th>등록자</th><td>" . $info['youName'] . "</td></tr>";
-                            echo "<tr><th>등록일</th><td>" . date('Y-m-d', $info['regTime']) . "</td></tr>";
-                            echo "<tr><th>조회수</th><td>" . $info['boardView'] . "</td></tr>";
-                            echo "<tr><th>내용</th><td>" . $info['boardContents'] . "</td></tr>";
-                        }
-                        ?>
+    echo "<tr><th>제목</th><td>" . $info['boardTitle'] . "</td></tr>";
+    echo "<tr><th>등록자</th><td>" . $info['youName'] . "</td></tr>";
+    echo "<tr><th>등록일</th><td>" . date('Y-m-d', $info['regTime']) . "</td></tr>";
+    echo "<tr><th>조회수</th><td>" . $info['boardView'] . "</td></tr>";
+    echo "<tr><th>내용</th><td>" . $info['boardContents'] . "</td></tr>";
+}
+?>
                         <!-- <tr>
                             <th>제목</th>
                             <td>게시판 제목입니다.</td>
