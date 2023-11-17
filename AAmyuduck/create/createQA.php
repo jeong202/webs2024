@@ -11,5 +11,11 @@
     $sql .= "PRIMARY KEY(boardID)";
     $sql .= ") charset=utf8";
 
-    $connect -> query($sql);
+    // 원본 $connect -> query($sql);
+    $result = $connect->query($sql);
+    if($result){
+        echo "Create Tables Complete";
+    } else {
+        echo "Create Tables False";
+    }
 ?>

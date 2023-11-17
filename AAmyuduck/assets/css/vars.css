@@ -1,27 +1,28 @@
 :root {
     --main-nanum: "NanumSquareNeo";
     --main-gmark: "GmarketSans";
-    
+
     --primary-Oleo: "OleoScript";
     --primary-Hahmlet: "Hahmlet";
     --primary-Mapo: "MapoGoldenPier";
     --primary-Nanum: "nanumSquareNeo";
     --primary-Oswald: "Oswald";
 
-    --primary-color: #EEEEEE;
 
-    --black: #000;
-    --white: #fff;
+    --black: #000000;
+    --white: #ffffff;
     --red: #f00;
 
     --black100: #333;
     --black200: #555;
     --black300: #777;
     --black400: #999;
-    --black500: #D7D7D7;
-    --black600: #E8E8E8;
-    --black700: #F6F4F4;
+    --black500: #d7d7d7;
+    --black600: #e8e8e8;
+    --black700: #f6f4f4;
     --black800: #00000060;
+    --black900: #00000080;
+    /* // 900이 제일 어두움(타이틀 전용) */
     --black999: #00000060;
 
     font-size: 16px;
@@ -29,7 +30,7 @@
     font-weight: 400;
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
     :root {
         font-size: 14px;
     }
@@ -41,13 +42,10 @@
     --hahm: "Hahmlet";
     --mapo: "MapoGoldenPier";
     --oswald: "Oswald";
-    
+
 
     --primary-color: #D06958;
-    --primary-color2: #160A0C;
-}
-@media (max-width: 800px){
-    :root {
-        font-size: 14px;
-    }
+    --primary-color2: #985353;
+    --primary-color3: #160A0C;
+    --primary-color4: #c9b5b2;
 }

@@ -1,0 +1,281 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+    /* 또는 vertical-align: top;*/
+}
+
+/* wrap */
+#wrap {
+    width: 100%;
+}
+
+/* ------------------------------------------------------------- */
+
+
+
+/* main */
+#main {
+    width: 100%;
+    height: calc(100vh - 120px);
+    display: flex;
+    /* background-color: #ccc; */
+}
+
+/* ------------------------------------------------------------- */
+
+
+
+/* header */
+#header {
+    width: 200px;
+    /* height: 100%;
+    background-color: #efefef; */
+}
+
+.logo {
+    width: 100%;
+    height: 10%;
+    background-color: #efefef;
+    text-align: center;
+}
+
+.logo a {
+    display: block;
+    padding: 20px;
+    color: green;
+}
+
+.nav {
+    width: 100%;
+    height: 90%;
+    background-color: #e3e3e3;
+}
+
+/* 메인메뉴 */
+.nav>ul>li {
+    text-align: center;
+    position: relative;
+    /* 서브메뉴를 오른쪽으로 보내기 위해 기준점 */
+}
+
+.nav>ul>li>a {
+    display: inline-block;
+    padding: 10px;
+    background-color: green;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav>ul>li>a:hover {
+    background-color: skyblue;
+}
+
+/* 서브메뉴 */
+.nav>ul>li>ul {
+    position: absolute;
+    /* 기준점은 메인메뉴 */
+    right: -200px;
+    top: 0;
+    width: 200px;
+    display: none;
+    /* js를 통해 작업함 */
+}
+
+.nav>ul>li>ul>li>a {
+    display: inline-block;
+    padding: 10px;
+    background-color: greenyellow;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav>ul>li>ul>li>a:hover {
+    background-color: azure;
+    color: #333;
+}
+
+
+/* ------------------------------------------------------------- */
+
+
+
+/* contents */
+#contents {
+    width: 400px;
+    height: 100%;
+    /* background-color: #e3e3e3; */
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    height: 15%;
+    /* background-color: #d9d9d9; */
+    background: url(../images/banner.jpg) no-repeat center;
+    /* background는 여러 배경 속성을 한 번에 다루는 데 사용되고, background-image는 배경 이미지만을 지정하는 데 사용됩니다. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.banner h3 {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 24px;
+}
+
+.banner a {
+    color: #333;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 10px 20px;
+
+}
+
+/* .notice  */
+.notice {
+    width: 100%;
+    height: 35%;
+    background-color: #d1d1d1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.notice h3 {
+    font-size: 24px;
+    background-color: green;
+    color: #fff;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.notice li {
+    position: relative;
+    display: flex;
+    /* 가상의 점(notice li::before) 기준점 */
+}
+
+.notice li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: green;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    border-radius: 50%;
+}
+
+
+.notice li a {
+    padding-left: 10px;
+    width: 70%;
+
+    /* 한줄효과 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* 한줄효과 주기 위해서는 */
+}
+
+.notice li a:hover {
+    text-decoration: underline;
+}
+
+.notice li span {
+    width: 30%;
+    text-align: right;
+}
+
+
+
+
+
+
+.gallery {
+    width: 100%;
+    height: 35%;
+    background-color: #c7c7c7;
+}
+
+.link {
+    width: 100%;
+    height: 15%;
+    background-color: #bcbcbc;
+}
+
+/* ------------------------------------------------------------- */
+
+
+/* slider */
+#slider {
+    width: calc(100% - 600px);
+    height: 100%;
+    background-color: #d9d9d9;
+}
+
+
+
+/* ------------------------------------------------------------- */
+
+/* footer */
+#footer {
+    width: 100%;
+    height: 120px;
+    /* background-color: #d1d1d1; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer1 {
+    width: 200px;
+    height: 120px;
+    background-color: #a3a3a3;
+}
+
+.footer2 {
+    width: calc(100% - 400px);
+}
+
+.footer2__1 {
+    width: 100%;
+    height: 60px;
+    background-color: #9d9d9d;
+}
+
+.footer2__2 {
+    width: 100%;
+    height: 60px;
+    background-color: #929292;
+}
+
+.footer3 {
+    width: 200px;
+    height: 120px;
+    background-color: #838383;
+
+}

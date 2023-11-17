@@ -1,5 +1,6 @@
 <?php
 include "../connect/connect.php";
+include "../connect/session.php";
 
 $theaterId = $_GET['theaterId'];
 
@@ -132,7 +133,7 @@ if ($result->num_rows > 0) {
     <script>
         function handleLinkClick(thName) {
             // category_th_detail.php 페이지로 이동
-            window.location.href = "http://kiwowki.dothome.co.kr/myuduck2/theater/category_th_detail.php";
+            window.location.href = "http://http://jhyjhy968.dothome.co.kr/AAmyuduck/html/category_theater.php#";
 
             // 클릭한 a 링크에 대한 정보를 localStorage에 저장
             localStorage.setItem("thName", thName);

@@ -1,17 +1,17 @@
 <?php
-    include "../connect/connect.php";
-    include "../connect/session.php";
+include "../connect/connect.php";
+include "../connect/session.php";
 
-    // echo "<pre>";
-    // var_dump($_SESSION);
-    // echo "</pre>";
+// echo "<pre>";
+// var_dump($_SESSION);
+// echo "</pre>";
 
-    //총 페이지 갯수
-    $sql = "SELECT count(boardID) FROM QAboard";
-    $result = $connect->query($sql);
+//총 페이지 갯수
+$sql = "SELECT count(boardID) FROM QAboard";
+$result = $connect->query($sql);
 
-    $boardTotalCount = $result->fetch_array(MYSQLI_ASSOC);
-    $boardTotalCount = $boardTotalCount['count(boardID)'];
+$boardTotalCount = $result->fetch_array(MYSQLI_ASSOC);
+$boardTotalCount = $boardTotalCount['count(boardID)'];
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -40,7 +40,7 @@
             <div class="board container">
                 <div class="board__search">
                     <div class="board__searchT1">
-                        <span>문의하기</span><span class="en">Q&A</span>
+                        <span>후기 게시판</span><span class="en">Review</span>
                         <div class="num">
                             * 총 <em><?= $boardTotalCount ?></em>건의 게시물이 등록되어 있습니다.
                         </div>
@@ -81,51 +81,51 @@
                                 </tr>
                             </thead>
                             <tbody>
-<?php
-    if (isset($_GET['page'])) {
-        $page = (int) $_GET['page'];
-    } else {
-        $page = 1;
-    }
+                                <?php
+                                if (isset($_GET['page'])) {
+                                    $page = (int) $_GET['page'];
+                                } else {
+                                    $page = 1;
+                                }
 
-    $viewNum = 10;
-    $viewLimit = ($viewNum * $page) - $viewNum;
+                                $viewNum = 10;
+                                $viewLimit = ($viewNum * $page) - $viewNum;
 
-    //1~10  LIMIT 0,  10  --> page1 ($viewNum * 1) - $viewNum
-    //11~20 LIMIT 10, 10  --> page2 ($viewNum * 2) - $viewNum
-    //21~30 LIMIT 20, 10  --> page3 ($viewNum * 3) - $viewNum
-    //31~40 LIMIT 30, 10  --> page4 ($viewNum * 4) - $viewNum
+                                //1~10  LIMIT 0,  10  --> page1 ($viewNum * 1) - $viewNum
+                                //11~20 LIMIT 10, 10  --> page2 ($viewNum * 2) - $viewNum
+                                //21~30 LIMIT 20, 10  --> page3 ($viewNum * 3) - $viewNum
+                                //31~40 LIMIT 30, 10  --> page4 ($viewNum * 4) - $viewNum
 
-    $sql = "SELECT b.boardID, b.boardTitle, m.youId, b.regTime, b.boardView FROM QAboard b JOIN myuduck m ON(b.youId = m.youId) ORDER BY boardID DESC LIMIT {$viewLimit}, {$viewNum}";
-    //ON(b.memberID = m.memberID) board 테이블과 members 테이블, 두 테이블의 memberID 값이 일치하는 레코드들을 하나로 합칠 수 있습니다.
-    //JOIN 작업에서 어떤 조건 아래에서 두 테이블을 결합할지를 나타내는 부분으로 여기서는 memberID를 기준으로 사용했습니다 
-    //b와 m이라는 별칭을 사용해 SQL 문에서 각 테이블에 접근할 때 b와 m 별칭을 사용할 수 있습니다.
+                                $sql = "SELECT b.boardID, b.boardTitle, m.youId, b.regTime, b.boardView FROM QAboard b JOIN myuduck m ON(b.youId = m.youId) ORDER BY boardID DESC LIMIT {$viewLimit}, {$viewNum}";
+                                //ON(b.memberID = m.memberID) board 테이블과 members 테이블, 두 테이블의 memberID 값이 일치하는 레코드들을 하나로 합칠 수 있습니다.
+                                //JOIN 작업에서 어떤 조건 아래에서 두 테이블을 결합할지를 나타내는 부분으로 여기서는 memberID를 기준으로 사용했습니다 
+                                //b와 m이라는 별칭을 사용해 SQL 문에서 각 테이블에 접근할 때 b와 m 별칭을 사용할 수 있습니다.
 
-    $result = $connect->query($sql);
-    
+                                $result = $connect->query($sql);
 
-    if ($result) {
-        $count = $result->num_rows;
 
-        if ($count > 0) {
-            for ($i = 0; $i < $count; $i++) {
-                $info = $result->fetch_array(MYSQLI_ASSOC);
+                                if ($result) {
+                                    $count = $result->num_rows;
 
-                echo "<tr>";
-                echo "<td>" . $info['boardID'] . "</td>";
-                echo "<td><a href='QAView.php?boardID={$info['boardID']}'>" . $info['boardTitle'] . "</a></td>";
-                echo "<td>" . $info['youId'] . "</td>";
-                echo "<td>" . date('Y-m-d', $info['regTime']) . "</td>";
-                echo "<td>" . $info['boardView'] . "</td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='5'>게시글이 없습니다.</td></tr>";
-        }
-    } else {
-        echo "관리자에게 문의해주세요!!";
-    }
-?>
+                                    if ($count > 0) {
+                                        for ($i = 0; $i < $count; $i++) {
+                                            $info = $result->fetch_array(MYSQLI_ASSOC);
+
+                                            echo "<tr>";
+                                            echo "<td>" . $info['boardID'] . "</td>";
+                                            echo "<td><a href='QAView.php?boardID={$info['boardID']}'>" . $info['boardTitle'] . "</a></td>";
+                                            echo "<td>" . $info['youId'] . "</td>";
+                                            echo "<td>" . date('Y-m-d', $info['regTime']) . "</td>";
+                                            echo "<td>" . $info['boardView'] . "</td>";
+                                            echo "</tr>";
+                                        }
+                                    } else {
+                                        echo "<tr><td colspan='5'>게시글이 없습니다.</td></tr>";
+                                    }
+                                } else {
+                                    echo "관리자에게 문의해주세요!!";
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -133,7 +133,7 @@
             </div>
             <div class="board__pages">
                 <ul>
-                <?php
+                    <?php
                     // 총 페이지 갯수
                     $boardTotalCount = ceil($boardTotalCount / $viewNum); //29.4 -->30 무조건 올림
 
@@ -157,10 +157,10 @@
                     for ($i = $startPage; $i <= $endPage; $i++) {
                         $active = "";
                         if ($i == $page) $active = "active";
-                    
+
                         echo "<li class='{$active}'><a href='QA.php?page={$i}'>{$i}</a></li>";
                     }
-                    
+
                     //마지막으로/다음
                     if ($page != $boardTotalCount) {
                         $nextPage = $page + 1;
@@ -181,8 +181,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="../script/commons.js"></script>
-    
+
     <script>
         $(document).ready(function() {
             const writeBtn = $(".writeBtn");
@@ -208,4 +209,5 @@
 
 
 </body>
+
 </html>

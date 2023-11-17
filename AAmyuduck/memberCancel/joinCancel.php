@@ -28,10 +28,10 @@
 
 
     <main>
-        <section class="join__inner2">
+        <section class="join__inner2 ">
             <h2 class="blind">회원탈퇴</h2>
             <div class="join__from2 container2">
-                <h3>회원탈퇴<span>withdrawal from membership</span></h3>
+                <h3 class="join_withdrawal">회원탈퇴<span>withdrawal from membership</span></h3>
                 <form action="joinCancelCheck.php" name="joinCancelCheck" method="post">
                     <fieldset>
                         <div>

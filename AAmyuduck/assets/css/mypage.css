@@ -1,0 +1,13 @@
+#mypage_wrap {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.mypage_inner {
+    flex-direction: row !important;
+}
+
+.mypage_side_img {
+    background: url(../img/mypage01.jpg) no-repeat center;
+    width: 100%;
+}

@@ -1,10 +1,11 @@
 <?php
 include "../connect/connect.php";
+include "../connect/session.php";
 
 $muCategory = array();
 
 // 뮤지컬 테이블 정보 가져오기
-$sql = "SELECT * FROM musical ORDER BY musicalId ASC";
+$sql = "SELECT * FROM musical ORDER BY musicalId DESC";
 $result = $connect->query($sql);
 
 
@@ -45,9 +46,9 @@ if ($result->num_rows > 0) {
     <!-- //header -->
 
 
-    <main>
+    <main id="mu_de">
         <div class="categorieWrap">
-            <img src="../assets/img/category_musical.png" alt="이미지" class="intro__img">
+            <img src="../assets/img/category_musical.jpg" alt="이미지" class="intro__img">
             <div class="container">
                 <div class="ca__inner1">
                     <div class="title">
@@ -58,7 +59,7 @@ if ($result->num_rows > 0) {
                     <div class="ca__imgs">
                         <?php foreach ($muCategory as $muInfo) : ?>
                             <div class="img1 imgcontainer">
-                                <a href="http://kiwowki.dothome.co.kr/myuduck2/musical/category_mu_detail.php?musicalId=<?php echo $muInfo['musicalId']; ?>"><img src="<?php echo $muInfo['muImg']; ?>" alt="<?php echo $muInfo['muNameKo']; ?>"></a>
+                                <a href="http://jhyjhy968.dothome.co.kr/AAmyuduck/musical/category_mu_detail.php?musicalId=<?php echo $muInfo['musicalId']; ?>"><img src="<?php echo $muInfo['muImg']; ?>" alt="<?php echo $muInfo['muNameKo']; ?>"></a>
                                 <div class="text">
                                     <div class="t1"><?php echo $muInfo['muNameKo']; ?></div>
                                     <div class="t2"><?php echo $muInfo['muPlace']; ?></div>
@@ -76,6 +77,7 @@ if ($result->num_rows > 0) {
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
 <script src="../script/commons.js"></script>
 <script>
 

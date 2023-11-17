@@ -52,7 +52,7 @@ include "../connect/session.php";
                     </div>
                 </div>
                 <div class="my_favorites">
-                    <h3>즐겨찾기 목록</h3>
+                    <h3>찜목록</h3>
                     <div class="favorites_list">
                         <div class="favorites-card">
                             <a href="#"><img src="../assets/img/my_page01.jpg" alt="my_page01"></a>

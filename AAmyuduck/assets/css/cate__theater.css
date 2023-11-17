@@ -1,13 +1,13 @@
 .theater__ineer {
-    padding: 100px 60px 100px 60px;
+    padding: 150px 60px 100px 60px;
     color: var(--black);
 }
 
 .theater__ineer h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: var(--primary-Hahmlet);
-    font-weight: bold;
-    margin-bottom: 10px;
+    color: var(--primary-color);
+    margin-bottom: 50px;
 }
 
 .theater__ineer h1 span {
@@ -33,7 +33,7 @@
 /* theater__info */
 .theater__info {
     margin: 0 auto;
-    /* background-color: var(--white); */
+    /* background-color: var(--black); */
     /* color: var(--black); */
     position: relative;
 }
@@ -42,6 +42,21 @@
 .theater__map img {
     width: 80%;
     height: 85%;
+    /* border-top: 2px solid var(--black600);
+    border-bottom: 2px solid var(--black600); */
+    /* margin: 10px;
+    padding: 10px; */
+}
+
+.theater__map .pin {
+    position: absolute;
+    right: 13.5rem;
+    top: 15.9rem;
+    width: 18px;
+    height: 30px;
+    background-image: url(../img/pin.svg);
+    background-position: -15px -10px;
+    display: block;
 }
 
 /* theater__link */
@@ -57,7 +72,7 @@
     display: flex;
     flex-wrap: wrap;
     border: 1px solid var(--black200);
-    /* background-color: var(--black500); */
+    background-color: var(--black500);
     padding: 1.1rem;
     box-sizing: border-box;
     justify-content: flex-start;
@@ -69,9 +84,9 @@
     padding: 10px;
 }
 
-/* .theater__link>ul li a img {
+.theater__link>ul li a img {
     border-radius: 15px;
-} */
+}
 
 .theater__link>ul li a:hover img {
     transform: scale(1.1);
@@ -182,7 +197,7 @@
     padding: 5px;
     /* overflow: hidden; */
     border-radius: 20px;
-    box-shadow: 0 0 2px var(--white);
+    box-shadow: 0 0 2px var(--black);
     padding-left: 55px;
 }
 
@@ -214,7 +229,6 @@
 /* theater__detail */
 
 .th__detail_info {
-    border: 1px solid var(--black);
     display: flex;
     background-image: url(../img/aaa.jpg);
     background-position: center center;
@@ -253,6 +267,7 @@
     font-size: 2.4em;
     font-family: var(--mapo);
     font-weight: bold;
+    color: var(--white);
 }
 
 .theater__detail__title .logo_cont {
@@ -281,7 +296,7 @@
 
 .theater__detail__info {
     padding: 10px auto;
-    /* color: var(--white); */
+    /* color: var(--black); */
 }
 
 .theater__detail__info h1 {
@@ -303,16 +318,16 @@
 }
 
 .theater__detail__cont .main_theater_title {
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid var(--black);
 }
 
 .theater__detail__cont .main_theater_title h3 {
     display: inline-block;
     font-size: 24px;
     padding: 10px 20px 10px 10px;
-    border-bottom: 2px solid var(--white);
+    border-bottom: 2px solid var(--black);
     font-family: var(--hahm);
-    color: var(--black500);
+    color: var(--black200);
 }
 
 .theater_transport {
@@ -320,7 +335,7 @@
 }
 
 .theater_transport .transport_info {
-    white-space: pre-line;
+    black-space: pre-line;
     font-size: 0.9rem;
     padding: 10px;
 }
@@ -332,9 +347,9 @@
 .theater_seat_info h3 {
     font-size: 24px;
     padding: 10px;
-    border-bottom: 2px solid var(--white);
+    border-bottom: 2px solid var(--black);
     font-family: var(--hahm);
-    color: var(--black500);
+    color: var(--black200);
 }
 
 .theater_seat_info .seat_img {
@@ -354,20 +369,20 @@
 
     .list__cont .rounded-left {
         /* display: block; */
-        border: 1px solid var(--white);
+        border: 1px solid var(--black);
         border-radius: 30px 0 0 0;
         width: 100%;
     }
 
     .list__cont .rounded-center {
         /* display: block;/ */
-        border: 1px solid var(--white);
+        border: 1px solid var(--black);
         width: 70%;
     }
 
     .list__cont .rounded-right {
         /* display: block; */
-        border: 1px solid var(--white);
+        border: 1px solid var(--black);
         border-radius: 0 10px 0 0;
         width: 100%;
     }

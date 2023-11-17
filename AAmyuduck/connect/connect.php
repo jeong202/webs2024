@@ -1,6 +1,5 @@
 <?php
     $host = "localhost";
-    $host = "localhost";
     $user = "jhyjhy968";
     $pw = "dothome369582!";
     $db = "jhyjhy968";

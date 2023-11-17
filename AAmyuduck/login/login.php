@@ -36,7 +36,7 @@
                         </div>
                         <div class="check">
                             <label for="loginCheck1">
-                                로그인 상태 유지
+                                아이디 유지
                                 <input type="checkbox" name="loginCheck1" id="loginCheck1">
                                 <span class="indicator"></span>
                             </label>

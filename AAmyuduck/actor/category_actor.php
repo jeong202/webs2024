@@ -1,5 +1,6 @@
 <?php
 include "../connect/connect.php";
+include "../connect/session.php";
 
 // 배우와 연극 정보를 저장할 배열 초기화
 $actorsWithPerformances = array();
@@ -62,7 +63,7 @@ if ($result->num_rows > 0) {
     <title>MYUDUCK</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/commons2.css">
-    <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../assets/img/favicon.jpg" type="image/x-icon">
     <style>
 
     </style>
@@ -74,7 +75,7 @@ if ($result->num_rows > 0) {
 
 
     <div class="fix_image">
-        <img src="../assets/img/category_musical.png" alt="이미지" class="intro_img">
+        <img src="../assets/img/aaa.jpg" alt="이미지" class="intro_img">
     </div>
 
     <main id="category_wrap">
@@ -112,6 +113,7 @@ if ($result->num_rows > 0) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../script/commons.js"></script>
     <script>
 
     </script>

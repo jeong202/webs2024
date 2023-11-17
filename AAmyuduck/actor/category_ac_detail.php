@@ -1,5 +1,6 @@
 <?php
 include "../connect/connect.php";
+include "../connect/session.php";
 
 // URL에서 actorId를 가져옴
 $actorId = $_GET['actorId'];
@@ -91,7 +92,7 @@ if ($result->num_rows > 0) {
 
 
     <div class="dtail_fix_image">
-        <img src="../assets/img/detail_image.jpg" alt="이미지" class="intro_img">
+        <img src="../assets/img/aaa.jpg" alt="이미지" class="intro_img">
         <div class="intro_actor">
 
             <div class="image_wrap">
@@ -133,7 +134,7 @@ if ($result->num_rows > 0) {
                     <?php foreach ($actorData['performances'] as $performance) : ?>
                         <div class="work-card">
                             <div class="ac_img_wrap">
-                                <img src=<?= $performance['muImg'] ?> alt="<?= $performance['acPerformName'] ?> 이미지">
+                                <img src="<?= $performance['muImg']?>" alt="<?= $performance['acPerformName'] ?> 이미지">
                             </div>
                             <div class="ac_text_wrap">
                                 <h3 class="ac_musical"><?= $performance['acPerformName'] ?></h3>
@@ -159,6 +160,7 @@ if ($result->num_rows > 0) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="../script/star.js"></script>
+    <script src="../script/commons.js"></script>
     <script>
 
     </script>

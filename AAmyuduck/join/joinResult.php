@@ -40,7 +40,7 @@
     <!-- //header -->
 
 
-    <main>
+    <main class="bg">
         <div class="joinResultWrap container2">
             <div class="message1">회원 가입이 완료되었습니다!</div>
             <div class="img red"></div>
@@ -56,6 +56,7 @@
     <!-- //footer -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="../script/commons.js"></script>
     <script>
         

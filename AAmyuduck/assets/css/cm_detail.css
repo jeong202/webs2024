@@ -3,7 +3,7 @@
     /* 꼭 필요합니다.안그러면 구조가 깨져요!! */
 }
 
-main {
+#mu_de {
     background-color: var(--white);
     color: var(--black);
 }
@@ -14,21 +14,23 @@ a {
 
 /* desc1 */
 .desc1 {
+    display: flex;
     background-image: url(../img/aaa.jpg);
+    background-position: center center;
     background-size: cover;
-    display: block;
-    object-fit: cover;
-    width: 100%;
-    height: 540px;
-    margin-bottom: 100px;
+    margin: 1.2rem 0;
+    box-sizing: border-box;
+    height: 33.75rem;
 }
 
 .poster {
     display: flex;
     flex-direction: column;
+    width: 49%;
 }
 
 .ts {
+    width: 49%;
     color: var(--white);
 }
 
@@ -50,9 +52,12 @@ a {
 }
 
 .mu__container {
+    max-width: 1260px;
+    width: 96%;
+    margin: 70px auto 10px auto;
     display: flex;
-    padding: 100px;
-    justify-content: space-around
+    justify-content: space-between;
+    align-items: center;
 }
 
 .d1t1 {
@@ -88,46 +93,6 @@ a {
     }
 }
 
-/* star_rating */
-.rating {
-    z-index: 10;
-    margin-top: 80px;
-    position: relative;
-    width: 210px;
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.3em;
-    padding: 5px;
-    /* overflow: hidden; */
-    border-radius: 20px;
-    box-shadow: 0 0 2px var(--white);
-    padding-left: 55px;
-}
-
-.rating__result {
-    position: absolute;
-    top: 8px;
-    left: 10px;
-    transform: translateY(-10px) translateX(2px);
-    z-index: 10000;
-    font: 2em Arial, Helvetica, sans-serif;
-    color: #ffffffad;
-    pointer-events: none;
-}
-
-.rating__star {
-    font-size: 1.3em;
-    cursor: pointer;
-    color: yellow;
-    transition: filter linear .3s;
-}
-
-.rating__star:hover {
-    filter: drop-shadow(1px 1px 4px gold);
-}
-
 
 /* desc2 */
 .title {
@@ -147,7 +112,6 @@ a {
 .desc2Wrap {
     max-width: 1280px;
     margin: 0 auto;
-    margin-bottom: 100px;
     border: 3px solid var(--black);
     border-radius: 20px;
     background-color: var(--white);
@@ -155,7 +119,6 @@ a {
     padding: 30px;
     text-align: left;
     min-height: 80vh;
-
 }
 
 .d2t1 {
@@ -210,13 +173,7 @@ a {
     line-height: 1.8;
 }
 
-.muimg {
-    width: 90%;
-}
-
 /* info */
 .infoimg {
     margin: 20px;
-    display: flex;
-    justify-content: space-around;
 }

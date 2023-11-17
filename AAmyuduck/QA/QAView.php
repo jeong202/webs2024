@@ -46,7 +46,7 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/commons3.css">
 
-    <title>문의하기</title>
+    <title>후기 게시판</title>
 </head>
 
 <body>
@@ -59,7 +59,7 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
             <section class="board__inner container">
                 <div class="board__search">
                     <div class="board_view_T">
-                        <span>문의작성</span><span class="en">Q&A</span>
+                        <span>후기작성</span><span class="en">Review</span>
                     </div>
                 </div>
                 <div class="board__wrap">
@@ -94,13 +94,26 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
                         </table>
                     </div>
                 </div>
+                <div class="viewbtns__wrap">
+                    <?php if (($_SESSION['youId']) ==  $info['youId'] || ($_SESSION['youId']) == "admin") { ?>
+                        <div class="board__btns viewbtns">
+                            <a href="QAModify.php?boardID=<?= $_GET['boardID'] ?>" class="viewbtn">수정</a>
+                            <a href="QA.php" class="viewbtn">목록</a>
+                            <a href="QARemove.php?boardID=<?= $_GET['boardID'] ?>" class="viewbtn" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a>
+                        </div>
+                    <?php } else { ?>
+                        <div class="board__btns viewbtns">
+                            <a href="QA.php" class="viewbtn">목록</a>
+                        </div>
+                    <?php } ?>
+                </div>
                 <div class="board__viewpages">
                     <h4 class="blind">이전글/다음글 가기</h4>
                     <!-- <a href="#" class="prev">이전글</a>
                     <a href="#" class="next">다음글</a> -->
                     <?php if (!empty($prevQAInfo)) { ?>
                         <a href="QAView.php?boardID=<?= $prevQAInfo['boardID']; ?>" class="prev">
-                            이전글 <?= substr($prevQAInfo['boardTitle'], 0, 20); ?>...
+                            <strong>이전글</strong> <?= substr($prevQAInfo['boardTitle'], 0, 20); ?>...
                         </a>
                     <?php } else { ?>
                         <span class="prev">이전글이 없습니다.</span>
@@ -108,19 +121,13 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
 
                     <?php if (!empty($nextQAInfo)) { ?>
                         <a href="QAView.php?boardID=<?= $nextQAInfo['boardID']; ?>" class="next">
-                            다음글 <?= substr($nextQAInfo['boardTitle'], 0, 20); ?>...
+                        <strong>다음글</strong> <?= substr($nextQAInfo['boardTitle'], 0, 20); ?>...
                         </a>
                     <?php } else { ?>
                         <span class="next">다음글이 없습니다.</span>
                     <?php } ?>
                 </div>
-                <div class="viewbtns__wrap">
-                    <div class="board__btns viewbtns">
-                        <a href="QAModify.php?boardID=<?= $_GET['boardID'] ?>" class="viewbtn">수정</a>
-                        <a href="QA.php" class="viewbtn">목록</a>
-                        <a href="QARemove.php?boardID=<?= $_GET['boardID'] ?>" class="viewbtn" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a>
-                    </div>
-                </div>
+                
                 <section id="blogComment" class="blog__comment">
                     <h4>댓글 쓰기</h4>
                     <div class="comment">
@@ -216,30 +223,76 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="../script/commons.js"></script>
-    <script src="../script/QA.js"></script>
     <script>
+        // 얼굴 표정 랜덤으로 들어가기
+        const avataImages = [
+            "AngrywithFang.svg",
+            "Awe.svg",
+            "Blank.svg",
+            "Calm.svg",
+            "Cheek.svg",
+            "ConcernedFear.svg",
+            "Concerned.svg",
+            "Contempt.svg",
+            "Cute.svg",
+            "Cyclops.svg",
+            "Driven.svg",
+            "EatingHappy.svg",
+            "Explaining.svg",
+            "EyesClosed.svg",
+            "Fear.svg",
+            "Hectic.svg",
+            "LovingGrin1.svg",
+            "LovingGrin2.svg",
+            "Monster.svg",
+            "Old.svg",
+            "Rage.svg",
+            "Serious.svg",
+            "SmileBig.svg",
+            "SmileLOL.svg",
+            "SmileTeeth Gap.svg",
+            "Smile.svg",
+            "Solemn.svg",
+            "Suspicious.svg",
+            "Tired.svg",
+            "VeryAngry.svg",
+        ]
+        const commentViews = document.querySelectorAll(".comment__view");
+        commentViews.forEach((view, i) => {
+            const avata = view.querySelector(".avata");
+            const rand = avataImages[Math.floor(Math.random() * (avataImages.length - 1))];
+
+            console.log(rand);
+            avata.style.backgroundImage = `url(../assets/face/${rand})`;
+        });
+
+        // 댓글
+
         let commentId = "";
 
+        let myuduckIdSet = <?= isset($_SESSION['myuduckId']) ? 'true' : 'false' ?>;
+
         // 댓글 쓰기 버튼
-        $("#commentWriteBtn").click(function() {
-            if ($("#commentWrite").val() == "") {
-                alert("댓글을 작성해주세요.");
-                $("#commentWriteBtn").focus();
-            } else {
-                if ("<?= $youId ?>" === "admin" || "<?= $youId ?>" === "<?= $info['youId'] ?>") {
+        $("#commentWriteBtn").click(function () {
+            if (myuduckIdSet) { 
+                if ($("#commentWrite").val() == "") {
+                    alert("댓글을 작성해주세요.");
+                    $("#commentWriteBtn").focus();
+                } else {
                     $.ajax({
                         url: "QACommentWrite.php",
                         method: "POST",
                         dataType: "json",
                         data: {
-                            "boardID": <?= $boardID ?>,
+                            "boardID": <?=$boardID?>,
                             "youId": $("#commentName").val(),
                             "name": $("#commentName").val(),
                             "pass": $("#commentPass").val(),
                             "msg": $("#commentWrite").val()
                         },
-                        success: function(data) {
+                        success: function (data) {
                             if (data && data.success) {
                                 console.log("댓글이 성공적으로 등록되었습니다.");
                                 location.reload();
@@ -247,20 +300,22 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
                                 console.log("댓글 등록 중 오류가 발생했습니다.");
                             }
                         },
-                        error: function(request, status, error) {
+                        error: function (request, status, error) {
                             console.log("request: ", request);
                             console.log("status: ", status);
                             console.log("error: ", error);
                         }
                     })
-                } else {
-                    alert("댓글 작성 권한이 없습니다.");
                 }
+            } else {
+                alert("로그인을 해주세요");
+                window.location.href="../login/login.php";
             }
         });
 
         // 댓글 삭제 버튼
-        $(".comment__view .delete").click(function(e) {
+
+        $(".comment__view .delete").click(function (e) {
             e.preventDefault();
             $("#popupDelete").removeClass("none");
             commentId = $(this).data("comment-id");
@@ -268,12 +323,12 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
         });
 
         // 댓글 삭제 버튼 --> 취소 버튼
-        $("#commentDeleteCancel").click(function() {
+        $("#commentDeleteCancel").click(function () {
             $("#popupDelete").addClass("none");
         });
 
         // 댓글 삭제 버튼 --> 삭제 버튼
-        $("#commentDeleteButton").click(function() {
+        $("#commentDeleteButton").click(function () {
             if ($("#commentDeletePass").val() == "") {
                 alert("댓글 작성시 비밀번호를 작성해주세요!");
                 $("#commentDeletePass").focus();
@@ -286,7 +341,7 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
                         "commentPass": $("#commentDeletePass").val(),
                         "commentId": commentId,
                     },
-                    success: function(data) {
+                    success: function (data) {
                         console.log("data : ", data);
                         if (data.result == "bad") {
                             alert("비밀번호가 일치하지 않습니다.");
@@ -295,7 +350,7 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
                         }
                         location.reload();
                     },
-                    error: function(request, status, error) {
+                    error: function (request, status, error) {
                         console.log("request" + request);
                         console.log("status" + status);
                         console.log("error" + error);
@@ -305,7 +360,7 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
         });
 
         // 댓글 수정 버튼
-        $(".comment__view .modify").click(function(e) {
+        $(".comment__view .modify").click(function (e) {
             e.preventDefault();
             $("#popupModify").removeClass("none");
             commentId = $(this).data("comment-id");
@@ -315,12 +370,12 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
         });
 
         // 댓글 수정 버튼 --> 취소 버튼
-        $("#commentModifyCancel").click(function() {
+        $("#commentModifyCancel").click(function () {
             $("#popupModify").addClass("none");
         });
 
         // 댓글 수정 버튼 --> 수정 버튼
-        $("#commentModifyButton").click(function() {
+        $("#commentModifyButton").click(function () {
             if ($("#commentModifyPass").val() == "") {
                 alert("댓글 작성시 비밀번호를 작성해주세요!");
                 $("#commentModifyPass").focus();
@@ -334,7 +389,7 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
                         "commentPass": $("#commentModifyPass").val(),
                         "commentId": commentId,
                     },
-                    success: function(data) {
+                    success: function (data) {
                         console.log(data);
                         if (data.result == "bad") {
                             alert("비밀번호가 일치하지 않습니다.");
@@ -343,7 +398,7 @@ $commentInfo = $commentResult->fetch_array(MYSQLI_ASSOC);
                         }
                         location.reload();
                     },
-                    error: function(request, status, error) {
+                    error: function (request, status, error) {
                         console.log("request" + request);
                         console.log("status" + status);
                         console.log("error" + error);

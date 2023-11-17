@@ -30,7 +30,7 @@ function printRatingResult(result, num = 0) {
 
 executeRating(ratingStars, ratingResult);
 
-찜버튼
+// 찜버튼
 const likeButton = document.querySelector('.like-button');
 
 likeButton.addEventListener('click', function () {

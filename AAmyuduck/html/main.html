@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -8,9 +7,7 @@
     <title>MYUDUCK</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/commons2.css">
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -21,7 +18,7 @@
         <nav class="category">
             <ul>
                 <li><a href="category_theater.html">Theater</a></li>
-                <li><a href="http://jhyjhy968.dothome.co.kr/project2/kategorie_musical.html">Musical</a></li>
+                <li><a href="category_musical.html">Musical</a></li>
                 <li><a href="category_actor.html">Actor</a></li>
                 <li><a href="search.html">Search</a></li>
             </ul>
@@ -45,12 +42,13 @@
                         </ul>
                     </li>
 
-                    <li><a href="http://ljy16.dothome.co.kr/myuduck/html/login.html" class="m">로그인</a></li>
+                    <li><a href="http://ljy16.dothome.co.kr/myuduck2/html/login.html" class="m">로그인</a></li>
 
                     <li><a href="#" class="m">문의하기</a>
                         <ul class="submenu">
-                            <li><a href="http://jhyjhy968.dothome.co.kr/project2/QA_write.html" class="m">문의 글 쓰기</a></li>
-                            <li><a href="http://jhyjhy968.dothome.co.kr/project2/QA.html" class="m">문의 글 목록</a></li>
+                            <li><a href="http://jhyjhy968.dothome.co.kr/myuduck2/QA_write.html" class="m">문의 글 쓰기</a>
+                            </li>
+                            <li><a href="http://jhyjhy968.dothome.co.kr/myuduck2/QA.html" class="m">문의 글 목록</a></li>
                         </ul>
                     </li>
 
@@ -68,83 +66,219 @@
     </header>
     <!-- //header -->
 
-    <main id="parallax_cont">
-        <section id="section1" class="parallax_item">
-            <span class="parallax_item_num">01</span>
-            <div class="parallax_item_img"></div>
-            <div class="parallax_text">
-                <div class="parallax_item_title">빨래</div>
-                <p class="parallax_item_desc">서울살이 5년차, 나영. 집세와 나이는 늘어가지만 꿈은 닳아 지워진 지 오래다.<br>
-                    작가가 되고 싶었던 꿈과는 달리, 나영의 직업은 서점 직원.</p>
+    <main id="main" role="main">
+        <section id="sliderWrap">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider_img">
+                            <img src="../assets/img/slide01.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider_img">
+                            <img src="../assets/img/slide02.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider_img">
+                            <img src="../assets/img/slide03.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider_img">
+                            <img src="../assets/img/slide04.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider_img">
+                            <img src="../assets/img/slide05.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-button">
+                    <div class="swiper-button-play"></div>
+                    <div class="swiper-button-stop"></div>
+                </div>
             </div>
         </section>
-        <!-- //section1 -->
+        <!-- </section> -->
 
-        <section id="section2" class="parallax_item">
-            <span class="parallax_item_num">02</span>
-            <div class="parallax_item_img"></div>
-            <div class="parallax_text">
-                <div class="parallax_item_title">프랑켄슈타인</div>
-                <p class="parallax_item_desc">만약 신이 없다면 누가 이 세상을 이런 지옥으로 만들 수 있었을까?"<br><br>
-                    19세기 유럽, 나폴레옹 전쟁 당시 스위스 제네바 출신의 과학자 빅터 프랑켄슈타인은<br>
-                    전쟁터에서 '죽지 않는 군인'에 대한 연구를 진행하던 중 신체접합술의 귀재 앙리 뒤프레를 만나게 된다.</p>
+        <section id="introWrap">
+            <div class="intro_inner">
+                <div class="container3">
+                    <h2><span>new</span> 뮤지컬!</h2>
+                    <div class="new_muWrap">
+                        <div class="new_musical n1">
+                            <div class="new_imgWrap">
+                                <img src="../assets/img/musical/ca_mu_img1.jpg" alt="ca_mu_img1 이미지">
+                                <div class="new_overlay"></div>
+                            </div>
+                            <div class="new_text">
+                                <h3>뮤지컬 <오페라의 유령>
+                                </h3>
+                                <span>샤롯데씨어터</span>
+                                <p>2023.07.21 ~2023.11.19</p>
+                            </div>
+                        </div>
+                        <div class="new_musical n2">
+                            <div class="new_imgWrap">
+                                <img src="../assets/img/musical/ca_mu_img1.jpg" alt="ca_mu_img1 이미지">
+                                <div class="new_overlay"></div>
+                            </div>
+                            <div class="new_text">
+                                <h3>뮤지컬 <오페라의 유령>
+                                </h3>
+                                <span>샤롯데씨어터</span>
+                                <p>2023.07.21 ~2023.11.19</p>
+                            </div>
+                        </div>
+                        <div class="new_musical n3">
+                            <div class="new_imgWrap">
+                                <img src="../assets/img/musical/ca_mu_img1.jpg" alt="ca_mu_img1 이미지">
+                                <div class="new_overlay"></div>
+                            </div>
+                            <div class="new_text">
+                                <h3>뮤지컬 <오페라의 유령>
+                                </h3>
+                                <span>샤롯데씨어터</span>
+                                <p>2023.07.21 ~2023.11.19</p>
+                            </div>
+                        </div>
+                        <div class="new_musical n4">
+                            <div class="new_imgWrap">
+                                <img src="../assets/img/musical/ca_mu_img1.jpg" alt="ca_mu_img1 이미지">
+                                <div class="new_overlay"></div>
+                            </div>
+                            <div class="new_text">
+                                <h3>뮤지컬 <오페라의 유령>
+                                </h3>
+                                <span>샤롯데씨어터</span>
+                                <p>2023.07.21 ~2023.11.19</p>
+                            </div>
+                        </div>
+                        <div class="new_musical n5">
+                            <div class="new_imgWrap">
+                                <img src="../assets/img/musical/ca_mu_img1.jpg" alt="ca_mu_img1 이미지">
+                                <div class="new_overlay"></div>
+                            </div>
+                            <div class="new_text">
+                                <h3>뮤지컬 <오페라의 유령>
+                                </h3>
+                                <span>샤롯데씨어터</span>
+                                <p>2023.07.21 ~2023.11.19</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-
         </section>
-        <!-- //section2 -->
+        <!-- //introWrap -->
 
-        <section id="section3" class="parallax_item">
-            <span class="parallax_item_num">03</span>
-            <div class="parallax_item_img"></div>
-            <div class="parallax_text">
-                <div class="parallax_item_title">더데빌</div>
-                <p class="parallax_item_desc">"빛과 어둠은 항상 함께이니... 빛도 어둠도 인간의 선택"<br><br>
-                    시대와 국경을 초월하는 '유혹'과 '선택'</p>
+        <section id="category_link">
+            <div class="link_inner">
+                <div class="container3">
+                    <div class="link_img">
+                        <div class="img1">
+                            <p><em>Theater</em></p>
+                            <figure>
+                                <img src="../assets/img/link_theater.jpg" alt="극장 바로가기">
+                                <figcaption>극장 카테고리<a href="category_theater.html">바로가기</a></figcaption>
+                            </figure>
+                        </div>
+                        <div class="img2">
+                            <p><em>Musical</em></p>
+                            <figure>
+                                <img src="../assets/img/link_musical.jpg" alt="뮤지컬 바로가기">
+                                <figcaption>뮤지컬 카테고리<a href="category_mu.html">바로가기</a></figcaption>
+                            </figure>
+                        </div>
+                        <div class="img3">
+                            <p><em>Actor</em></p>
+                            <figure>
+                                <img src="../assets/img/link_actor.jpg" alt="배우 바로가기">
+                                <figcaption>배우 카테고리<a href="category_actor.html">바로가기</a></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <!-- //section3 -->
 
-        <section id="section4" class="parallax_item">
-            <span class="parallax_item_num">04</span>
-            <div class="parallax_item_img"></div>
-            <div class="parallax_text">
-                <div class="parallax_item_title">레베카</div>
-                <p class="parallax_item_desc">"내게 드 윈터 부인은 이 세상 하나뿐인데!"<br><br>
-                    불의의 사고로 아내 레베카를 잃고 힘든 나날을 보내고 있는 막심 드 윈터,<br>
-                    그는 몬테카를로 여행 중 우연히 '나'를 만나 사랑에 빠지게 된다.<br>
-                    행복한 결혼식을 올린 두 사람은 막심의 저택인 맨덜리에서 함께 생활하게 되는데···</p>
+        <section id="pointUp">
+            <div class="up_inner">
+                <div class="container3">
+                    <div class="up_title">
+                        <h3>포인트 <em>쌓기</em> <span>즐거움이 매일매일 쌓이는 포인트 플레이</span></h3>
+                    </div>
+                    <div class="up_slider">
+                        <div class="img">
+                            <div>
+                                <span>H.설문</span>
+                                <em>간단한 설문에 혜택이 빵빵!</em>
+                            </div>
+                            <div>
+                                <span>오늘의 퀴즈</span>
+                                <em>간단히 포인트 받자!</em>
+                            </div>
+                            <div class="active">
+                                <span>알파벳</span>
+                                <em>조합하고 완성하는 재미</em>
+                            </div>
+                            <div>
+                                <span>출석룰렛</span>
+                                <em>매일 돌리면 포인트</em>
+                            </div>
+                            <div>
+                                <span>포인트 워크</span>
+                                <em>걸으면서 받는 포인트</em>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <a href="#" class="left"><span class="ir">왼쪽 이미지</span></a>
+                            <a href="#" class="right"><span class="ir">오른쪽 이미지</span></a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-
         </section>
-        <!-- //section4 -->
+        <!-- //pointUp -->
 
-        <section id="section5" class="parallax_item">
-            <span class="parallax_item_num">05</span>
-            <div class="parallax_item_img"></div>
-            <div class="parallax_text">
-                <div class="parallax_item_title">팬텀</div>
-                <p class="parallax_item_desc">세상이 무너진 이 순간, 너의 음악이 되리라!<br><br>
-                    19세기 말 파리 오페라극장, 천재적인 재능을 가졌으나 흉측한 얼굴 탓에 오페라극장 지하에서 유령처럼 숨어 지내는 에릭.<br>
-                    우연히 천상의 목소리를 가진 크리스틴 다에의 노랫소리를 듣고 단번에 매료된 그는<br>
-                    크리스틴을 오페라극장의 새로운 디바로 만들기로 결심하고 매일 밤 몰래 비밀스러운 레슨을 시작한다.
-                </p>
+        <section id="ticket_link">
+            <div class="ticket_inner">
+                <div class="container3">
+                    <h2>티켓 <span>예매처</span> 바로가기</h2>
+                    <div class="ticket_wrap">
+                        <div class="ticket">
+                            <p><a href="https://tickets.interpark.com/">인터파크 티켓 <span>바로가기</span></a></p>
+                            <a href="https://tickets.interpark.com/"><img src="../assets/img/link_interpark.png" alt="인터파크 티켓 바로가기"></a>
+                        </div>
+                        <div class="ticket">
+                            <p><a href="http://ticket.yes24.com/">예스24 티켓 <span>바로가기</span></a></p>
+                            <a href="http://ticket.yes24.com/"><img src="../assets/img/link_yes24.png" alt="예스24 티켓 바로가기"></a>
+                        </div>
+                        <div class="ticket">
+                            <p><a href="https://www.ticketlink.co.kr/">티켓 링크 <span>바로가기</span></a></p>
+                            <a href="https://www.ticketlink.co.kr/"><img src="../assets/img/link_ticketlink.png" alt="티켓 링크 바로가기"></a>
+                        </div>
+                        <div class="ticket">
+                            <p><a href="https://ticket.m.11st.co.kr/">티켓 11번가 <span>바로가기</span></a></p>
+                            <a href="https://ticket.m.11st.co.kr/"><img src="../assets/img/link_11st.png" alt="티켓 11번가 바로가기"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </section>
-        <!-- //section5 -->
-
-        <section id="section6" class="parallax_item">
-            <span class="parallax_item_num">06</span>
-            <div class="parallax_item_img">시카고</div>
-            <div class="parallax_text">
-                <div class="parallax_item_title">시카고</div>
-                <p class="parallax_item_desc">세상이 무너진 이 순간, 너의 음악이 되리라!<br><br>
-                    19세기 말 파리 오페라극장, 천재적인 재능을 가졌으나 흉측한 얼굴 탓에 오페라극장 지하에서 유령처럼 숨어 지내는 에릭.</p>
-            </div>
-
-        </section>
-        <!-- //section6 -->
+        <!-- //ticket_link -->
     </main>
+    <!-- //main -->
 
     <footer id="footer">
         <div class="footer_inner">
@@ -171,11 +305,39 @@
     </footer>
     <!-- //footer -->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../script/commons.js"></script>
-   
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        let swiper = new Swiper(".swiper", {
+            loop: true, // 무한 루프 활성화
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        const btnPlay = document.querySelector(".swiper-button-play")
+        const btnStop = document.querySelector(".swiper-button-stop")
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+        })
+
+        btnPlay.addEventListener("click", () => {
+            swiper.autoplay.start();
+        })
+    </script>
 </body>
 
 </html>

@@ -24,9 +24,9 @@
     border-radius: 20px;
     box-shadow: 0 0 2px var(--white);
     padding-left: 55px;
-}
-
-.rating_result {
+ }
+ 
+ .rating_result {
     position: absolute;
     top: 8px;
     left: 10px;
@@ -35,24 +35,23 @@
     font: 2em Arial, Helvetica, sans-serif;
     color: #ffffffad;
     pointer-events: none;
-}
-
-.rating_star {
+ }
+ 
+ .rating_star {
     font-size: 1.3em;
     cursor: pointer;
     color: yellow;
     transition: filter linear .3s;
-}
-
-.rating_star:hover {
+ }
+ 
+ .rating_star:hover {
     filter: drop-shadow(1px 1px 4px gold);
-}
+ }
 
 
-/* intro_actor */
+ /* intro_actor */
 .intro_actor {
-    z-index: 2;
-    /* 이미지(z-index:1) 위에 배치하기 위해 z-index를 높게 설정 */
+    z-index: 2; /* 이미지(z-index:1) 위에 배치하기 위해 z-index를 높게 설정 */
     width: 1280px;
     height: 540px;
     margin: 0 auto;
@@ -68,7 +67,6 @@
     flex-direction: column;
     justify-content: center;
 }
-
 .intro_actor .image_wrap img {
     width: 299px;
     height: 400px;
@@ -82,32 +80,29 @@
     line-height: 1;
     text-align: left;
     padding-left: 400px;
+    color: var(--white);
 }
-
 .intro_info .name {
     display: flex;
     margin-bottom: 70px;
 }
-
 .intro_info .name h1 {
     font-family: var(--mapo);
     font-size: 40px;
     font-weight: bold;
     display: flex;
     padding-left: 20px;
+    color: var(--white);
 }
-
 .intro_info .name h1:first-child {
     border-right: 4px solid var(--black400);
     padding-right: 20px;
     padding-left: 0;
 }
-
 .intro_info p {
     padding-top: 25px;
     font-size: 1.5rem;
 }
-
 .intro_info .sns {
     text-align: right;
     font-size: 1.1rem;
@@ -116,7 +111,6 @@
     align-items: center;
     justify-content: flex-end;
 }
-
 .intro_info img {
     width: 25px;
     height: 25px;
@@ -124,58 +118,51 @@
 
 /* category_ac_wrap */
 .category_ac_wrap {}
+.category_ac_inner {
 
-.category_ac_inner {}
-
+}
 .category_ac_inner span {
     font-size: 1.4rem;
     color: var(--black400);
     padding-left: 10px;
 }
-
-.main_actor {}
-
-.main_actor>h3 {
+.main_actor {
+    
+}
+.main_actor > h3 {
     font-size: 35px;
     padding: 50px 0;
     display: inline-block;
     font-family: var(--hahm);
-
+    
 }
-
 .main_actor_title {
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid var(--black);
 }
-
-.main_actor_title>h4 {
+.main_actor_title > h4 {
     display: inline-block;
     font-size: 24px;
     padding: 10px;
-    border-bottom: 2px solid var(--white);
+    border-bottom: 2px solid var(--black);
     font-family: var(--hahm);
-    color: var(--black500);
+    color: var(--black300);
 }
-
 .recent_work {}
-
 .work-card {
     display: flex;
     border-bottom: 1px solid var(--black400);
 }
-
 .ac_img_wrap {
     width: 250px;
     /* height: 300px; */
     margin: 60px 0 60px 10px;
-
+    
 }
-
 .ac_img_wrap img {
     width: 250px;
     /* height: 300px; */
-
+    
 }
-
 .ac_text_wrap {
     display: flex;
     flex-wrap: wrap;
@@ -183,21 +170,18 @@
     justify-content: center;
     align-content: center;
 }
-
-.ac_text_wrap>h3 {
+.ac_text_wrap > h3 {
     font-size: 35px;
     width: 100%;
     padding: 20px 50px;
     font-family: var(--hahm);
 }
-
-.ac_text_wrap>p {
+.ac_text_wrap > p {
     font-size: 25px;
     width: 100%;
     padding: 5px 50px;
     box-sizing: border-box;
 }
-
 /* .ac_text_wrap .ac_musical {}
 .ac_text_wrap .ac_date {}
 .ac_text_wrap .ac_theater {}
