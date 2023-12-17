@@ -1,0 +1,230 @@
+.none {
+    display: none;
+}
+
+
+.container {
+    max-width: 1280px;
+    width: 96%;
+    min-height: 100vh;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+@media (max-width: 1280px) {
+    .container {
+        transform: scale(0.95);
+    }
+}
+
+
+/* 지영님 */
+.container2 {
+    max-width: 520px;
+    width: 96%;
+    margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+}
+
+.container3 {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+.fix_image img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 270px;
+    padding-top: 70px;
+    filter: brightness(0.6);
+}
+
+
+.dtail_fix_image {
+    position: relative;
+    /* 부모 요소를 상대 위치로 설정 */
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+    /* 이미지를 넘치지 않도록 함 */
+    margin-top: 70px;
+}
+
+.dtail_fix_image>img {
+    position: absolute;
+    /* 이미지를 절대 위치로 설정하여 부모 요소 내에 위치시킴 */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* 부모 요소의 높이와 동일하게 설정 */
+}
+
+
+/* btn-style */
+.btn-style {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    background-color: var(--black);
+    border: 1px solid var(--white);
+    border-radius: 10px;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-style2 {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    background-color: var(--white);
+    /* border: 1px solid var(--black); */
+    border-radius: 10px;
+    color: var(--black);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-style3 {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 0.8rem 2.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-style4 {
+    display: inline-block;
+    width: 100%;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--white);
+    padding: 0.8rem 2.5rem;
+    cursor: pointer;
+}
+
+.btn-style5 {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+
+/* 마진 간격 */
+.mt0 {
+    margin-top: 0px !important;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mt30 {
+    margin-top: 30px !important;
+}
+
+.mt40 {
+    margin-top: 40px !important;
+}
+
+.mt50 {
+    margin-top: 50px !important;
+}
+
+.mt60 {
+    margin-top: 60px !important;
+}
+
+.mt70 {
+    margin-top: 70px !important;
+}
+
+.mt80 {
+    margin-top: 80px !important;
+}
+
+.mt90 {
+    margin-top: 90px !important;
+}
+
+.mt100 {
+    margin-top: 100px !important;
+}
+
+.mr0 {
+    margin-right: 0px !important;
+}
+
+.mr10 {
+    margin-right: 10px !important;
+}
+
+.mr20 {
+    margin-right: 20px !important;
+}
+
+.mr30 {
+    margin-right: 30px !important;
+}
+
+.mr40 {
+    margin-right: 40px !important;
+}
+
+.mr50 {
+    margin-right: 50px !important;
+}
+
+.mr60 {
+    margin-right: 60px !important;
+}
+
+.mr70 {
+    margin-right: 70px !important;
+}
+
+.mr80 {
+    margin-right: 80px !important;
+}
+
+.mr90 {
+    margin-right: 90px !important;
+}
+
+.mr100 {
+    margin-right: 100px !important;
+}

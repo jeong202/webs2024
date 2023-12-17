@@ -1,0 +1,233 @@
+#footer {
+    display: block !important;
+    /* 꼭 필요합니다.안그러면 구조가 깨져요!! */
+}
+
+main {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+a {
+    display: block;
+}
+
+/* desc1 */
+.desc1 {
+    display: flex;
+    background-image: url(../img/aaa.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin: 1.2rem 0;
+    box-sizing: border-box;
+    height: 33.75rem;
+}
+
+.poster {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
+
+.poster img {
+    max-width: 299px;
+    max-height: 400px;
+    width: 20vw;
+    min-width: 140px;
+}
+
+
+.ts {
+    width: 49%;
+    color: var(--black);
+}
+
+.like-button {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 2px solid var(--white);
+    border-radius: 20px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+/* .desc1 img {
+    width: 258px;
+    height: 344px;
+
+
+} */
+
+.mu__container {
+    max-width: 1260px;
+    width: 96%;
+    margin: 70px auto 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.d1t1 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 2.25rem;
+    font-family: var(--mapo);
+    font-size: 40px;
+    font-weight: bold;
+    word-break: keep-all;
+    color: var(--white);
+}
+
+.d1t2 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    line-height: 1.9;
+    word-break: keep-all;
+    color: var(--white);
+}
+@media (max-width: 1280px) {
+    .poster {
+        padding-left: 12vw;
+    }
+    .desc2Wrap.container {
+        transform: none;
+    }
+}
+
+@media (max-width: 950px) {
+    .like-button {
+        font-size: 11px!important;
+    }
+    .d1t1 {
+        margin-bottom: 30px;
+        font-size: 3vw;
+    }
+
+    .d1t2 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 550px) {
+    .mu__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .poster {
+        margin-left: 0;
+        height: 223px;
+        flex-direction: row;
+        width: inherit;
+        
+    }
+    .poster .like-button {
+       margin-top: 105px;
+    }
+
+    .ts {
+        padding-right: 0;
+        align-items: center;
+    }
+
+    .d1t1 {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+        font-size: 15px;
+        padding: 10px 0 0 0;
+    }
+
+    .d1t2 {
+        font-size: 10px;
+    }
+}
+
+/* desc2 */
+.title {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 30px;
+    color: var(--black);
+    font-family: var(--hahm);
+    font-size: 2rem;
+}
+
+.title span {
+    font-size: 1.3rem;
+    color: var(--black400);
+}
+
+.desc2Wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    border: 3px solid var(--black);
+    border-radius: 20px;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 30px;
+    text-align: left;
+    min-height: 80vh;
+}
+
+.d2t1 {
+    font-size: 1.5rem;
+    font-family: var(--hahm);
+    border-bottom: 1px solid var(--black);
+}
+
+.line1 {
+    width: 110px;
+
+    border-bottom: 3px solid var(--black);
+}
+
+.d2t2 {
+    font-size: 1.5rem;
+    font-family: var(--hahm);
+    border-bottom: 1px solid var(--black);
+    margin-top: 30px;
+}
+
+.line2 {
+    width: 110px;
+    border-bottom: 3px solid var(--black);
+
+}
+
+.imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* 각 열을 좌우로 분산 정렬 */
+}
+
+.img {
+    margin: 35px 20px;
+    width: 150px;
+    height: 150px;
+}
+
+.imgs:last-child {
+    margin-bottom: 100px;
+}
+
+.img a {
+    display: block;
+    /* 링크를 블록 레벨 요소로 만들어 이미지가 링크 영역을 가득 채울 수 있게 함 */
+}
+
+.castingText {
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* info */
+.infoimg {
+    margin: 20px;
+}

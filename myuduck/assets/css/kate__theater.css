@@ -1,0 +1,213 @@
+.theater__ineer {
+    padding: 70px 60px 100px 60px;
+    color: var(--white);
+}
+
+
+/* theater__info */
+.theater__info {
+    margin: 0 auto;
+    /* background-color: var(--white); */
+    /* color: var(--black); */
+    position: relative;
+}
+
+/* theater__map */
+.theater__map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+}
+.theater__map img {
+    width: 92%;
+    height: 92%;
+    /* border-top: 2px solid var(--black600);
+    border-bottom: 2px solid var(--black600); */
+    margin: 10px;
+    padding: 10px;
+}
+.theater__map .pin {
+    position: absolute;
+    right: 13.5rem;
+    top: 15.9rem;
+    width: 18px;
+    height: 30px;
+    background-image: url(../img/pin.svg);
+    background-position: -15px -10px;
+    display: block;
+}
+
+/* theater__link */
+.theater__link {
+    width: 92%;
+    height: 30vh;
+    display: flex;
+    margin: 0 auto;
+
+}
+.theater__link > ul {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid var(--black200);
+    /* background-color: var(--black500); */
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+.theater__link > ul li {
+    width: 25%;
+    height: 14%;
+    padding: 10px;
+}
+.theater__link > ul li a:hover img{
+    transform: scale(1.1);
+    transition: transform 0.4s;
+}
+.theater__list {
+    margin: 1.6rem auto;
+}
+
+/* list__cont */
+.list__cont {
+    width: 92%;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+.list__cont tr {
+    border-bottom: 1px solid var(--black200);
+    width: 100%;
+}
+.list_cont_header {
+    /* display: flex; */
+
+}
+.list__cont th {
+    padding: 0.8rem;
+    /* background-color: var(--black500); */
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+
+.list__cont .rounded-left  {
+    /* display: block; */
+    border: 1px solid var(--white);
+    border-radius: 30px 0 0 0;
+    width: 100%;
+}
+.list__cont .rounded-center {
+    /* display: block;/ */
+    border: 1px solid var(--white);
+    width: 70%;
+}
+.list__cont .rounded-right {
+    /* display: block; */
+    border: 1px solid var(--white);
+    border-radius: 0 10px 0 0;
+    width: 100%;
+}
+.list__cont td {
+    margin: 1.3rem auto;
+}
+.list__cont .img_name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.list__cont .img_name > a > img {
+    margin-right: 1.2rem;
+}
+.list__cont .img_name > a > span {
+    font-size: 0.9rem;
+    margin-left: 1.2rem;
+}
+.theater__location span{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.theater__musical ul {
+    padding: 1.3rem;
+}
+
+
+/* theater__detail */
+.theater__info {
+
+}
+
+.theater__info .theater_detail {
+    /* border: 1px solid var(--black); */
+    display: flex;
+    background-image: url(../img/theater/detail_image.jpg);
+    margin: 1.2rem 0;
+    box-sizing: border-box;
+}
+.theater_detail .log_img {
+    width: 30%;
+    height: 15vh;
+    /* margin: 0 auto;
+    padding-top: 1.5rem;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+.theater__detail__title {
+    width: 69%;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.theater__detail__info {
+    padding: 10px 60px 100px 60px;
+    color: var(--white);
+}
+.theater__detail__info h1 {
+    font-size: 2rem;
+    font-family: var(--primary-Oswald);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.theater__detail__info h1 span {
+    font-size: 1.6rem;
+    font-family: var(--primary-Oswald);
+    font-weight: normal;
+}
+.theater__detail__cont {
+    border: 1px solid var(--white);
+    color: var(--black);
+    background-color: var(--white);
+    padding: 10px;
+}
+.theater_transport {
+    margin-bottom: 1.2rem;
+}
+.theater_transport h3 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--black400);
+    margin-bottom: 1.1rem;
+}
+.theater_transport .transport_info {
+    white-space: pre-line;
+    font-size: 0.9rem;
+}
+.theater_seat_info {
+    margin-bottom: 1.3rem;
+}
+.theater_seat_info h3 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--black400);
+    margin-bottom: 1.1rem;
+}
+.theater_seat_info .seat_img {
+    margin-top: 20px;
+}

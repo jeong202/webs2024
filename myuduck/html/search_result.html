@@ -1,0 +1,185 @@
+<?php
+include "../connect/connect.php";
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/commons2.css">
+
+    <title>MYUDUCK</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1 class="logo">
+            <a href="main.html">myuduck</a>
+        </h1>
+        <nav class="category">
+            <ul>
+                <li><a href="category_theater.html">Theater</a></li>
+                <li><a href="category_musical.html">Musical</a></li>
+                <li><a href="category_actor.html">Actor</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </nav>
+
+        <div class="header_ham">
+            <div class="navbar_overlay"></div>
+            <div class="navbar_burger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </div>
+            <div class="navbar_menu">
+                <ul>
+                    <li><a href="#" class="m">마이페이지</a>
+                        <ul class="submenu">
+                            <li><a href="#" class="m">나의 찜 목록</a></li>
+                            <li><a href="#" class="m">회원 정보 수정</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="http://ljy16.dothome.co.kr/myuduck2/html/login.html" class="m">로그인</a></li>
+
+                    <li><a href="#" class="m">문의하기</a>
+                        <ul class="submenu">
+                            <li><a href="http://jhyjhy968.dothome.co.kr/myuduck2/QA_write.html" class="m">문의 글 쓰기</a>
+                            </li>
+                            <li><a href="http://jhyjhy968.dothome.co.kr/myuduck2/QA.html" class="m">문의 글 목록</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" class="m">회원탈퇴</a></li>
+                </ul>
+                <div class="navbar_burger_back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <main id="search">
+        <div class="search_inner container">
+            <div class="search_result_logo">
+                <img src="../assets/img/redduck.jpg" alt="오페라글래스낀뮤덕로고">
+            </div>
+            <form action="search_result.php" method="GET">
+                <fieldset class="all_search">
+                    <legend class="blind">검색 영역</legend>
+                    <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력하세요." required>
+                    <select name="searchOption" id="searchOption">
+                        <option value="all">전체</option>
+                        <option value="theater">극장</option>
+                        <option value="musical">뮤지컬</option>
+                        <option value="actor">배우</option>
+                    </select>
+                    <button type="submit">검색</button>
+                </fieldset>
+            </form>
+            <div class="category">
+                <span><a href="theater.html">극장</a></span>
+                <span><a href="musical.html">뮤지컬</a></span>
+                <span><a href="actor.html">배우</a></span>
+            </div>
+            <div class="search_result">
+                <h2><span>뮤지컬</span> 검색결과</h2>
+                <div class="search_result_inner">
+                    <div class="result_img">
+                        <div class="img1 imgcontainer">
+                            <a href="#"><img src="../assets/img/musical/ca_mu_img1.jpg" alt=""></a>
+                            <div class="text">
+                                <div class="t1">빨래</div>
+                                <div class="t2">샤롯데씨어터</div>
+                            </div>
+                        </div>
+
+                        <div class="img2 imgcontainer">
+                            <a href="#"><img src="../assets/img/musical/ca_mu_img2.jpg" alt=""></a>
+                            <div class="text">
+                                <div class="t1">오페라의 유령</div>
+                                <div class="t2">샤롯데씨어터</div>
+                            </div>
+                        </div>
+                        insert_data.php
+                        <div class="img3 imgcontainer">
+                            <a href="#"><img src="../assets/img/musical/ca_mu_img3.jpg" alt=""></a>
+                            <div class="text">
+                                <div class="t1">레미제라블</div>
+                                <div class="t2">블루스퀘어</div>    
+                            </div>
+                        </div>
+
+                        <div class="img4 imgcontainer">
+                            <a href="#"><img src="../assets/img/musical/ca_mu_img4.jpg" alt=""></a>
+                            <div class="text">
+                                <div class="t1">웃는 남자</div>
+                                <div class="t2">예술의전당</div>
+                            </div>
+                        </div>
+
+                        <div class="img5 imgcontainer">
+                            <a href="#"><img src="../assets/img/musical/ca_mu_img5.jpg" alt=""></a>
+                            <div class="text">
+                                <div class="t1">더 데빌</div>
+                                <div class="t2">충무아트센터</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <div class="footer_inner">
+            <div class="footer1">
+                <img src="../assets/img/footerMyuduck2.jpg" alt="뮤덕이로고">
+            </div>
+            <div class="footer2">
+                <div class="footer2-1">
+                    <ul>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">위치기반서비스 이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">개인정보보호방침</a></li>
+                    </ul>
+                </div>
+                <div class="footer2-2">
+                    <p>
+                        CODING CODI ALL Rights Reserved<br>
+                        Contact : wolves941110@gmail.com, jhyjhy968@gmail.com, lee.jiyoung492@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../script/commons.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

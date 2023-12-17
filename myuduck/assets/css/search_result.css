@@ -1,0 +1,134 @@
+.search_inner {
+    padding: 70px 160px 120px 160px;
+}
+
+.search_result_logo {
+    margin-top: 70px;
+    height: 250px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.search_result_logo img {
+    width: 210px;
+    height: 200px;
+}
+
+
+/* search_result */
+.search_result {
+    width: 100%;
+}
+
+.search_result h2 {
+    font-size: 1.5rem;
+    margin: 30px 0;
+    color: var(--black300);
+    display: inline-block;
+    font-family: var(--main-nanum);
+}
+
+.search_result h2 span {
+    font-size: 2.5rem;
+    margin: 30px 0;
+    color: var(--primary-color);
+    display: inline-block;
+    font-family: var(--hahm);
+}
+
+/* result_img */
+.result_img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.result_img .imgcontainer {
+    width: 250px;
+    height: 250px;
+    margin: 30px 25px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+.result_img .imgcontainer.theaterimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imgcontainer.theaterimg a {
+    width: 250px;
+}
+.imgcontainer.theaterimg a > img {
+    width: 250px;
+}
+
+
+.result_img .imgcontainer img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 이미지를 비율 유지하면서 컨테이너를 가득 채우도록 설정 (크롭될 수 있음) */
+    object-position: center center;
+    /* 이미지를 가운데 정렬 */
+}
+
+.result_img .imgcontainer .text {
+    font-weight: 800;
+    color: var(--black);
+    background-color: rgba(0, 0, 0, 0.781);
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.text .t1 {
+    font-size: 1.4rem;
+    font-family: var(--hahm);
+}
+
+.text .t2 {
+    color: var(--black300);
+    padding-top: 20px;
+}
+.imgcontainer a {
+    display: block;
+    position: relative;
+    z-index: 1; /* 링크가 텍스트 위로 나타나도록 설정 */
+}
+
+    .imgcontainer:hover .text {
+    opacity: 1;
+}
+
+.imgcontainer:hover {
+    opacity: 1;
+    filter: blur(0px);
+}
+
+.no_result {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no_result img {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}

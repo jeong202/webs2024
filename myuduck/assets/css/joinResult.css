@@ -1,0 +1,48 @@
+.joinResultWrap {
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+.bg {
+    background-image: url(../img/dddd.jpg);
+}
+
+.message1 {
+    margin-top: 50px;
+    font-size: 1.875rem;
+    margin-bottom: 10px;
+}
+
+.img.red {
+    display: block;
+    margin: 0 auto;
+    width: 266px;
+    height: 250px;
+    background-image: url(../img/redduck.jpg);
+}
+
+.message2 {
+    margin-top: 20px;
+    font-size: 1.375rem;
+}
+
+.movehome {
+    margin-top: 15px;
+    width: 366px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 1.25rem;
+}
+
+.movehome a {
+    display: inline-block;
+    padding: 10px;
+    color: #000;
+}

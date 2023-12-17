@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background-color: #000;
+    font-family: 'Hahmlet';
+    font-weight: 400;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'NanumSquareNeo';
+    font-weight: 400;
+}
+
+#wrap {
+    display: flex;
+}
+
+#nav {
+    width: 400px;
+    height: 95vh;
+    padding: 20px;
+    overflow: scroll;
+    margin: 0 auto;
+}
+
+#nav h3 {
+    margin: 20px 0 10px;
+}
+
+#nav li a {
+    border: 1px solid #555;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    transition: all 0.1s;
+
+}
+
+#nav li a:hover {
+    color: #b96565;
+}
+
+#nav .webd {
+    margin-top: 50px;
+}
+
+#nav .webd li {
+    width: 55px;
+    display: inline-block;
+    text-align: center;
+}
+
+#nav::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+#nav::-webkit-scrollbar-button {
+    background-color: #1a1a1a;
+}
+
+#nav::-webkit-scrollbar-track-piece {
+    background-color: #0e0e0e;
+}
+
+#nav::-webkit-scrollbar-thumb {
+    background-color: #b96565;
+}
+
+#nav::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+
+#main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+#main iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.menu ul {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu ul li {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #555;
+    cursor: pointer;
+    width: 32%;
+    text-align: center;
+}
+
+.menu ul li.active {
+    color: #b96565;
+    font-weight: bold;
+}
+
+.contents>div {
+    display: none;
+}
+
+.contents>div:nth-child(2) {
+    display: block;
+}
+
+.contents>div>ul>li>a.active {
+    color: #b96565;
+}

@@ -1,0 +1,124 @@
+.search_inner {
+    padding: 210px 160px 120px 160px;
+    font-family: var(--hahm);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* 화면 크기에 상관 없이 수직 중앙 정렬 */
+    align-content: center;
+}
+
+.search_logo {
+    width: 100%;
+    height: 320px;
+    text-align: center;
+    margin-bottom: 125px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.search_logo img {
+    width: 62vw;
+    max-width: 600px;
+}
+
+.all_search {
+    width: 100%;
+    height: 73px;
+    display: flex;
+    justify-content: center;
+}
+
+.all_search input {
+    max-width: 600px;
+    width: 46vw;
+    height: 65px;
+    font-size: 1.3rem;
+    border: 5px solid var(--primary-color);
+    background-color: var(--white);
+    color: var(--black400);
+    padding: 0 20px;
+    margin-right: 5px;
+    outline: var(--primary-color);
+}
+
+.all_search select {
+    max-width: 150px;
+    width: 15vw;
+    height: 65px;
+    font-size: 1.5rem;
+    border: 2px solid var(--black);
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 10px 21px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.all_search select:hover {
+    background-color: var(--primary-color2);
+    color: var(--white);
+}
+.all_search select option {
+    background-color: var(--primary-color2);
+    color: var(--white);
+}
+
+.all_search button {
+    max-width: 150px;
+    width: 15vw;
+    height: 65px;
+    font-size: 1.5rem;
+    border: 2px solid var(--black);
+    background-color: var(--white);
+    color: var(--primary-color);
+    cursor: pointer;
+
+}
+.all_search button:hover {
+    background-color: var(--primary-color2);
+    color: var(--white);
+} 
+
+.search_inner .category {
+    width: 50%;
+    height: 81px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.category span {
+    text-align: center;
+    padding: 2px 5px;
+    margin-right: 10px;
+}
+.category span:hover {
+    
+} 
+
+.category span a:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 1080px) {
+    .search_inner .category {
+        font-size: 1.5em;
+    }
+    
+}
+@media (max-width: 850px) {
+    .all_search select {
+        font-size: 1.2rem;
+        padding: 0px 10px;
+    }
+    .all_search button {
+        font-size: 1.2rem;
+        padding: 0px 10px;
+    }
+    .search_inner .category {
+        font-size: 1.2em;
+    }
+    
+}

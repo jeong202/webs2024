@@ -1,0 +1,123 @@
+#category_wrap {
+  margin-top: 286px; /* 이미지의 높이에 따라 조절 (예: 400px) */
+  width: 100%;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  z-index: 2;
+  position: relative;
+}
+.category_inner {
+  margin-top: 70px;
+  align-items: center;
+  background-color: var(--white);
+}
+.category_inner h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin: 50px 75px;
+  display: inline-block;
+  font-family: var(--hahm);
+}
+/* actor_list */
+.actor_list {
+  text-align: center;
+}
+.actor_title {
+  width: 100%;
+  background-color: var(--black);
+}
+.actor_header {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+.actor_header span {
+  border: 1px solid var(--black300);
+  padding: 1vw 9.6vw;
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-right: -1px;
+  font-weight: bold;
+}
+.actor_header span:first-child {
+  border-radius: 10px 0 0 0;
+}
+.actor_header span:last-child {
+  border-radius: 0 10px 0 0;
+}
+
+/* actor_main */
+.actor_main {
+  display: inline-block;
+}
+.actor-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--black);
+  padding: 20px 0;
+}
+.info_actor {
+  width: 22vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 0;
+}
+.info_actor img {
+  width: 9vw;
+  max-width: 115px;
+  min-width: 50px;
+  border-radius: 50%;
+}
+.info_actor h2 {
+  width: 100px;
+  font-weight: bold;
+}
+
+.info_occupation {
+  width: 22vw;
+  text-align: left;
+  padding-left: 20px;
+}
+.info_occupation p {
+  display: inline-block;
+}
+
+.info_perform {
+  width: 22vw;
+  text-align: left;
+  padding-left: 20px;
+}
+.info_perform p {
+  display: inline-block;
+}
+
+@media (max-width: 1280px) {
+  .category_inner.container {
+    transform: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .category_inner h1 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 900px) {
+  .category_inner h1 {
+    font-size: 25px;
+    margin: 30px 10px;
+  }
+  .info_perform p {
+    font-size: 13px;
+  }
+  .info_occupation p {
+    font-size: 13px;
+  }
+  .info_actor h2 {
+    font-size: 13px;
+  }
+}

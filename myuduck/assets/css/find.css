@@ -1,0 +1,63 @@
+.find__from {
+    width: 100%;
+}
+
+/* find__inner */
+.find__inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    color: var(--white);
+    background-position: 100% 100%;
+    background-size: cover;
+    font-family: var(--primary-Hahmlet);
+    background-image: url(../img/join_bg.jpg);
+}
+
+.find__inner h3 {
+    margin-bottom: 40px;
+    font-size: 1.9rem;
+}
+
+.find__from span {
+    margin: 0 0 40px 5px;
+    font-size: 0.9rem;
+    color: var(--black400);
+}
+
+.find__from p {
+    font-size: 0.9rem;
+}
+
+.find__inner fieldset {
+    margin-top: 1.2rem;
+    width: 100%;
+    height: 20rem;
+}
+
+.find__inner label {
+    display: inline-block;
+    padding: 10px 0 5px 0;
+}
+
+.find__inner input {
+    padding: 20px;
+    color: var(--white);
+    width: 100%;
+    height: 5vh;
+    border: 1px solid var(--white);
+    background: transparent;
+    margin: 10px 0;
+}
+
+.find__inner button {
+    margin: 60px auto;
+    background-color: var(--white);
+    border: 1px solid var(--white);
+}
+
+.find__inner button:hover {
+    background-color: var(--black999);
+    color: var(--white)
+}

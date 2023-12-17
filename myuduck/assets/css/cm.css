@@ -1,0 +1,102 @@
+main {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+a {
+    display: block;
+}
+
+.intro__img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    margin: 70px 0 30px 0;
+    filter: brightness(0.6);
+}
+
+.categorieWrap {
+    width: 100%;
+    margin-bottom: px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ca__inner1 .title {
+    color: #D06958;
+    font-size: 2.5rem;
+}
+
+
+.title {
+    font-size: 2.5rem;
+}
+
+.ca__imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.ca__imgs .imgcontainer {
+    width: 250px;
+    height: 250px;
+    margin: 30px 25px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 0 2px var(--white);
+
+    position: relative;
+}
+.ca__imgs .imgcontainer img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    /* 이미지를 비율 유지하면서 컨테이너를 가득 채우도록 설정 (크롭될 수 있음) */
+    object-position: center center;
+    /* 이미지를 가운데 정렬 */
+}
+
+.ca__imgs .imgcontainer .text {
+    font-weight: 800;
+    color: var(--black);
+    background-color: rgba(0, 0, 0, 0.781);
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+.text .t1 {
+    font-size: 1.4rem;
+    font-family: var(--hahm);
+    
+    color: var(--white);
+}
+.text .t2 {
+    color: var(--black300);
+    padding-top: 20px;
+}
+
+.ca__imgs .imgcontainer:hover .text {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ca__imgs .imgcontainer:hover {
+    box-shadow: 0 0 0 2px var(--white);
+}
